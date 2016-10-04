@@ -1,0 +1,50 @@
+var BDAuth = [
+	{
+		"id_fournisseur" : 0,
+		"frn_nom" : "HACHETTE",
+		"frn_contact" : "Jean-Paul HOCHON",
+		"frn_telephone" : "33.25.48.36.75"
+	},
+	{
+		"id_fournisseur" : 1,
+		"frn_nom" : "Dupuis",
+		"frn_contact" : "Abby DOCHON",
+		"frn_telephone" : "16.28.32.44.16"
+	},
+	{
+		"id_fournisseur" : 2,
+		"frn_nom" : "Petit-à-petit",
+		"frn_contact" : "Jessica MEMBERT",
+		"frn_telephone" : "28.16.38.44.44"
+	},
+	{
+		"id_fournisseur" : 3,
+		"frn_nom" : "SePP",
+		"frn_contact" : "Raoul BRISEFER",
+		"frn_telephone" : "44.32.16.48.12"
+	},
+	{
+		"id_fournisseur" : 4,
+		"frn_nom" : "Casterman",
+		"frn_contact" : "Etore PISSENLIT",
+		"frn_telephone" : "85.25.14.96.12"
+	},
+	{
+		"id_fournisseur" : 5,
+		"frn_nom" : "BD Trésors",
+		"frn_contact" : "Anatole FRANCE",
+		"frn_telephone" : "45.85.63.21.74"
+	},
+	{
+		"id_fournisseur" : 6,
+		"frn_nom" : "Lombard",
+		"frn_contact" : "Amélie POULAIN",
+		"frn_telephone" : "25.36.98.01.78"
+	},
+	{
+		"id_fournisseur" : 7,
+		"frn_nom" : "Dargaud - Lombard",
+		"frn_contact" : "Alain TERIEUR",
+		"frn_telephone" : "87.25.96.12.01"
+	}
+];

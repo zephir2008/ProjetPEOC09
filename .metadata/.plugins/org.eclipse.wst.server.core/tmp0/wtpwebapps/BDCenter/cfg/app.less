@@ -1,3 +1,7 @@
+/****************************/
+/* Feuille de style Less    */
+/****************************/
+
 @clip: rect(0px, 1920px, 740px, 0px );
 @height: 1020px;
 @shadow-size: 12px;
@@ -5,6 +9,8 @@
 @min-size: 640px;
 @zindex-base: -3;
  
+
+/* paramètre de base de la page */
 body {
 	background: linear-gradient(to right, #336666, #ffffff);
 	min-width: @min-size;
@@ -13,8 +19,12 @@ body {
 }
 
 .jumbotron {
-	background-color: transparent;
+/*	background-color: transparent;*/
+/*opacity: 0.5;*/
+	background-color: rgba(127,127,127,0.5);
+	border-radius: 60px !important;
 }
+
 @keyframes buttonlogin {
 	from {
 		width: @button-size;
@@ -85,39 +95,39 @@ body {
 
 	background-color: rgba(172,172,128,0.8);
 }
-/*******************************/
 
+/*******************************/
+/* La mention légale en bas de page */
+.bottom {
+	display: block;
+	position: absolute;
+	z-index: 1;
+	max-width: 100%;
+	min-width: @min-size;
+	width: 100%;
+	height: auto;
+	bottom: 0;
+
+	text-align: center;
+	text-shadow: 4px 4px 2px navy;
+	color: gold; /* #d4184d; */
+}
+
+/*************************/
+/* le formulaire de login */
 .ontop {
-	z-index:10;
+	z-index: 10;
 	display: block;
 	position: absolute;
 	top: 0;
 	width:100%;
-/* 	opacity: 1 !important;*/
-	background-color: transparent !important;
 }
-
-
-
-
-.bottom {
-	display: block;
-	position: absolute;
-	z-index: 4;
-	max-width: 100%;
-	width: 100%;
-	height: auto;
-	bottom: 0;
-	text-align: center;
-	min-width: @min-size;
-	text-shadow: 4px 4px 2px #fffff7;
-	color: #d4184d;
-}
-.myshade {
-	box-shadow: -@shadow-size @shadow-size @shadow-size/2 #f7f7f7;
+.login2 {
+/* 	opacity: 1.0;
+	background-color: gold;*/
 }
 input[type=password]{
-	background-color: #fCC;
+	background-color: #fcc;
 	margin-right: 20px;
 }
 button[type=button] {
@@ -125,6 +135,13 @@ button[type=button] {
 	height: @button-size;
 	border: 4px inset rgba(0,0,0,0.2);
 	border-radius: 10px;
+}
+
+
+
+
+.myshade {
+	box-shadow: -@shadow-size @shadow-size @shadow-size/2 #f7f7f7;
 }
 nav{
 	position: absolute;
@@ -152,6 +169,8 @@ nav{
 	color: white;
 	box-sizing: border-box;
 }
+
+
 #workspace1 {
 	position: absolute;
 	top: 150px;

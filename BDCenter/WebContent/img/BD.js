@@ -1,11 +1,13 @@
-[
+var BDCouv = [
   {
     "Référence":"0000NEWNEW",
     "Titre":"Nouvelle édition",
     "Auteur":"(sans)",
     "Editeur":0,
     "Photo":"0000NEWNEW.jpg",
-    "Etat":5
+    "Etat":5,
+    "Stock": 4,
+    "Reassort": 0
   },
   {
     "Référence":"0001BLANWAL",
@@ -13,7 +15,9 @@
     "Auteur":"Walt DISNEY",
     "Editeur":0,
     "Photo":"0001BLAWAL.jpg",
-    "Etat":3
+    "Etat":3,
+    "Stock": 0,
+    "Reassort": 5
   },
   {
     "Référence":"0002BOUJEA",
@@ -21,7 +25,9 @@
     "Auteur":"ROBA Jean",
     "Editeur":1,
     "Photo":"0002BOUJEA.jpg",
-    "Etat":5
+    "Etat":5,
+    "Stock": 6,
+    "Reassort": 0
   },
   {
     "Référence":"0003JIMOLI",
@@ -29,7 +35,9 @@
     "Auteur":"Oliv et Ben",
     "Editeur":2,
     "Photo":"0003JIMOLI.jpg",
-    "Etat":5
+    "Etat":5,
+    "Stock": 3,
+    "Reassort": 0
   },
   {
     "Référence":"0004LABCOL",
@@ -37,7 +45,9 @@
     "Auteur":"Collectif",
     "Editeur":3,
     "Photo":"0004LABCOL.jpg",
-    "Etat":4
+    "Etat":4,
+    "Stock": 1,
+    "Reassort": 0
   },
   {
     "Référence":"0005BAUCOL",
@@ -45,7 +55,9 @@
     "Auteur":"Collectif",
     "Editeur":2,
     "Photo":"0005BAUCOL.jpg",
-    "Etat":5
+    "Etat":5,
+    "Stock": 9,
+    "Reassort": 0
   },
   {
     "Référence":"0006CHAGEL",
@@ -53,7 +65,9 @@
     "Auteur":"GELUCK Philippe",
     "Editeur":5,
     "Photo":"0006CHAGEL.jpg",
-    "Etat":5
+    "Etat":5,
+    "Stock": 6,
+    "Reassort": 0
   },
   {
     "Référence":"0007PIEFOR",
@@ -61,7 +75,9 @@
     "Auteur":"FORTON Louis",
     "Editeur":6,
     "Photo":"0007PIEFOR.jpg",
-    "Etat":3
+    "Etat":3,
+    "Stock": 1,
+    "Reassort": 0
   },
   {
     "Référence":"0008SCHPEY",
@@ -69,7 +85,9 @@
     "Auteur":"Peyo",
     "Editeur":7,
     "Photo":"0008SCHPEY.jpg",
-    "Etat":5
+    "Etat":5,
+    "Stock": 5,
+    "Reassort": 0
   },
   {
     "Référence":"0009SPIROB",
@@ -77,7 +95,9 @@
     "Auteur":"Rob-Vel",
     "Editeur":1,
     "Photo":"0009SPIROB.jpg",
-    "Etat":5
+    "Etat":5,
+    "Stock": 4,
+    "Reassort": 0
   },
   {
     "Référence":"0010ETEPRA",
@@ -85,7 +105,9 @@
     "Auteur":"Pratt-Manara",
     "Editeur":4,
     "Photo":"0010ETEPRA.jpg",
-    "Etat":5
+    "Etat":5,
+    "Stock": 0,
+    "Reassort": 0
   },
   {
     "Référence": "ACH0208GRE",
@@ -196,25 +218,5 @@
     "Etat": 5,
     "Stock": 1,
     "Reassort": 0
-  },
-  {
-    "Référence": "",
-    "Titre": "",
-    "Auteur": "",
-    "Editeur": ,
-    "Photo": ".jpg",
-    "Etat": 5,
-    "Stock": 12,
-    "Reassort": 0
-  },
-  {
-    "Référence": "",
-    "Titre": "",
-    "Auteur": "",
-    "Editeur": ,
-    "Photo": ".jpg",
-    "Etat": 5,
-    "Stock": 12,
-    "Reassort": 0
   }
-]
+];
