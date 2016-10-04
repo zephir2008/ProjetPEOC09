@@ -47,7 +47,7 @@ Temporary Items
 .apdisk
 
 # Eclipse.gitignore
-.metadata
+.metadata/
 bin/
 tmp/
 *.tmp
@@ -97,3 +97,5 @@ local.properties
 
 # Code Recommenders
 .recommenders/
+
+photothumb.db
