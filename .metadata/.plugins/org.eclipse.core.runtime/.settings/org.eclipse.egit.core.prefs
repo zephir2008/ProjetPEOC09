@@ -1,5 +1,5 @@
-GitRepositoriesView.GitDirectories=
-GitRepositoriesView.GitDirectories.relative=BDCenter\\.git;
+GitRepositoriesView.GitDirectories=C\:\\Users\\Philippe\\ProjetPEOC09\\.git;C\:\\Users\\Philippe\\ProjetPEOC09\\BDCenter\\.git;
+GitRepositoriesView.GitDirectories.relative=.git;BDCenter\\.git;
 core_packedGitMMAP=true
 core_preferredMergeStrategy=jgit-default-mergeStrategy
 eclipse.preferences.version=1
