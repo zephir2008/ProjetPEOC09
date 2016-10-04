@@ -1,0 +1,75 @@
+
+body {
+
+}
+
+fieldset {
+	/*border-radius: 5px;*/
+	border: 3px solid #2166ac !important;
+	padding: 0 10px;
+	/*box-shadow: 3px 3px 3px rgba(192, 192, 192, 0.7);*/
+	min-height: 250px;
+	/*margin: 0 25px !important;*/
+	min-width: 450px;
+	/*max-width: 1080px;*/
+}
+
+header {
+	/*border: 1px solid #4393c3;
+	border-radius: 10px;
+	max-width: 1080px;*/
+	min-width: 500px;
+	/*box-shadow: 3px 3px 3px #fddbc7;*/
+}
+
+legend {
+
+}
+
+footer {
+	text-align: center;
+	display:block;
+	position: absolute;
+	bottom:5px;
+	height:35px;
+	min-width: 500px;
+	width: 100%;
+}
+
+nav {
+	min-width: 500px;
+	min-height: 80px;
+	background-color: transparent;
+}
+
+.transparent{
+	background-color: transparent;
+}
+.cadrac-main {
+	background: linear-gradient(to right, #92c5de, #f7f7f7);
+	/*background-color: #f7f7f7;*/
+	min-width: 640px;
+	min-height: 640px;
+}
+
+.cadrac-logo {
+	/*background: url("../img/logopetit.png") 1% 1% no-repeat local; /* fixed */*/
+	/*background: #d1e5f0 url("../img/logopetit.png") left center no-repeat fixed;*/
+	height: 100px;
+	padding-top: 5px;
+}
+
+.cadrac-maj {
+	font-size: 48pt;
+	font-weight: bold;
+	font-style: italic;
+	color: #f7f7f7;
+	text-shadow: 3px 3px 3px #2166ac;
+	text-transform: uppercase;
+	margin: 20px 50px 0 0;
+	/*width: auto;*/
+}
+
+.cadrac-droite {
+	text-align: right;
+}

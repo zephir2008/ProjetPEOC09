@@ -1,0 +1,90 @@
+[
+  {
+    "Référence":"0000NEWNEW",
+    "Titre":"Nouvelle édition",
+    "Auteur":"(sans)",
+    "Editeur":0,
+    "Photo":"0000NEWNEW.jpg",
+    "Etat":5
+  },
+  {
+    "Référence":"0001BLANWAL",
+    "Titre":"Blanche-neige et les 7 nains",
+    "Auteur":"Walt DISNEY",
+    "Editeur":0,
+    "Photo":"0001BLAWAL.jpg",
+    "Etat":3
+  },
+  {
+    "Référence":"0002BOUJEA",
+    "Titre":"Boule et Bill 15",
+    "Auteur":"ROBA Jean",
+    "Editeur":1,
+    "Photo":"0002BOUJEA.jpg",
+    "Etat":5
+  },
+  {
+    "Référence":"0003JIMOLI",
+    "Titre":"Jimmy Endrix en BD",
+    "Auteur":"Oliv et Ben",
+    "Editeur":2,
+    "Photo":"0003JIMOLI.jpg",
+    "Etat":5
+  },
+  {
+    "Référence":"0004LABCOL",
+    "Titre":"Torpille - La base secrette",
+    "Auteur":"Collectif",
+    "Editeur":3,
+    "Photo":"0004LABCOL.jpg",
+    "Etat":4
+  },
+  {
+    "Référence":"0005BAUCOL",
+    "Titre":"Poèmes de Baudelaire en Bandes dessinées",
+    "Auteur":"Collectif",
+    "Editeur":2,
+    "Photo":"0005BAUCOL.jpg",
+    "Etat":5
+  },
+  {
+    "Référence":"0006CHAGEL",
+    "Titre":"Le Chat 1999,9999",
+    "Auteur":"GELUCK Philippe",
+    "Editeur":5,
+    "Photo":"0006CHAGEL.jpg",
+    "Etat":5
+  },
+  {
+    "Référence":"0007PIEFOR",
+    "Titre":"Les Nouvelles Aventures des PIEDS NICKELES",
+    "Auteur":"FORTON Louis",
+    "Editeur":6,
+    "Photo":"0007PIEFOR.jpg",
+    "Etat":3
+  },
+  {
+    "Référence":"0008SCHPEY",
+    "Titre":"Schtroumpf les Bains",
+    "Auteur":"Peyo",
+    "Editeur":7,
+    "Photo":"0008SCHPEY.jpg",
+    "Etat":5
+  },
+  {
+    "Référence":"0009SPIROB",
+    "Titre":"Spirou et Fantasio - 55",
+    "Auteur":"Rob-Vel",
+    "Editeur":1,
+    "Photo":"0009SPIROB.jpg",
+    "Etat":5
+  },
+  {
+    "Référence":"0010ETEPRA",
+    "Titre":"Un été Indien",
+    "Auteur":"Pratt-Manara",
+    "Editeur":4,
+    "Photo":"0010ETEPRA.jpg",
+    "Etat":5
+  }
+]

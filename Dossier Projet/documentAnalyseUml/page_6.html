@@ -1,0 +1,660 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<head>
+  <title> Rédaction des documents d’analyse avec U.M.L - Club d'entraide des d&#233;veloppeurs francophones</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <meta name="generator" content="developpez-com" />
+  <link rel="stylesheet" type="text/css" media="screen" href="./article.css" />
+  
+</head>
+<body>
+<style type="text/css">
+<!--
+body {
+	background-color : #DDEEFF;
+	background: #DDEEFF;
+	font: normal;
+    font-family: Verdana;
+    font-weight: normal;    
+    margin: 0
+}
+
+img {
+    border:0
+}
+form {
+    margin : 0
+}
+td {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size : 10pt;
+	font-weight: normal;
+}
+td.iongl {
+	width : 1px;
+}
+
+td.bgongl {
+	background-image : url(./images/kitint.gif);
+	text-align : center;
+}
+.ntdrub:link {
+	color : #000000;
+	font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:visited {
+    color : #000000;
+    font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:active {
+	color : #000000;
+	font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:hover {
+    color : #FF0000;
+    background-color: #FFF8DD;
+    font-weight : bold;
+	font-size : 8pt;
+	text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+td.trbleu {
+	background-color:#6389D8;
+	text-align : center;
+    margin: 0 ;
+	border: 0;
+	padding-top : 3px;
+	padding-bottom : 3px;
+	height : 34px;
+}
+td.fondart {
+    background-color:#FFFFFF;
+    
+}
+
+table.tbnoir{
+	background-color:#000000;
+}
+.titrepied {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size : 10pt;
+	font: normal;
+	font-weight: normal
+}
+
+-->
+</style>
+<table width="100%" cellspacing="4">
+	<tr>
+	<td align="center">
+		<table width="100%" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+				  <table width="100%" cellspacing="11">
+					<tr>
+						<td>
+						<a href="http://www.developpez.com"><img src="images/kitlogo.gif" alt="Accueil" /></a>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+			<tr>
+    			<td>
+						<table class="cachee" cellpadding="0" cellspacing="0" width="100%">
+							<tr>
+								<td class="iongl"><img src="images/kitbordg.gif" alt=""/></td>
+								<td class="bgongl"><a href="http://www.developpez.com" class="ntdrub">Accueil</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://club.developpez.com" class="ntdrub">Le Club</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://delphi.developpez.com" class="ntdrub">Delphi Kylix</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://c.developpez.com" class="ntdrub">C C++</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://java.developpez.com" class="ntdrub">Java J2EE</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://dotnet.developpez.com" class="ntdrub">DotNET &amp; C#</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://vb.developpez.com" class="ntdrub">Visual Basic</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://access.developpez.com" class="ntdrub">Access</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://pascal.developpez.com" class="ntdrub">Pascal</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://web.developpez.com" class="ntdrub">Dev Web</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://php.developpez.com" class="ntdrub">PHP</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://asp.developpez.com" class="ntdrub">ASP</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://xml.developpez.com" class="ntdrub">XML</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://uml.developpez.com" class="ntdrub">UML</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://sgbd.developpez.com" class="ntdrub">SQLSGBD</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://windows.developpez.com" class="ntdrub">Windows</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://linux.developpez.com" class="ntdrub">Linux</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://www.developpez.com/cours/" class="ntdrub">Autres</a></td>
+								<td class="iongl"><img src="images/kitbordd.gif" alt="" /></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="trbleu">
+					</td>
+				</tr>
+
+				<tr valign="top">
+					<td valign="top" class="fondart">
+						<table cellspacing="1" width="100%" class="tbnoir">
+							<tr>
+								<td class="fondart">
+									<div style="text-align:center;">
+									<table class="cadrearticle" width="90%" cellpadding="10" cellspacing="0">
+										<tr>
+											<td align="center" style="text-align:left">
+
+        <br/><h1> Rédaction des documents d’analyse avec U.M.L</h1><p class="dateArticle">
+		Date de publication : 12/04/2006</p><hr/><div class="barreNavigation"> [ <a class="barreNavigationTexte" href="page_5.html">Précédent</a> ]  [ <a class="barreNavigationTexte" href="sommaire.html">Sommaire</a> ]  [ <a class="barreNavigationTexte" href="page_7.html">Suivant</a> ] </div><hr/>
+	
+	
+	
+	
+	
+	
+	<br /><a class="summaryIndent0" href="#L5">5.  Détaillons ...</a>
+			
+			<br /><a class="summaryIndent1" href="#L5.1">5.1. Préambule</a>
+				
+								
+						
+			<br /><a class="summaryIndent1" href="#L5.2">5.2. Réunion : L’acte de fidélité</a>
+				
+				
+				
+				<br /><a class="summaryIndent2" href="#L5.2.1">5.2.1. Cas dégradés</a>
+					
+										
+				
+				<br /><a class="summaryIndent2" href="#L5.2.2">5.2.2. Fonctions annexes</a>
+					
+					
+					
+					
+					
+																														
+																				
+			
+			<br /><a class="summaryIndent1" href="#L5.3">5.3. Cas d’utilisation</a>
+				
+				
+				
+				
+				<br /><a class="summaryIndent2" href="#L5.3.1">5.3.1. Acteur</a>
+					
+										
+				
+				<br /><a class="summaryIndent2" href="#L5.3.2">5.3.2. Liste des scénarios</a>
+					
+										
+																					
+					
+			<br /><a class="summaryIndent1" href="#L5.4">5.4. Scénario : Passage d’un achat</a>
+				
+				
+				
+				
+																
+				
+			<br /><a class="summaryIndent1" href="#L5.5">5.5. Annexe </a>
+				
+				
+				<br /><a class="summaryIndent2" href="#L5.5.1">5.5.1. Message d’échange avec le TPE</a>
+					
+										
+					
+				<br /><a class="summaryIndent2" href="#L5.5.2">5.5.2. Diagramme de classes</a>
+					
+					
+															
+					
+					
+					
+					
+					
+																																			
+															
+			
+			<br /><a class="summaryIndent1" href="#L5.6">5.6. Autres scénarios</a>
+				
+				
+				
+												
+															
+		
+	
+<br/><br/>
+	
+	
+	
+	
+	
+	
+	<br /><h2 class="TitreSection1" id="L5">5.  Détaillons ...</h2>
+			
+			<br /><h3 class="TitreSection2" id="L5.1">5.1. Préambule</h3>
+				
+				<div class="paragraph">
+					Vous devez maintenant vous concentrer sur la spécification des besoins qui permettra d’alimenter les autres tâches.
+					<br /><br />
+					Trois scénarios dans le cas d’utilisation principal sont décrits. Il est maintenant temps de les préciser à tour de rôle.
+					<br /><br />
+					Le cœur du métier est l’acte de fidélité. C’est donc le premier point par lequel commencer. Pour cela une réunion d’analyse avec le groupement et le constructeur de TPE est organisée.
+				</div><br/>				
+						
+			<br /><h3 class="TitreSection2" id="L5.2">5.2. Réunion : L’acte de fidélité</h3>
+				
+				<div class="paragraph">
+					Vous abordez avec le groupement l’utilisation du TPE chez les commerçants. Il apparaît qu’il ne faut pas oublier :
+				</div><br/>
+				<ul style="list-style-type: disc;">
+					<li>Les cas dégradés et leurs solutions</li>
+					<li>Le fait que le TPE est le principal moyen de communication entre le commerçant et le système d’information</li>					
+				</ul>
+				<br /><h4 class="TitreSection3" id="L5.2.1">5.2.1. Cas dégradés</h4>
+					
+					<div style="text-align:center;"><table class="tableau" cellspacing="0" border="1" style="text-align: left;margin:0px auto;" width="80%">
+						<tr>
+							<th class="colonne_entete" style="width:30%;">Cas</th>
+							<th class="colonne_entete" style="width:70%;">Solution</th>
+						</tr>
+						<tr>
+							<td class="colonne" style="">Erreur sur la transaction (Généralement erreur sur la saisie du montant)</td>
+							<td class="colonne" style="">Annulation de la dernière transaction qu’il y ait remboursement des remises cumulées ou non. Puis le commerçant recommence la transaction.
+Pour éviter les fraudes, seule la dernière transaction peut être annulée. La carte doit être dans le lecteur.</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="">Perte du ticket</td>
+							<td class="colonne" style="">Demande de duplicata.
+Le duplicata ne peut porter que sur la dernière transaction ou annulation. Il n’est pas nécessaire que la carte soit présente dans le lecteur</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="">Time-out (Temps de réponses &gt; 2 mn)</td>
+							<td class="colonne" style="">Abandon de la transaction. Le commerçant recommence.</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="">Pas d’établissement de la ligne</td>
+							<td class="colonne" style="">Abandon de l’acte de fidélité.</td>
+						</tr>
+					</table></div>					
+				
+				<br /><h4 class="TitreSection3" id="L5.2.2">5.2.2. Fonctions annexes</h4>
+					
+					<div class="paragraph">
+						Les fonctions annexes sont les suivantes :
+					</div><br/>
+					<div style="text-align:center;"><table class="tableau" cellspacing="0" border="1" style="text-align: left;margin:0px auto;" width="80%">
+						<tr>
+							<th class="colonne_entete" style="width:50%;">Cas</th>
+							<th class="colonne_entete" style="width:50%;">Solution</th>
+						</tr>
+						<tr>
+							<td class="colonne" style="">Le client souhaite connaître l’état de sa carte (Cumul des provisions, rang dans la série)</td>
+							<td class="colonne" style="">Le commerçant introduit la carte dans le lecteur et par menu, choisit une option « Consultation ».</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="">Le commerçant souhaite connaître le cumul des remises du mois précédent et du mois en cours pour son commerce</td>
+							<td class="colonne" style="">Le commerçant introduit sa carte commerçant et par menu choisi une option "Interrogation".</td>
+						</tr>
+					</table></div>
+					<div class="paragraph">
+						Le constructeur du TPE présent à la réunion, nous permet de mettre au point les échanges. Nous apprenons au passage :
+					</div><br/>
+					<ul style="list-style-type: disc;">
+						<li>Qu’un commerçant possède une « carte commerçant » qui permet de l’identifier. Le numéro de commerce sera donc le numéro de cette carte.</li>
+						<li>Que toutes les cartes possèdent un numéro d’application qui permet de réaliser les contrôles de validité de la carte introduite. Ainsi, seront rejetées toutes les cartes n’ayant pas ce numéro (vous ne voulez pas de cartes de parking !).</li>
+					</ul>
+					<div class="paragraph">
+						En devançant la réunion sur l’administration des cartes, nous découvrons que certaines cartes peuvent être annulées ou remplacées en cas perte.
+					</div><br/>																									
+																				
+			
+			<br /><h3 class="TitreSection2" id="L5.3">5.3. Cas d’utilisation</h3>
+				
+				<div class="paragraph">
+					La réunion sur l’acte de fidélité permet l’établissement du cas d’utilisation correspondant.
+				</div><br/>
+				<div class="image" style="text-align:center;"><a href="./images/UseCase-fidelite.png"><img src="./images/logo-UseCase-fidelite.png" alt=""/></a></div>
+				<div class="paragraph">
+					Comme pour chaque cas d’utilisation, nous décrivons succinctement les acteurs et les scénarios
+				</div><br/>
+				<br /><h4 class="TitreSection3" id="L5.3.1">5.3.1. Acteur</h4>
+					
+					<div style="text-align:center;"><table class="tableau" cellspacing="0" border="1" style="text-align: left;margin:0px auto;" width="80%">
+						<tr>
+							<th class="colonne_entete" style="width:20%;">Acteur</th>
+							<th class="colonne_entete" style="width:80%;">Rôle</th>
+						</tr>
+						<tr>
+							<td class="colonne" style="">Commerçant</td>
+							<td class="colonne" style="">Unique acteur du cas d’utilisation. Il est responsable du passage des actes de fidélité en présence du client.</td>
+						</tr>
+					</table></div>					
+				
+				<br /><h4 class="TitreSection3" id="L5.3.2">5.3.2. Liste des scénarios</h4>
+					
+					<div style="text-align:center;"><table class="tableau" cellspacing="0" border="1" style="text-align: left;margin:0px auto;" width="80%">
+						<tr>
+							<th class="colonne_entete" style="width:20%;">Scénario</th>
+							<th class="colonne_entete" style="width:80%;">Description</th>
+						</tr>
+						<tr>
+							<td class="colonne" style="">Passage d’un achat</td>
+							<td class="colonne" style="">Scénario principal du cas d’utilisation. Il consiste à enregistrer un achat dans le commerce afin de provisionner des remises. Si plus de 10 achats ont déjà été effectués, le système doit proposer le remboursement des remises provisionnées.</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="">Annulation</td>
+							<td class="colonne" style="">Doit permettre d’annuler le dernier acte d’achat effectué en cas d’erreur. Si le commerçant n’est pas certain si la transaction précédente est enregistrée ou non, il peut interroger la carte client.</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="">...</td>
+							<td class="colonne" style=""> </td>
+						</tr>
+					</table></div>					
+																					
+					
+			<br /><h3 class="TitreSection2" id="L5.4">5.4. Scénario : Passage d’un achat</h3>
+				
+				<div class="paragraph">
+					Puis vous devez approfondir chacun des scénarios ... Vous commencez par le plus important : l’acte d’achat.
+					<br /><br />
+					Le cas nominal du passage d’un acte d’achat au titre de la fidélité a été vu lors du cas d’utilisation principal. Il semble maintenant nécessaire de le détailler en tenant compte des contrôles et des cas dégradés. Un graphe de séquence serait trop complexe et illisible. Nous préférons un diagramme d’activité.
+				</div><br/>
+				<div class="image" style="text-align:center;"><a href="./images/Activite-Achat.png"><img src="./images/logo-Activite-Achat.png" alt=""/></a></div>
+				<div class="paragraph">
+					Il reste à d’écrire plus précisément chaque étape.
+				</div><br/>
+				<div style="text-align:center;"><table class="tableau" cellspacing="0" border="1" style="text-align: left;margin:0px auto;" width="80%">
+					<tr>
+						<th class="colonne_entete" style="width:10%;">Code</th>
+						<th class="colonne_entete" style="width:20%;">Etape</th>
+						<th class="colonne_entete" style="width:70%;">Commentaire</th>
+					</tr>
+					<tr>
+						<td class="colonne" style="">1</td>
+						<td class="colonne" style="">Saisie du montant</td>
+						<td class="colonne" style="">La saisie du montant est effectuée par le commerçant. C’est le premier acte du scénario. On suppose que toutes les transactions sont en Euro.</td>
+					</tr>
+					<tr>
+						<td class="colonne" style="">2</td>
+						<td class="colonne" style="">Contrôle du montant</td>
+						<td class="colonne" style="">En cas d’échec, Le TPE affiche :<br />
+Le montant saisi et la mention « Montant incorrect »<br />
+La transaction est abandonnée.<br />
+Si le montant est correct, le TPE passe en étape 3.</td>
+					</tr>
+					<tr>
+						<td class="colonne" style="">3</td>
+						<td class="colonne" style="">Affichage montant</td>
+						<td class="colonne" style="">Le TPE contrôle le montant et l’affiche sur l’écran :<br />
+le montant saisi et la mention « Introduire carte »<br />
+Si la carte n’est pas introduite dans les 2 minutes, la transaction est arrêtée.</td>
+					</tr>
+					<tr>
+						<td class="colonne" style="">4</td>
+						<td class="colonne" style="">Introduction carte</td>
+						<td class="colonne" style="">Le commerçant demande la carte au client et l’introduit dans le TPE</td>
+					</tr>
+					<tr>
+						<td class="colonne" style="">5</td>
+						<td class="colonne" style="">Contrôle carte</td>
+						<td class="colonne" style="">Le TPE lit la bande magnétique sur la carte. En cas de carte illisible ou incorrecte, le TPE affiche le message « Carte incorrecte » et abandonne la transaction.</td>
+					</tr>
+					<tr>
+						<td class="colonne" style="">6</td>
+						<td class="colonne" style="">Initialisation de la connexion</td>
+						<td class="colonne" style="">Le TPE appelle le serveur par le réseau commuté.<br />
+En cas d’échec, le TPE essaie au plus 3 tentatives.<br />
+Si la connexion est réussie, le TPE affiche le message « Connexion en cours ».<br />
+Si la connexion est en échec après 3 tentatives, le TPE affiche « Echec de connexion » et la transaction est abandonnée.<br />
+Le message d’échange d’initialisation est donné plus en annexe.</td>
+					</tr>
+					<tr>
+						<td class="colonne" style="">7</td>
+						<td class="colonne" style="">Réception transaction</td>
+						<td class="colonne" style="">Le serveur prépare le traitement de la demande. Il aiguille sur le traitement des achats.</td>
+					</tr>
+					<tr>
+						<td class="colonne" style="">8</td>
+						<td class="colonne" style="">Contrôle commerçant</td>
+						<td class="colonne" style="">Le serveur recherche la carte commerçant dans la base de donnée.<br />
+Si le commerçant est non identifié ou n’est pas autorisé le serveur va en 8.1 sinon il va en 9.</td>
+					</tr>
+					<tr>
+						<td class="colonne" style="">8.1</td>
+						<td class="colonne" style="">Préparation commerçant invalide</td>
+						<td class="colonne" style="">Le serveur formate les informations à envoyer au TPE. Le message envoyé au serveur est de type échec.<br />
+La transaction est abandonnée.</td>
+					</tr>
+					<tr>
+						<td class="colonne" style="">9</td>
+						<td class="colonne" style="">Contrôle de la carte</td>
+						<td class="colonne" style="">Le serveur lit la carte dans la base de données.<br />
+En cas d’échec, il va en 9.1<br />
+En cas de lecture réussie, il va en 9.2.</td>
+					</tr>
+					<tr>
+						<td class="colonne" style="">9.1</td>
+						<td class="colonne" style="">Création de la carte</td>
+						<td class="colonne" style="">Le serveur crée un enregistrement carte dans la base de données avec les informations suivantes :
+				<ul style="list-style-type: disc;">
+					<li>N° de carte</li>
+					<li>mtCumulProvision = 0</li>
+					<li>nbAchat = 0</li>
+					<li>etatCarte = « OK »</li>
+				</ul>
+						
+
+    </td>
+					</tr>
+					<tr>
+						<td class="colonne" style="">9.2</td>
+						<td class="colonne" style="">Contrôle de la carte</td>
+						<td class="colonne" style="">Si la carte est annulée ou remplacée, le serveur va en 9.3 sinon en 10.</td>
+					</tr>
+					<tr>
+						<td class="colonne" style="">9.3</td>
+						<td class="colonne" style="">Préparation carte invalide</td>
+						<td class="colonne" style="">Le serveur formate les informations à envoyer au TPE. Le message envoyé au serveur est de type échec.</td>
+					</tr>
+					<tr>
+						<td class="colonne" style="">10</td>
+						<td class="colonne" style="">Enregistrement de l’achat</td>
+						<td class="colonne" style="">Le serveur enregistre l’achat dans la base de données. Le montant du cumul des provisions est mis à jour.<br />
+Le serveur va à l’étape 11.</td>
+					</tr>
+					<tr>
+						<td class="colonne" style="">11</td>
+						<td class="colonne" style="">Calcul des remises</td>
+						<td class="colonne" style="">Montant remise = Mt Achat * Taux remise - Frais.<br />
+Mise à jour du mtCumulProvision de la carte<br />
+Incrémentation du nombre d’achats de la carte.</td>
+					</tr>
+					<tr>
+						<td class="colonne" style="">12</td>
+						<td class="colonne" style="">Préparation provision</td>
+						<td class="colonne" style="">Mise à jour de la base de données.<br />
+Le serveur formate les informations à envoyer au TPE. Le message envoyé au serveur est de type « Transaction acceptée ».</td>
+					</tr>
+					<tr>
+						<td class="colonne" style="">13</td>
+						<td class="colonne" style="">Remboursement</td>
+						<td class="colonne" style="">Mise à jour de la base de données<br />
+Mt Remboursement = Somme des montants remises provisionnées.<br />
+Mise à zéro du montant des cumuls de provision de la carte et du nombre d’achats de la série.<br />
+Le serveur formate les informations à envoyer au TPE. Le message envoyé au serveur est de type « Remboursement acceptée ».</td>
+					</tr>
+					<tr>
+						<td class="colonne" style="">14</td>
+						<td class="colonne" style="">Réception demande ticket</td>
+						<td class="colonne" style="">Le TPE reçoit le message de la part du serveur et prépare l’édition.<br />
+Les opérations 15 et 16 sont en parallèle.</td>
+					</tr>
+					<tr>
+						<td class="colonne" style="">15</td>
+						<td class="colonne" style="">Edition ticket</td>
+						<td class="colonne" style="">(Présentation de la maquette du ticket ici.)</td>
+					</tr>
+					<tr>
+						<td class="colonne" style="">16</td>
+						<td class="colonne" style="">Accusé de réception</td>
+						<td class="colonne" style="">Le TPE envoie au serveur un accusé de réception. Le serveur peut alors valider les mises à jour de la base de données</td>
+					</tr>
+				</table></div>												
+				
+			<br /><h3 class="TitreSection2" id="L5.5">5.5. Annexe </h3>
+				
+				<div class="paragraph">
+					Quelques précisions d’ordre technique sont nécessaires. Elles ne sont pas destinées à l’utilisateur final qui validera l’analyse. Un chapitre particulier (à défaut d’un document spécifique) est consacré à ces annexes.
+				</div><br/>
+				<br /><h4 class="TitreSection3" id="L5.5.1">5.5.1. Message d’échange avec le TPE</h4>
+					
+					<div style="text-align:center;"><table class="tableau" cellspacing="0" border="1" style="text-align: left;margin:0px auto;" width="50%">
+						<tr>
+							<td class="colonne" style="width:100%;"><b>Message</b></td>
+						</tr>
+						<tr>
+							<td class="colonne" style="">N° de la carte commerçant (6N)<br />
+Code fonction (XXX)<br />
+N° de la carte (6N)<br />
+Date du message (SSAAMMJJ)<br />
+N° du message (NNNN)<br />
+Montant de l’achat (NNNNNN.NN)<br />
+Libellé du message : 15 lignes de 20 caractères</td>
+						</tr>
+						<tr>
+							<td class="colonne" style=""><b>Code fonction</b></td>
+						</tr>
+						<tr>
+							<td class="colonne" style="">AC : Achat<br />
+EC : Echec<br />
+AN : Annulation<br />
+...</td>
+						</tr>
+					</table></div>					
+					
+				<br /><h4 class="TitreSection3" id="L5.5.2">5.5.2. Diagramme de classes</h4>
+					
+					<div class="paragraph">
+						Le modèle de données pour réaliser les transactions d’achat doit être précisé. le résultat obtenu est légèrement plus complexe que lors de la réponse au cahier des charges ... Mais il reste un modèle fonctionnel.
+					</div><br/>
+					<div class="image" style="text-align:center;"><a href="./images/Classe-achat.png"><img src="./images/logo-Classe-achat.png" alt="Diagramme de classe : Acte d’achat"/></a><div style="text-align:center;" class="legimage">Diagramme de classe : Acte d’achat</div></div>										
+					<div class="paragraph">
+						Ce diagramme doit être complété, notamment par la liste des statuts :
+					</div><br/>
+					<div style="text-align:center;"><table class="tableau" cellspacing="0" border="1" style="text-align: left;margin:0px auto;" width="50%">
+						<tr>
+							<th class="colonne_entete" style="width:20%;"> </th>
+							<th class="colonne_entete" style="width:80%;">Liste des états de la carte (Classe EtatCarte)</th>
+						</tr>
+						<tr>
+							<td class="colonne" style="">OK</td>
+							<td class="colonne" style="">Carte acceptée</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="">AN</td>
+							<td class="colonne" style="">Carte annulée</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="">RE</td>
+							<td class="colonne" style="">Carte remplacée</td>
+						</tr>
+					</table></div>
+					<div class="paragraph">
+						Remarques :
+					</div><br/>
+					<ul style="list-style-type: disc;">
+						<li>Pour des raisons d’optimisation en terme de performance, nous choisissons de stocker les résultats des calculs plutôt que de les recalculer à chaque transaction. Ceci nous met aussi à l’abri des modifications dans les formules de calcul des remises.</li>
+						<li>Les remboursements sont mémorisés dans une nouvelle table. Il stocke le résultat des calculs et le mouvement qui a portée le remboursement. Tous les mouvements sont identifiés par un attribut Id.</li>
+						<li>De manière similaire, tous les remboursements porteront un identificateur. Les transactions ayant donné lieu à un remboursement seront indicées par cet identificateur. Ceci permettra de retrouver toutes les transactions d’une série.</li>
+						<li>Nous construisons une classe CalculAchat pour le calcul des remises et la cinématique de l’ensemble. Cette classe permet de centraliser les algorithmes de calcul.</li>
+					</ul>
+					<div class="paragraph">
+						Il peut être nécessaire de vérifier qu’aucune méthode ou attribut ne sont oubliés par des diagrammes de collaboration (Les diagrammes de séquence sont parfois plus lisibles ...). Seul le cas des remboursements est donné ici :
+					</div><br/>
+					<div class="image" style="text-align:center;"><a href="./images/object-remboursement.png"><img src="./images/logo-object-remboursement.png" alt="Diagramme de collaboration : Remboursement"/></a><div style="text-align:center;" class="legimage">Diagramme de collaboration : Remboursement</div></div>																														
+															
+			
+			<br /><h3 class="TitreSection2" id="L5.6">5.6. Autres scénarios</h3>
+				
+				<div class="paragraph">
+					Les autres scénarios sont à analyser de la même manière.<br />
+					Pour chacun des scénarios, il est nécessaire de construire un diagramme de classe. Deux approches sont possibles.
+				</div><br/>
+				<ol style="list-style-type: decimal;">
+					<li>Consolider les diagrammes de classes en ajoutant les nouvelles fonctions et attributs qui apparaissent</li>
+					<li>Construire un diagramme de classe ne permettant de réaliser que le scénario en cours. </li>
+				</ol>
+				<div class="paragraph">
+					La deuxième approche nous semble préférable. Elle permet de lire les scénarios indépendamment les uns des autres et de conserver une approche « De quoi ai-je besoins pour réaliser le cas d’utilisation ? ».<br />
+					Une deuxième étape est alors nécessaire pour consolider tous les diagrammes de classes. Cette consolidation permettra de changer de point de vue et passer à une vue « métier », c’est-à-dire à une consolidation des besoins par entité (Carte, mouvement, commerçant, ...)..
+				</div><br/>								
+															
+		
+	
+<hr/><div class="barreNavigation"> [ <a class="barreNavigationTexte" href="page_5.html">Précédent</a> ]  [ <a class="barreNavigationTexte" href="sommaire.html">Sommaire</a> ]  [ <a class="barreNavigationTexte" href="page_7.html">Suivant</a> ] </div><hr/><div class="licence">
+		Ce document est soumis à la licence <a href="http://www.gnu.org/copyleft/fdl.html" class="lienArticle">GNU FDL</a> traduit en français <a href="http://cesarx.free.fr/gfdlf.html" class="lienArticle">ici</a>.<br />
+
+		Permission vous est donnée de distribuer, modifier des copies de cette page tant que cette note apparaît clairement.
+
+	</div>
+       											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table></div>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+
+	<tr>
+		<td>
+			<table width="100%" cellpadding="4" class="cachee">
+				<tr>
+					<td class="titrepied">
+			  Vos questions techniques : <b><a href="http://www.developpez.net/forums/" >forum d'entraide Accueil</a></b> - Publiez vos articles, tutoriels, cours
+			  et rejoignez-nous dans l'&eacute;quipe de r&eacute;daction du club d'entraide des d&eacute;veloppeurs francophones. <a href="http://club.developpez.com/contacts/">Nous contacter</a>
+	
+			  - Copyright 2000..2005 www.developpez.com
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
+
+	

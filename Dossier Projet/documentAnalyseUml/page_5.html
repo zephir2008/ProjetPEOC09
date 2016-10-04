@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<head>
+  <title> Rédaction des documents d’analyse avec U.M.L - Club d'entraide des d&#233;veloppeurs francophones</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <meta name="generator" content="developpez-com" />
+  <link rel="stylesheet" type="text/css" media="screen" href="./article.css" />
+  
+</head>
+<body>
+<style type="text/css">
+<!--
+body {
+	background-color : #DDEEFF;
+	background: #DDEEFF;
+	font: normal;
+    font-family: Verdana;
+    font-weight: normal;    
+    margin: 0
+}
+
+img {
+    border:0
+}
+form {
+    margin : 0
+}
+td {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size : 10pt;
+	font-weight: normal;
+}
+td.iongl {
+	width : 1px;
+}
+
+td.bgongl {
+	background-image : url(./images/kitint.gif);
+	text-align : center;
+}
+.ntdrub:link {
+	color : #000000;
+	font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:visited {
+    color : #000000;
+    font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:active {
+	color : #000000;
+	font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:hover {
+    color : #FF0000;
+    background-color: #FFF8DD;
+    font-weight : bold;
+	font-size : 8pt;
+	text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+td.trbleu {
+	background-color:#6389D8;
+	text-align : center;
+    margin: 0 ;
+	border: 0;
+	padding-top : 3px;
+	padding-bottom : 3px;
+	height : 34px;
+}
+td.fondart {
+    background-color:#FFFFFF;
+    
+}
+
+table.tbnoir{
+	background-color:#000000;
+}
+.titrepied {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size : 10pt;
+	font: normal;
+	font-weight: normal
+}
+
+-->
+</style>
+<table width="100%" cellspacing="4">
+	<tr>
+	<td align="center">
+		<table width="100%" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+				  <table width="100%" cellspacing="11">
+					<tr>
+						<td>
+						<a href="http://www.developpez.com"><img src="images/kitlogo.gif" alt="Accueil" /></a>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+			<tr>
+    			<td>
+						<table class="cachee" cellpadding="0" cellspacing="0" width="100%">
+							<tr>
+								<td class="iongl"><img src="images/kitbordg.gif" alt=""/></td>
+								<td class="bgongl"><a href="http://www.developpez.com" class="ntdrub">Accueil</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://club.developpez.com" class="ntdrub">Le Club</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://delphi.developpez.com" class="ntdrub">Delphi Kylix</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://c.developpez.com" class="ntdrub">C C++</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://java.developpez.com" class="ntdrub">Java J2EE</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://dotnet.developpez.com" class="ntdrub">DotNET &amp; C#</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://vb.developpez.com" class="ntdrub">Visual Basic</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://access.developpez.com" class="ntdrub">Access</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://pascal.developpez.com" class="ntdrub">Pascal</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://web.developpez.com" class="ntdrub">Dev Web</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://php.developpez.com" class="ntdrub">PHP</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://asp.developpez.com" class="ntdrub">ASP</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://xml.developpez.com" class="ntdrub">XML</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://uml.developpez.com" class="ntdrub">UML</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://sgbd.developpez.com" class="ntdrub">SQLSGBD</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://windows.developpez.com" class="ntdrub">Windows</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://linux.developpez.com" class="ntdrub">Linux</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://www.developpez.com/cours/" class="ntdrub">Autres</a></td>
+								<td class="iongl"><img src="images/kitbordd.gif" alt="" /></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="trbleu">
+					</td>
+				</tr>
+
+				<tr valign="top">
+					<td valign="top" class="fondart">
+						<table cellspacing="1" width="100%" class="tbnoir">
+							<tr>
+								<td class="fondart">
+									<div style="text-align:center;">
+									<table class="cadrearticle" width="90%" cellpadding="10" cellspacing="0">
+										<tr>
+											<td align="center" style="text-align:left">
+
+        <br/><h1> Rédaction des documents d’analyse avec U.M.L</h1><p class="dateArticle">
+		Date de publication : 12/04/2006</p><hr/><div class="barreNavigation"> [ <a class="barreNavigationTexte" href="page_4.html">Précédent</a> ]  [ <a class="barreNavigationTexte" href="sommaire.html">Sommaire</a> ]  [ <a class="barreNavigationTexte" href="page_6.html">Suivant</a> ] </div><hr/>
+	
+	
+	
+	
+	
+	
+	<br /><a class="summaryIndent0" href="#L4">4.  Organisation du projet</a>
+			
+			<br /><a class="summaryIndent1" href="#L4.1">4.1.  Préambule</a>
+				
+								
+			
+			<br /><a class="summaryIndent1" href="#L4.2">4.2.  Grant du projet</a>
+				
+				
+				
+				
+																
+			
+			<br /><a class="summaryIndent1" href="#L4.3">4.3. Description des tâches du projet</a>
+				
+				
+				
+																
+			
+			<br /><a class="summaryIndent1" href="#L4.4">4.4. Tâche : Commande des cartes</a>
+				
+				
+								
+					
+			<br /><a class="summaryIndent1" href="#L4.5">4.5.  Epilogue</a>
+				
+								
+																
+		
+	
+<br/><br/>
+	
+	
+	
+	
+	
+	
+	<br /><h2 class="TitreSection1" id="L4">4.  Organisation du projet</h2>
+			
+			<br /><h3 class="TitreSection2" id="L4.1">4.1.  Préambule</h3>
+				
+				<div class="paragraph">
+					Votre réponse technique et commerciale a donné entière satisfaction et vous voilà C.P. du projet “Carte de fidélité”. Votre premier souci est d’organiser le projet ...
+				</div><br/>				
+			
+			<br /><h3 class="TitreSection2" id="L4.2">4.2.  Grant du projet</h3>
+				
+				<div class="paragraph">
+					Il semble que pour tenir les délais, il faille mener plusieurs opérations en parallèle :
+				</div><br/>
+				<ul style="list-style-type: disc;">
+					<li>Le relation avec le constructeur pour qu’il puisse démarrer rapidement les développements</li>
+					<li>L’organisation de la part du groupement de la mise en place de la fidélité (Logo des cartes, relation avec la banque, relation avec les mainteneurs, ...)</li>
+					<li>La mise en place de l’architecture interne (achat machine, installation, ...)</li>
+					<li>La spécification des besoins.</li>
+				</ul>
+				<div class="paragraph">
+					Dans le cas de délai court de mise en place un diagramme de Grant peut être très utile. Pour conserver une notation U.M.L., un diagramme d’activité est tout indiqué ...
+				</div><br/>
+				<div class="image" style="text-align:center;"><a href="./images/Road-map.png"><img src="./images/logo-Road-map.png" alt="Grant des tâches"/></a><div style="text-align:center;" class="legimage">Grant des tâches</div></div>												
+			
+			<br /><h3 class="TitreSection2" id="L4.3">4.3. Description des tâches du projet</h3>
+				
+				<div class="paragraph">
+					Vous prenez ensuite votre plume pour spécifier le rôle de chacun ...
+				</div><br/>
+				<div style="text-align:center;"><table class="tableau" cellspacing="0" border="1" style="text-align: left;margin:0px auto;" width="80%">
+					<tr>
+						<th class="colonne_entete" style="width:20%;">Libellé</th>
+						<th class="colonne_entete" style="width:70%;">Commentaire</th>
+						<th class="colonne_entete" style="width:10%;">Date</th>
+					</tr>
+					<tr>
+						<td class="colonne" style="">Spécification générale</td>
+						<td class="colonne" style="">
+							Elles doivent comprendre :
+				<ul style="list-style-type: disc;">
+					<li>De manière détaillée les spécifications d’échange avec l’opérateur de TPE</li>
+				
+					<li>Définir de manière exhaustive <a class="signetNoteBasPage" id="signetNoteBasPage1" href="#noteBasPage1">(1)</a> l’ensemble des tâches à réaliser</li>
+				</ul>
+							
+						</td>
+						<td class="colonne" style=""> </td>
+					</tr>
+					<tr>
+						<td class="colonne" style="">Spécification détaillée WEB</td>
+						<td class="colonne" style="">Description des écrans Web, diagramme de navigation, ...</td>
+						<td class="colonne" style=""> </td>
+					</tr>
+					<tr>
+						<td class="colonne" style="">....</td>
+						<td class="colonne" style=""> </td>
+						<td class="colonne" style=""> </td>
+					</tr>
+					<tr>
+						<td class="colonne" style="">Commande des cartes</td>
+						<td class="colonne" style="">...</td>
+						<td class="colonne" style=""> </td>
+					</tr>
+					<tr>
+						<td class="colonne" style="">....</td>
+						<td class="colonne" style=""> </td>
+						<td class="colonne" style=""> </td>
+					</tr>
+				</table></div>
+				<div class="paragraph">
+					Certaines tâches ne sont pas précisément décrites dans le graphe précédant. Elles nécessitent d’être détaillées.
+				</div><br/>												
+			
+			<br /><h3 class="TitreSection2" id="L4.4">4.4. Tâche : Commande des cartes</h3>
+				
+				<div class="image" style="text-align:center;"><a href="./images/Road-map-carte.png"><img src="./images/logo-Road-map-carte.png" alt="Grant : Commande des cartes"/></a><div style="text-align:center;" class="legimage">Grant : Commande des cartes</div></div>
+				<div class="paragraph">
+					Nous vous laissons le soin de décrire chacune des étapes ...
+				</div><br/>				
+					
+			<br /><h3 class="TitreSection2" id="L4.5">4.5.  Epilogue</h3>
+				
+				<div class="paragraph">
+					Les autres tâches du road map sont à reprendre suivant le même principe.<br />
+					Maintenant que vous avez lister les tâches et les contraintes, il vous reste à construire le planning en fonction de l’organsiation de votre équipe.<br />
+					Bonne chance ...
+				</div><br/>				
+																
+		
+	
+<hr/><div class="barreNavigation"> [ <a class="barreNavigationTexte" href="page_4.html">Précédent</a> ]  [ <a class="barreNavigationTexte" href="sommaire.html">Sommaire</a> ]  [ <a class="barreNavigationTexte" href="page_6.html">Suivant</a> ] </div><hr/><div class="licence">
+		Ce document est soumis à la licence <a href="http://www.gnu.org/copyleft/fdl.html" class="lienArticle">GNU FDL</a> traduit en français <a href="http://cesarx.free.fr/gfdlf.html" class="lienArticle">ici</a>.<br />
+
+		Permission vous est donnée de distribuer, modifier des copies de cette page tant que cette note apparaît clairement.
+
+	</div>
+       											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table></div>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+
+	<tr>
+		<td>
+			<table width="100%" cellpadding="4" class="cachee">
+				<tr>
+					<td class="titrepied">
+			  Vos questions techniques : <b><a href="http://www.developpez.net/forums/" >forum d'entraide Accueil</a></b> - Publiez vos articles, tutoriels, cours
+			  et rejoignez-nous dans l'&eacute;quipe de r&eacute;daction du club d'entraide des d&eacute;veloppeurs francophones. <a href="http://club.developpez.com/contacts/">Nous contacter</a>
+	
+			  - Copyright 2000..2005 www.developpez.com
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
+
+	

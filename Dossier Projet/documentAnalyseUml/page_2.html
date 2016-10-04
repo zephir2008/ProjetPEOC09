@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<head>
+  <title> Rédaction des documents d’analyse avec U.M.L - Club d'entraide des d&#233;veloppeurs francophones</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <meta name="generator" content="developpez-com" />
+  <link rel="stylesheet" type="text/css" media="screen" href="./article.css" />
+  
+</head>
+<body>
+<style type="text/css">
+<!--
+body {
+	background-color : #DDEEFF;
+	background: #DDEEFF;
+	font: normal;
+    font-family: Verdana;
+    font-weight: normal;    
+    margin: 0
+}
+
+img {
+    border:0
+}
+form {
+    margin : 0
+}
+td {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size : 10pt;
+	font-weight: normal;
+}
+td.iongl {
+	width : 1px;
+}
+
+td.bgongl {
+	background-image : url(./images/kitint.gif);
+	text-align : center;
+}
+.ntdrub:link {
+	color : #000000;
+	font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:visited {
+    color : #000000;
+    font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:active {
+	color : #000000;
+	font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:hover {
+    color : #FF0000;
+    background-color: #FFF8DD;
+    font-weight : bold;
+	font-size : 8pt;
+	text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+td.trbleu {
+	background-color:#6389D8;
+	text-align : center;
+    margin: 0 ;
+	border: 0;
+	padding-top : 3px;
+	padding-bottom : 3px;
+	height : 34px;
+}
+td.fondart {
+    background-color:#FFFFFF;
+    
+}
+
+table.tbnoir{
+	background-color:#000000;
+}
+.titrepied {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size : 10pt;
+	font: normal;
+	font-weight: normal
+}
+
+-->
+</style>
+<table width="100%" cellspacing="4">
+	<tr>
+	<td align="center">
+		<table width="100%" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+				  <table width="100%" cellspacing="11">
+					<tr>
+						<td>
+						<a href="http://www.developpez.com"><img src="images/kitlogo.gif" alt="Accueil" /></a>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+			<tr>
+    			<td>
+						<table class="cachee" cellpadding="0" cellspacing="0" width="100%">
+							<tr>
+								<td class="iongl"><img src="images/kitbordg.gif" alt=""/></td>
+								<td class="bgongl"><a href="http://www.developpez.com" class="ntdrub">Accueil</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://club.developpez.com" class="ntdrub">Le Club</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://delphi.developpez.com" class="ntdrub">Delphi Kylix</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://c.developpez.com" class="ntdrub">C C++</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://java.developpez.com" class="ntdrub">Java J2EE</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://dotnet.developpez.com" class="ntdrub">DotNET &amp; C#</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://vb.developpez.com" class="ntdrub">Visual Basic</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://access.developpez.com" class="ntdrub">Access</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://pascal.developpez.com" class="ntdrub">Pascal</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://web.developpez.com" class="ntdrub">Dev Web</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://php.developpez.com" class="ntdrub">PHP</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://asp.developpez.com" class="ntdrub">ASP</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://xml.developpez.com" class="ntdrub">XML</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://uml.developpez.com" class="ntdrub">UML</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://sgbd.developpez.com" class="ntdrub">SQLSGBD</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://windows.developpez.com" class="ntdrub">Windows</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://linux.developpez.com" class="ntdrub">Linux</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://www.developpez.com/cours/" class="ntdrub">Autres</a></td>
+								<td class="iongl"><img src="images/kitbordd.gif" alt="" /></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="trbleu">
+					</td>
+				</tr>
+
+				<tr valign="top">
+					<td valign="top" class="fondart">
+						<table cellspacing="1" width="100%" class="tbnoir">
+							<tr>
+								<td class="fondart">
+									<div style="text-align:center;">
+									<table class="cadrearticle" width="90%" cellpadding="10" cellspacing="0">
+										<tr>
+											<td align="center" style="text-align:left">
+
+        <br/><h1> Rédaction des documents d’analyse avec U.M.L</h1><p class="dateArticle">
+		Date de publication : 12/04/2006</p><hr/><div class="barreNavigation"> [ <a class="barreNavigationTexte" href="page_1.html">Précédent</a> ]  [ <a class="barreNavigationTexte" href="sommaire.html">Sommaire</a> ]  [ <a class="barreNavigationTexte" href="page_3.html">Suivant</a> ] </div><hr/>
+	
+	
+	
+	
+	
+	
+	<br /><a class="summaryIndent0" href="#L1">1.  Cahier des charges</a>
+			
+			<br /><a class="summaryIndent1" href="#L1.1">1.1. Préambule</a>
+				
+							
+			
+			<br /><a class="summaryIndent1" href="#L1.2">1.2. Le besoin</a>
+				
+				
+				
+				
+				
+						
+				<br /><a class="summaryIndent2" href="#L1.2.1">1.2.1. Architecture</a>
+					
+										
+				
+				<br /><a class="summaryIndent2" href="#L1.2.2">1.2.2. Principe</a>
+					
+					
+										
+				
+				<br /><a class="summaryIndent2" href="#L1.2.3">1.2.3. Acte de fidélité</a>
+					
+					
+										
+				
+				<br /><a class="summaryIndent2" href="#L1.2.4">1.2.4. Site Web</a>
+					
+										
+				
+				<br /><a class="summaryIndent2" href="#L1.2.5">1.2.5. La comptabilité</a>
+					
+										
+						
+						
+		
+	
+<br/><br/>
+	
+	
+	
+	
+	
+	
+	<br /><h2 class="TitreSection1" id="L1">1.  Cahier des charges</h2>
+			
+			<br /><h3 class="TitreSection2" id="L1.1">1.1. Préambule</h3>
+				
+				<div class="paragraph">
+					Vos commerciaux font bien leur travail. Votre société est identifiée comme acteur principal des communautés de commerçants et vos solutions sont connues comme innovantes et techniquement à la pointe du mouvement .... Vous recevez donc le cahier des charges que voici : (Non je sais, un cahier des charges comme celui-ci, vous en rêvez, disons qu’il est le compte-rendu de réunions préliminaires ...)
+				</div><br/>			
+			
+			<br /><h3 class="TitreSection2" id="L1.2">1.2. Le besoin</h3>
+				
+				<div class="paragraph">
+					Des commerçants souhaitent participer à l’animation du centre ville par la création d’un groupement de commerçants dont les principaux objectifs sont :
+				</div><br/>
+				<ul style="list-style-type: disc;">
+					<li>Attirer la clientèle en centre ville par la création d’une carte de fidélité</li>
+					<li>Animer des opérations de marketing (Semaine de promotion, ...)</li>
+					<li>Constituer un carnet d’adresse des clients pour des opérations de mailing ciblés.</li>
+				</ul>
+				<div class="paragraph">
+					Le modèle économique adopté est le suivant :
+				</div><br/>
+				<ul style="list-style-type: disc;">
+					<li>Tous les mois, le groupement demande aux commerçants adhérants de verser une cotisation de fonctionnement</li>
+					<li>Sur chaque achat donnant lieu à un acte de fidélisation, le commerçant accorde une remise de 5 % sur le montant de l’achat. Sur cette remise, est prélevée une participation au frais destiné au prestataire informatique.</li>
+					<li>Le budget initial de mise en place du groupement relève de subventions ou de sponsoring.</li>
+				</ul>
+				<div class="paragraph">
+					Le groupement n’ayant que peu de moyens financiers souhaite des propositions d’un prestataire informatique pour la mise en place de la carte de fidélité et son hébergement.
+					<br />
+					Le prestataire pourra se rémunérer par des frais fixes pris sur chacun des actes de fidélisation (montant prélevé sur la remise accordée).
+				</div><br/>		
+				<br /><h4 class="TitreSection3" id="L1.2.1">1.2.1. Architecture</h4>
+					
+					<div class="paragraph">
+						Tous les commerçants sont dotés d’un TPE (Terminal de Paiement Electronique) sur lequel, à coté du logiciel de paiement bancaire, peut être installé un logiciel de fidélité.
+						<br /><br />
+						Le TPE dialogue avec un serveur hébergé chez le prestataire qui mémorise les transactions et effectue les calculs de fidélité. Le serveur doit disposer d’une application permettant d’effectuer la comptabilité de fin de mois en liaison avec les banques et de calculer les statistiques.
+						<br /><br />
+						Un serveur WEB doit permettre au groupement de saisir les informations nécessaires au fonctionnement de la fidélité.
+					</div><br/>					
+				
+				<br /><h4 class="TitreSection3" id="L1.2.2">1.2.2. Principe</h4>
+					
+					<div class="paragraph">
+						Le principe de la fidélité est le suivant :
+					</div><br/>
+					<ul style="list-style-type: disc;">
+						<li>Chaque client est possesseur d’une carte de fidélité magnétique valide dans tous les commerçants du groupement.</li>
+						<li>Chaque achat donne lieu à une provision de remise (Montant d’achat * 5% - frais). Le commerçant est débité chaque mois des provisions accordées plus la cotisation de fonctionnement au profit d’un compte détenu par le groupement.</li>
+						<li>A bout du dixième achat, la somme des provisions (moins les frais) devient une remise accordée au client qui est déduite par le commerçant du montant de ve dixième achat. Si la remise accordée est supérieure au montant de l’achat, le commerçant débourse de sa caisse la différence. Le commerçant est crédité du montant de la remise accordée, en fin de mois, à partir du compte du groupement.</li>
+					</ul>					
+				
+				<br /><h4 class="TitreSection3" id="L1.2.3">1.2.3. Acte de fidélité</h4>
+					
+					<div class="paragraph">
+						Lorsqu’un nouveau client arrive, le commerçant donne au client une carte magnétique au logo du groupement permettant d’effectuer les actes de fidélité. Le commerçant demande au client de remplir un coupon papier sur lequel le client donne son adresse. Le commerçant complète le coupon avec le numéro de la carte de fidélité. Le coupon est envoyé à la secrétaire du groupement qui effectue la saisie des adresses.
+						<br /><br />
+						L’enregistrement d’un acte d’achat donnant lieu à une remise au titre de la fidélité est le suivant : 
+					</div><br/>
+					<ol style="list-style-type: decimal;">
+						<li>Le commerçant saisit le montant de l’achat</li>
+						<li>Le commerçant introduit la carte de fidélité</li>
+						<li>Le TPE appelle un serveur chez le prestataire informatique par le réseau commuté</li>
+						<li>Le serveur reçoit la demande de fidélité avec le numéro du commerçant, le numéro de la carte et le montant. Il vérifie l’existence de la carte, du commerçant et calcule le montant de la fidélité.</li>					
+						<li>1ier cas :</li>
+						<ul style="list-style-type: disc;">
+							<li>Si le client n’a pas droit à la remise, le serveur renvoie la provision de remise accordée</li>
+							<li>Le TPE édite un ticket en double exemplaire (l’un pour le commerçant, l’autre pour le client) avec le nom du commerçant, la date d’achat, le montant de l’achat, la provision de remise, le cumul des provisions et le rang de l’achat</li>
+							<li>Le commerçant encaisse la totalité du montant de l’achat</li>
+						</ul>					
+						<li>2ième cas :</li>
+						<ul style="list-style-type: disc;">
+							<li>Le client a droit à une remise, le serveur renvoie les informations permettant le remboursement de la remise (somme des provisions - somme des frais)</li>
+							<li>Le TPE édite un ticket comprenant, le nom du commerçant, la date d’achat, la provision de remise sur cet achat, le montant des provisions de remise, et le restant dû par le client (Achats - remise). Il est possible que la somme des remises soit supérieure au montant de l’achat.</li>
+							<li>Le commerçant encaisse le montant de l’achat moins la remise ou décaisse l’écart.</li>
+						</ul>
+					</ol>					
+				
+				<br /><h4 class="TitreSection3" id="L1.2.4">1.2.4. Site Web</h4>
+					
+					<div class="paragraph">
+						Le site Web doit permettre au groupement de paramétrer l’application sur le serveur, de saisir les adresses et d’effectuer des interrogations sur la vie des cartes. Peu de commerçants disposent d’internet. La secrétaire du groupement est la principale utilisatrice du site Web.
+					</div><br/>					
+				
+				<br /><h4 class="TitreSection3" id="L1.2.5">1.2.5. La comptabilité</h4>
+					
+					<div class="paragraph">
+						La comptabilité est décrite plus haut.<br />
+						Elle est effectuée en fin de mois pour les transactions du premier au dernier jour du mois. Le groupement souhaite que les prélèvements et les virements soient effectués automatiquement vers la banque qui détient le compte du groupement.
+					</div><br/>					
+						
+						
+		
+	
+<hr/><div class="barreNavigation"> [ <a class="barreNavigationTexte" href="page_1.html">Précédent</a> ]  [ <a class="barreNavigationTexte" href="sommaire.html">Sommaire</a> ]  [ <a class="barreNavigationTexte" href="page_3.html">Suivant</a> ] </div><hr/><div class="licence">
+		Ce document est soumis à la licence <a href="http://www.gnu.org/copyleft/fdl.html" class="lienArticle">GNU FDL</a> traduit en français <a href="http://cesarx.free.fr/gfdlf.html" class="lienArticle">ici</a>.<br />
+
+		Permission vous est donnée de distribuer, modifier des copies de cette page tant que cette note apparaît clairement.
+
+	</div>
+       											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table></div>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+
+	<tr>
+		<td>
+			<table width="100%" cellpadding="4" class="cachee">
+				<tr>
+					<td class="titrepied">
+			  Vos questions techniques : <b><a href="http://www.developpez.net/forums/" >forum d'entraide Accueil</a></b> - Publiez vos articles, tutoriels, cours
+			  et rejoignez-nous dans l'&eacute;quipe de r&eacute;daction du club d'entraide des d&eacute;veloppeurs francophones. <a href="http://club.developpez.com/contacts/">Nous contacter</a>
+	
+			  - Copyright 2000..2005 www.developpez.com
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
+
+	

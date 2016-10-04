@@ -1,0 +1,520 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<head>
+  <title> Rédaction des documents d’analyse avec U.M.L - Club d'entraide des d&#233;veloppeurs francophones</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <meta name="generator" content="developpez-com" />
+  <link rel="stylesheet" type="text/css" media="screen" href="./article.css" />
+  
+</head>
+<body>
+<style type="text/css">
+<!--
+body {
+	background-color : #DDEEFF;
+	background: #DDEEFF;
+	font: normal;
+    font-family: Verdana;
+    font-weight: normal;    
+    margin: 0
+}
+
+img {
+    border:0
+}
+form {
+    margin : 0
+}
+td {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size : 10pt;
+	font-weight: normal;
+}
+td.iongl {
+	width : 1px;
+}
+
+td.bgongl {
+	background-image : url(./images/kitint.gif);
+	text-align : center;
+}
+.ntdrub:link {
+	color : #000000;
+	font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:visited {
+    color : #000000;
+    font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:active {
+	color : #000000;
+	font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:hover {
+    color : #FF0000;
+    background-color: #FFF8DD;
+    font-weight : bold;
+	font-size : 8pt;
+	text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+td.trbleu {
+	background-color:#6389D8;
+	text-align : center;
+    margin: 0 ;
+	border: 0;
+	padding-top : 3px;
+	padding-bottom : 3px;
+	height : 34px;
+}
+td.fondart {
+    background-color:#FFFFFF;
+    
+}
+
+table.tbnoir{
+	background-color:#000000;
+}
+.titrepied {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size : 10pt;
+	font: normal;
+	font-weight: normal
+}
+
+-->
+</style>
+<table width="100%" cellspacing="4">
+	<tr>
+	<td align="center">
+		<table width="100%" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+				  <table width="100%" cellspacing="11">
+					<tr>
+						<td>
+						<a href="http://www.developpez.com"><img src="images/kitlogo.gif" alt="Accueil" /></a>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+			<tr>
+    			<td>
+						<table class="cachee" cellpadding="0" cellspacing="0" width="100%">
+							<tr>
+								<td class="iongl"><img src="images/kitbordg.gif" alt=""/></td>
+								<td class="bgongl"><a href="http://www.developpez.com" class="ntdrub">Accueil</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://club.developpez.com" class="ntdrub">Le Club</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://delphi.developpez.com" class="ntdrub">Delphi Kylix</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://c.developpez.com" class="ntdrub">C C++</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://java.developpez.com" class="ntdrub">Java J2EE</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://dotnet.developpez.com" class="ntdrub">DotNET &amp; C#</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://vb.developpez.com" class="ntdrub">Visual Basic</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://access.developpez.com" class="ntdrub">Access</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://pascal.developpez.com" class="ntdrub">Pascal</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://web.developpez.com" class="ntdrub">Dev Web</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://php.developpez.com" class="ntdrub">PHP</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://asp.developpez.com" class="ntdrub">ASP</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://xml.developpez.com" class="ntdrub">XML</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://uml.developpez.com" class="ntdrub">UML</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://sgbd.developpez.com" class="ntdrub">SQLSGBD</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://windows.developpez.com" class="ntdrub">Windows</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://linux.developpez.com" class="ntdrub">Linux</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://www.developpez.com/cours/" class="ntdrub">Autres</a></td>
+								<td class="iongl"><img src="images/kitbordd.gif" alt="" /></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="trbleu">
+					</td>
+				</tr>
+
+				<tr valign="top">
+					<td valign="top" class="fondart">
+						<table cellspacing="1" width="100%" class="tbnoir">
+							<tr>
+								<td class="fondart">
+									<div style="text-align:center;">
+									<table class="cadrearticle" width="90%" cellpadding="10" cellspacing="0">
+										<tr>
+											<td align="center" style="text-align:left">
+
+        <br/><h1> Rédaction des documents d’analyse avec U.M.L</h1><p class="dateArticle">
+		Date de publication : 12/04/2006</p><hr/><div class="barreNavigation"> [ <a class="barreNavigationTexte" href="page_6.html">Précédent</a> ]  [ <a class="barreNavigationTexte" href="sommaire.html">Sommaire</a> ]  [ <a class="barreNavigationTexte" href="page_8.html">Suivant</a> ] </div><hr/>
+	
+	
+	
+	
+	
+	
+	<br /><a class="summaryIndent0" href="#L6">6.  Description d’une interface homme-machine</a>
+			
+			<br /><a class="summaryIndent1" href="#L6.1">6.1.  Préambule</a>
+				
+								
+			
+			<br /><a class="summaryIndent1" href="#L6.2">6.2. Réunion : L’administration</a>
+				
+				
+				
+				
+				
+				
+								
+			
+			<br /><a class="summaryIndent1" href="#L6.3">6.3. Description du cas d’utilisation : Administration</a>
+				
+				
+				
+								
+				
+				
+																				
+			
+			<br /><a class="summaryIndent1" href="#L6.4">6.4. Scénario Saisie carte</a>
+				
+				
+				<br /><a class="summaryIndent2" href="#L6.4.1">6.4.1. Fonctionnalité</a>
+					
+										
+					
+				<br /><a class="summaryIndent2" href="#L6.4.2">6.4.2. Ecran</a>
+					
+										
+				
+				<br /><a class="summaryIndent2" href="#L6.4.3">6.4.3. Cinématique</a>
+					
+					<br /><a class="summaryIndent3" href="#L6.4.3.a">6.4.3.a. Etape 1</a>
+						
+						
+																		
+					
+					<br /><a class="summaryIndent3" href="#L6.4.3.b">6.4.3.b. Etape 2</a>
+						
+						
+						
+						
+																								
+															
+				
+				<br /><a class="summaryIndent2" href="#L6.4.4">6.4.4. Contrôles</a>
+					
+					
+															
+				
+				<br /><a class="summaryIndent2" href="#L6.4.5">6.4.5. Fonctionnalités supplémentaires</a>
+					
+										
+																							
+			
+			<br /><a class="summaryIndent1" href="#L6.5">6.5. Annexes</a>
+				
+				
+								
+								
+			
+			<br /><a class="summaryIndent1" href="#L6.6">6.6. Epilogue</a>
+				
+								
+																					
+		
+	
+<br/><br/>
+	
+	
+	
+	
+	
+	
+	<br /><h2 class="TitreSection1" id="L6">6.  Description d’une interface homme-machine</h2>
+			
+			<br /><h3 class="TitreSection2" id="L6.1">6.1.  Préambule</h3>
+				
+				<div class="paragraph">
+					Le cas d’utilisation suivant est l’administration. Une réunion sur ce point est vite apparue nécessaire.
+				</div><br/>				
+			
+			<br /><h3 class="TitreSection2" id="L6.2">6.2. Réunion : L’administration</h3>
+				
+				<div class="paragraph">
+					Le premier diagramme de classe semblait peu clair sur la relation entre une carte et une adresse. vous discutez de ce point avec le groupement. La solution retenue doit permettre d’effectuer des mailings, donc d’identifier des individus. Vous devez envisager aussi les cas dégradés (perte de la carte, piste illisible, ...).
+					<br /><br />
+					Les règles suivantes sont retenues :
+				</div><br/>
+				<ul style="list-style-type: disc;">
+					<li>Une personne n’a qu’une adresse</li>
+					<li>Une personne peut avoir plusieurs cartes. Mais les cartes ne sont alors pas cumulatives (Les provisions de remises sont gérées au niveau de la carte et non au niveau de la personne). De ce principe, il est admis que la notion de personne est abandonnée. Le système ne saura gérer que des cartes.</li>
+					<li>Il est possible qu’une personne perde sa carte. Il doit alors être possible d’annuler la carte pour éviter son utilisation suite à un vol.</li>
+					<li>Une carte peut être endommagée. Il doit alors être possible de la remplacer par une nouvelle carte. Le report des provisions de remises et de l’historique des transactions est automatique.</li>
+				</ul>
+				<div class="paragraph">
+					Les commerçants sont enregistrés dans le système d’information :
+				</div><br/>
+				<ul style="list-style-type: disc;">
+					<li>Les commerçants seront identifiés par leur numéro de carte commerçant. Ceci est une contrainte du constructeur de TPE.</li>
+					<li>Le commerçant donnera un compte bancaire sur lequel seront effectués les virements -prélèvements</li>
+					<li>Un commerçant peut abandonner la fidélité.</li>
+					<li>Un commerce peut changer de propriétaire. Il est admis qu’une nouvelle carte commerçant sera émise par la banque.</li>
+				</ul>
+				<div class="paragraph">
+					Les autres fonctionnalités attendues du site web sont les suivantes :
+				</div><br/>
+				<ul style="list-style-type: disc;">
+					<li>Recherche d’une carte par le nom et/ou la ville de la personne</li>
+					<li>Historique des achats en cours pour une carte</li>
+					<li>Historique des achats et des remboursements pour une carte</li>
+					<li>Historique des achats et des remboursements pour un commerçant</li>
+				</ul>				
+			
+			<br /><h3 class="TitreSection2" id="L6.3">6.3. Description du cas d’utilisation : Administration</h3>
+				
+				<div class="paragraph">
+					Vous connaissez la démarche, allons au plus vite ....
+				</div><br/>
+				<div style="text-align:center;"><table class="tableau" cellspacing="0" border="1" style="text-align: left;margin:0px auto;" width="80%">
+					<tr>
+						<th class="colonne_entete" style="width:20%;">Acteur</th>
+						<th class="colonne_entete" style="width:80%;">Rôle</th>
+					</tr>
+					<tr>
+						<td class="colonne" style="">Secrétaire</td>
+						<td class="colonne" style="">Unique acteur du cas d’utilisation. Il est admis que les commerçants qui à termes se connecteront sur le site Web, ne disposeront pas de fonctions spécifiques.</td>
+					</tr>
+				</table></div>
+				<div class="paragraph">
+					
+				</div><br/>				
+				<div style="text-align:center;"><table class="tableau" cellspacing="0" border="1" style="text-align: left;margin:0px auto;" width="80%">
+					<tr>
+						<th class="colonne_entete" style="width:20%;">Scénarios</th>
+						<th class="colonne_entete" style="width:80%;">Description</th>
+					</tr>
+					<tr>
+						<td class="colonne" style="">Administration des adresses</td>
+						<td class="colonne" style="">Permet d’enregistrer ou de modifier des adresses</td>
+					</tr>
+					<tr>
+						<td class="colonne" style="">...</td>
+						<td class="colonne" style=""> </td>
+					</tr>
+				</table></div>
+				<div class="paragraph">
+					Il est ici nécessaire de réaliser le diagramme de navigation du site Web. Un diagramme d’état semble suffisant.
+				</div><br/>
+				<div class="image" style="text-align:center;"><a href="./images/State-Navigation.png"><img src="./images/logo-State-Navigation.png" alt="Diagramme d’état : Navigation du site Web"/></a><div style="text-align:center;" class="legimage">Diagramme d’état : Navigation du site Web</div></div>																
+			
+			<br /><h3 class="TitreSection2" id="L6.4">6.4. Scénario Saisie carte</h3>
+				
+				<div class="paragraph">
+					Le scénario doit permettre de saisir une adresse pour un numéro de carte. L’écran associé doit notamment permettre de visualiser l’état de la carte. Il n’y a pas d’apport particulier d’UML dans la description d’un écran. Vous restez classique ...
+				</div><br/>
+				<br /><h4 class="TitreSection3" id="L6.4.1">6.4.1. Fonctionnalité</h4>
+					
+					<ul style="list-style-type: disc;">
+						<li>Permettre la saisie ou la modification d’une carte.</li>
+						<li>Un menu contextuel permet d’accéder aux fonctions liès à la gestion des cartes.</li>
+					</ul>					
+					
+				<br /><h4 class="TitreSection3" id="L6.4.2">6.4.2. Ecran</h4>
+					
+					<div class="image" style="text-align:center;"><a href="./images/copy-ecran.png"><img src="./images/logo-copy-ecran.png" alt="Ecran de gestion des cartes"/></a><div style="text-align:center;" class="legimage">Ecran de gestion des cartes</div></div>					
+				
+				<br /><h4 class="TitreSection3" id="L6.4.3">6.4.3. Cinématique</h4>
+					
+					<br /><h5 class="TitreSection4" id="L6.4.3.a">6.4.3.a. Etape 1</h5>
+						
+						<div class="paragraph">
+							L’utilisateur entre le numéro de la carte.
+						</div><br/>
+						<ul style="list-style-type: disc;">
+							<li>Le bouton « Abandonner » permet de retourner au menu.</li>
+							<li>Le bouton « Rechercher » permet d’aller sur l’écran de recherche. Suite à une recherche réussie, l’écran se positionne en étape 2.</li>
+							<li>Le bouton « Confirmer » permet de passer en étape 2.</li>
+						</ul>												
+					
+					<br /><h5 class="TitreSection4" id="L6.4.3.b">6.4.3.b. Etape 2</h5>
+						
+						<div class="paragraph">
+							Le n° de carte devient en affichage.
+						</div><br/>
+						<ul style="list-style-type: disc;">
+							<li>Si le numéro de la carte existe, les informations de la carte sont affichées, les liens « Annuler carte », « Remplacer carte », « Achat en cours » et « Historique » sont activés.</li>
+						</ul>
+						<div class="paragraph">
+							L’utilisateur effectue la saisie puis clique sur « Confirmer ».
+						</div><br/>
+						<ul style="list-style-type: disc;">
+							<li>Le bouton « Abandonner » permet d’abandonner la saisie ne cours et revient en étape 1.</li>
+							<li>Le bouton « Annuler carte » permet d’aller dans l’écran d’annulation de la carte.</li>
+							<li>Le bouton « Remplacer carte » permet d’aller dans l’écran de remplacement de la carte.</li>
+							<li>Le bouton « Achat en cours » permet d’aller dans l’écran de visualisation des achats de la série.</li>
+							<li>Le bouton « Historique » permet d’aller en recherche des mouvements et des remboursements.</li>
+							<li>Le bouton « Confirmer » permet d’enregistrer la saisie et revient en début d’étape 1.</li>
+						</ul>																		
+															
+				
+				<br /><h4 class="TitreSection3" id="L6.4.4">6.4.4. Contrôles</h4>
+					
+					<div class="paragraph">
+						M : Modifiable, O : Obligatoire
+					</div><br/>
+					<div style="text-align:center;"><table class="tableau" cellspacing="0" border="1" style="text-align: left;margin:0px auto;" width="80%">
+						<tr>
+							<th class="colonne_entete" style="width:20%;">Libellé</th>
+							<th class="colonne_entete" style="width:5%;">M</th>
+							<th class="colonne_entete" style="width:5%;">O</th>
+							<th class="colonne_entete" style="width:20%;">Format</th>
+							<th class="colonne_entete" style="width:50%;">Remarque</th>
+						</tr>
+						<tr>
+							<td class="colonne" style="">N° de carte</td>
+							<td class="colonne" style=""> </td>
+							<td class="colonne" style="text-align:center;">X</td>
+							<td class="colonne" style="">6 numériques</td>
+							<td class="colonne" style=""> </td>
+						</tr>
+						<tr>
+							<td class="colonne" style="">Statut</td>
+							<td class="colonne" style=""> </td>
+							<td class="colonne" style=""> </td>
+							<td class="colonne" style=""> </td>
+							<td class="colonne" style="">Table des statuts. Voir « Annulation carte » et Remplacement carte »</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="">Civilité</td>
+							<td class="colonne" style="text-align:center;">X</td>
+							<td class="colonne" style=""> </td>
+							<td class="colonne" style=""> </td>
+							<td class="colonne" style="">La civilité doit appartenir à la table des civilités définie par le système.</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="">Nom</td>
+							<td class="colonne" style="text-align:center;">X</td>
+							<td class="colonne" style="text-align:center;">X</td>
+							<td class="colonne" style="">32 Alpha</td>
+							<td class="colonne" style=""> </td>
+						</tr>
+						<tr>
+							<td class="colonne" style="">Rue</td>
+							<td class="colonne" style="text-align:center;">X</td>
+							<td class="colonne" style=""> </td>
+							<td class="colonne" style="">32 Alpha</td>
+							<td class="colonne" style="">Attention la rue n’est pas obligatoire</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="">Code postal</td>
+							<td class="colonne" style="text-align:center;">X</td>
+							<td class="colonne" style="text-align:center;">X</td>
+							<td class="colonne" style="">5 Alpha</td>
+							<td class="colonne" style="">Les caractères doivent être numériques.</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="">Ville</td>
+							<td class="colonne" style="text-align:center;">X</td>
+							<td class="colonne" style="text-align:center;">X</td>
+							<td class="colonne" style="">26 Alpha</td>
+							<td class="colonne" style=""> </td>
+						</tr>
+					</table></div>										
+				
+				<br /><h4 class="TitreSection3" id="L6.4.5">6.4.5. Fonctionnalités supplémentaires</h4>
+					
+					<ul style="list-style-type: disc;">
+						<li>Il est impossible de modifier une carte remplacée ou annulée. Par contre, il est possible de visualiser les historiques.</li>
+						<li>Si la carte est annulée ou remplacée, les liens « Annuler carte » et « Remplacer carte » sont inactifs.</li>
+					</ul>					
+																							
+			
+			<br /><h3 class="TitreSection2" id="L6.5">6.5. Annexes</h3>
+				
+				<div class="paragraph">
+					<b>Diagramme de classe associée</b>
+				</div><br/>
+				<div class="image" style="text-align:center;"><a href="./images/Classe-Administration.png"><img src="./images/logo-Classe-Administration.png" alt="Diagramme de classe : Administration"/></a><div style="text-align:center;" class="legimage">Diagramme de classe : Administration</div></div>				
+				<div class="paragraph">
+					La classe EtatCarte nous indique comment activer ou désactiver les différents liens.<br />
+					L’adresse porte des fonctions de contrôle sur ses attributs. (Il n’est pas possible en UML de spécifier des exceptions, mais au niveau design, il serra possible de remplacer les booléens retournés par des exceptions qui sont plus précises sur la condition refusée et permettent de passer des messages d’erreurs.).
+				</div><br/>				
+			
+			<br /><h3 class="TitreSection2" id="L6.6">6.6. Epilogue</h3>
+				
+				<div class="paragraph">
+					Il est bien sur possible de compléter les annexes par tous les éléments nécessaire à la bonne compréhension du cas d’utilisation.<br />
+					La descritpion des algorithmes peut prêter à discutions. Certains considèrent qu’ils doivent être validés par les utilisateurs, d’autres non ... Peut-être n’y a-t-il pas de bonne formule ... S’adapter en fonction du niveau de compréhension de l’interlocuteur à notre préférence ...
+					<br /><br />
+					Faire de même pour les autres cas d’utilisation et scénario de l’administration.
+				</div><br/>				
+																					
+		
+	
+<hr/><div class="barreNavigation"> [ <a class="barreNavigationTexte" href="page_6.html">Précédent</a> ]  [ <a class="barreNavigationTexte" href="sommaire.html">Sommaire</a> ]  [ <a class="barreNavigationTexte" href="page_8.html">Suivant</a> ] </div><hr/><div class="licence">
+		Ce document est soumis à la licence <a href="http://www.gnu.org/copyleft/fdl.html" class="lienArticle">GNU FDL</a> traduit en français <a href="http://cesarx.free.fr/gfdlf.html" class="lienArticle">ici</a>.<br />
+
+		Permission vous est donnée de distribuer, modifier des copies de cette page tant que cette note apparaît clairement.
+
+	</div>
+       											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table></div>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+
+	<tr>
+		<td>
+			<table width="100%" cellpadding="4" class="cachee">
+				<tr>
+					<td class="titrepied">
+			  Vos questions techniques : <b><a href="http://www.developpez.net/forums/" >forum d'entraide Accueil</a></b> - Publiez vos articles, tutoriels, cours
+			  et rejoignez-nous dans l'&eacute;quipe de r&eacute;daction du club d'entraide des d&eacute;veloppeurs francophones. <a href="http://club.developpez.com/contacts/">Nous contacter</a>
+	
+			  - Copyright 2000..2005 www.developpez.com
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
+
+	

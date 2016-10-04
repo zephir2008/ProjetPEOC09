@@ -1,0 +1,447 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<head>
+  <title> Rédaction des documents d’analyse avec U.M.L - Club d'entraide des d&#233;veloppeurs francophones</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <meta name="generator" content="developpez-com" />
+  <link rel="stylesheet" type="text/css" media="screen" href="./article.css" />
+  
+</head>
+<body>
+<style type="text/css">
+<!--
+body {
+	background-color : #DDEEFF;
+	background: #DDEEFF;
+	font: normal;
+    font-family: Verdana;
+    font-weight: normal;    
+    margin: 0
+}
+
+img {
+    border:0
+}
+form {
+    margin : 0
+}
+td {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size : 10pt;
+	font-weight: normal;
+}
+td.iongl {
+	width : 1px;
+}
+
+td.bgongl {
+	background-image : url(./images/kitint.gif);
+	text-align : center;
+}
+.ntdrub:link {
+	color : #000000;
+	font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:visited {
+    color : #000000;
+    font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:active {
+	color : #000000;
+	font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:hover {
+    color : #FF0000;
+    background-color: #FFF8DD;
+    font-weight : bold;
+	font-size : 8pt;
+	text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+td.trbleu {
+	background-color:#6389D8;
+	text-align : center;
+    margin: 0 ;
+	border: 0;
+	padding-top : 3px;
+	padding-bottom : 3px;
+	height : 34px;
+}
+td.fondart {
+    background-color:#FFFFFF;
+    
+}
+
+table.tbnoir{
+	background-color:#000000;
+}
+.titrepied {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size : 10pt;
+	font: normal;
+	font-weight: normal
+}
+
+-->
+</style>
+<table width="100%" cellspacing="4">
+	<tr>
+	<td align="center">
+		<table width="100%" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+				  <table width="100%" cellspacing="11">
+					<tr>
+						<td>
+						<a href="http://www.developpez.com"><img src="images/kitlogo.gif" alt="Accueil" /></a>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+			<tr>
+    			<td>
+						<table class="cachee" cellpadding="0" cellspacing="0" width="100%">
+							<tr>
+								<td class="iongl"><img src="images/kitbordg.gif" alt=""/></td>
+								<td class="bgongl"><a href="http://www.developpez.com" class="ntdrub">Accueil</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://club.developpez.com" class="ntdrub">Le Club</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://delphi.developpez.com" class="ntdrub">Delphi Kylix</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://c.developpez.com" class="ntdrub">C C++</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://java.developpez.com" class="ntdrub">Java J2EE</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://dotnet.developpez.com" class="ntdrub">DotNET &amp; C#</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://vb.developpez.com" class="ntdrub">Visual Basic</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://access.developpez.com" class="ntdrub">Access</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://pascal.developpez.com" class="ntdrub">Pascal</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://web.developpez.com" class="ntdrub">Dev Web</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://php.developpez.com" class="ntdrub">PHP</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://asp.developpez.com" class="ntdrub">ASP</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://xml.developpez.com" class="ntdrub">XML</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://uml.developpez.com" class="ntdrub">UML</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://sgbd.developpez.com" class="ntdrub">SQLSGBD</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://windows.developpez.com" class="ntdrub">Windows</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://linux.developpez.com" class="ntdrub">Linux</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://www.developpez.com/cours/" class="ntdrub">Autres</a></td>
+								<td class="iongl"><img src="images/kitbordd.gif" alt="" /></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="trbleu">
+					</td>
+				</tr>
+
+				<tr valign="top">
+					<td valign="top" class="fondart">
+						<table cellspacing="1" width="100%" class="tbnoir">
+							<tr>
+								<td class="fondart">
+									<div style="text-align:center;">
+									<table class="cadrearticle" width="90%" cellpadding="10" cellspacing="0">
+										<tr>
+											<td align="center" style="text-align:left">
+
+        <br/><h1> Rédaction des documents d’analyse avec U.M.L</h1><p class="dateArticle">
+		Date de publication : 12/04/2006</p><hr/><div class="barreNavigation"> [ <a class="barreNavigationTexte" href="page_7.html">Précédent</a> ]  [ <a class="barreNavigationTexte" href="sommaire.html">Sommaire</a> ]  [ <a class="barreNavigationTexte" href="page_9.html">Suivant</a> ] </div><hr/>
+	
+	
+	
+	
+	
+	
+	<br /><a class="summaryIndent0" href="#L7">7.  Traitement batch</a>
+			
+			<br /><a class="summaryIndent1" href="#L7.1">7.1. préambule</a>
+				
+								
+			
+			<br /><a class="summaryIndent1" href="#L7.2">7.2. Réunion : Traitement bancaires</a>
+				
+								
+					
+			<br /><a class="summaryIndent1" href="#L7.3">7.3. Cas d’utilisation : Fin de mois</a>
+				
+				
+				
+								
+				
+				
+																								
+								
+			
+			<br /><a class="summaryIndent1" href="#L7.4">7.4. Cas d’utilisation : comptabilité</a>
+				
+				
+												
+				
+												
+				
+			<br /><a class="summaryIndent1" href="#L7.5">7.5. Comptabilité de fin de mois : Traitement des provisions de remise</a>
+				
+				
+				<br /><a class="summaryIndent2" href="#L7.5.1">7.5.1. Objectif</a>
+					
+										
+				
+				<br /><a class="summaryIndent2" href="#L7.5.2">7.5.2. Quand</a>
+					
+										
+				
+				<br /><a class="summaryIndent2" href="#L7.5.3">7.5.3. Paramètre de lancement</a>
+					
+										
+				
+				<br /><a class="summaryIndent2" href="#L7.5.4">7.5.4. Algorithme</a>
+					
+										
+				
+				<br /><a class="summaryIndent2" href="#L7.5.5">7.5.5. Reprise en cas d’erreur</a>
+					
+										
+					
+				<br /><a class="summaryIndent2" href="#L7.5.6">7.5.6. Diagramme de classe</a>
+					
+										
+																											
+			
+			<br /><a class="summaryIndent1" href="#L7.6">7.6. Epilogue</a>
+				
+								
+																				
+		
+	
+<br/><br/>
+	
+	
+	
+	
+	
+	
+	<br /><h2 class="TitreSection1" id="L7">7.  Traitement batch</h2>
+			
+			<br /><h3 class="TitreSection2" id="L7.1">7.1. préambule</h3>
+				
+				<div class="paragraph">
+					Le scénario concerne la comptabilité fin de mois. Une réunion avec la banque est nécessaire.
+				</div><br/>				
+			
+			<br /><h3 class="TitreSection2" id="L7.2">7.2. Réunion : Traitement bancaires</h3>
+				
+				<div class="paragraph">
+					Le format d’échange est précisé avec la banque ( le fichier d’échange doit respecter la normalisation bancaire).<br />
+					La banque indique, qu’une fois reçus, les virements et prélèvements ne peuvent être injectés dans le circuit bancaire qu’avec l’accord du groupement. Cette procédure reste manuelle par envoie d’un fax au responsable du compte de la banque. Le fax doit mentionner la mention « Accord de débit/crédit pour un montant de xxxx,xxx en date du xx/xx/xx ».
+					<br /><br />
+					Du point de vue du groupement, cette validation demande une statistique ...
+				</div><br/>				
+					
+			<br /><h3 class="TitreSection2" id="L7.3">7.3. Cas d’utilisation : Fin de mois</h3>
+				
+				<div class="paragraph">
+					Ce cas d’utilisation ne contient pas de difficultés particulières.
+				</div><br/>
+				<div style="text-align:center;"><table class="tableau" cellspacing="0" border="1" style="text-align: left;margin:0px auto;" width="80%">
+					<tr>
+						<th class="colonne_entete" style="width:20%;">Acteur</th>
+						<th class="colonne_entete" style="width:80%;">Rôle</th>
+					</tr>
+					<tr>
+						<td class="colonne" style="">Fin de mois</td>
+						<td class="colonne" style="">Acteur fictif figurant la fin de mois. La fin de mois déclenche le déroulement du cas d’utilisation.</td>
+					</tr>
+				</table></div>
+				<div class="paragraph">
+					
+				</div><br/>				
+				<div style="text-align:center;"><table class="tableau" cellspacing="0" border="1" style="text-align: left;margin:0px auto;" width="80%">
+					<tr>
+						<th class="colonne_entete" style="width:20%;">Scénarios</th>
+						<th class="colonne_entete" style="width:80%;">Description</th>
+					</tr>
+					<tr>
+						<td class="colonne" style="">Comptabilité</td>
+						<td class="colonne" style="">...</td>
+					</tr>
+					<tr>
+						<td class="colonne" style="">...</td>
+						<td class="colonne" style=""> </td>
+					</tr>
+				</table></div>
+				<div class="paragraph">
+					La réunion sur les traitements fin de mois permet d’y voir plus clair. Elle introduit notamment un workflow sur les virements-prélèvements.
+				</div><br/>
+				<div class="image" style="text-align:center;"><a href="./images/Activity-Compta.png"><img src="./images/logo-Activity-Compta.png" alt="Diagramme d’activité : Validation de la comptabilité"/></a><div style="text-align:center;" class="legimage">Diagramme d’activité : Validation de la comptabilité</div></div>																				
+				<div class="paragraph">
+					Vous prenez soin de décrire chacunes des tâches...
+				</div><br/>				
+			
+			<br /><h3 class="TitreSection2" id="L7.4">7.4. Cas d’utilisation : comptabilité</h3>
+				
+				<div class="paragraph">
+					Pour quelques instants les notations UML sont bandonnées pour revenir aux comptes en T de nos comptables !<br />
+					Le schéma comptable est le suivant :
+				</div><br/>
+				<div class="image" style="text-align:center;"><a href="./images/Compta.png"><img src="./images/logo-Compta.png" alt="Mouvements Comptables"/></a><div style="text-align:center;" class="legimage">Mouvements Comptables</div></div>								
+				<div class="paragraph">
+					Les scénarios à envisager sont donc :
+				</div><br/>
+				<div style="text-align:center;"><table class="tableau" cellspacing="0" border="1" style="text-align: left;margin:0px auto;" width="80%">
+					<tr>
+						<th class="colonne_entete" style="width:20%;">Scénario</th>
+						<th class="colonne_entete" style="width:80%;">Description</th>
+					</tr>
+					<tr>
+						<td class="colonne" style="">Provision de remise</td>
+						<td class="colonne" style="">Du débit du commerçant au crédit du groupement</td>
+					</tr>
+					<tr>
+						<td class="colonne" style="">Frais</td>
+						<td class="colonne" style="">Du débit du groupement au crédit du prestataire</td>
+					</tr>
+					<tr>
+						<td class="colonne" style="">Remise</td>
+						<td class="colonne" style="">Du débit du groupement au crédit du commerçant</td>
+					</tr>
+					<tr>
+						<td class="colonne" style="">Cotisation</td>
+						<td class="colonne" style="">Du débit du commerçant au crédit du groupement</td>
+					</tr>
+				</table></div>								
+				
+			<br /><h3 class="TitreSection2" id="L7.5">7.5. Comptabilité de fin de mois : Traitement des provisions de remise</h3>
+				
+				<div class="paragraph">
+					Le traitement « provision de remise » et « frais » est effectué en un seul passage.
+				</div><br/>
+				<br /><h4 class="TitreSection3" id="L7.5.1">7.5.1. Objectif</h4>
+					
+					<div class="paragraph">
+						Effectuer les mouvements comptables de fin de mois sur les remises accordées.
+					</div><br/>					
+				
+				<br /><h4 class="TitreSection3" id="L7.5.2">7.5.2. Quand</h4>
+					
+					<div class="paragraph">
+						Lancement automatique, dans la nuit du 1ier au 2ième jour ouvré du mois.
+					</div><br/>					
+				
+				<br /><h4 class="TitreSection3" id="L7.5.3">7.5.3. Paramètre de lancement</h4>
+					
+					<ul style="list-style-type: disc;">
+						<li>Année/Mois à prendre en compt</li>
+					</ul>					
+				
+				<br /><h4 class="TitreSection3" id="L7.5.4">7.5.4. Algorithme</h4>
+					
+					<div style="text-align:center;"><table style="width:90%;margin:10px auto;border-collapse: collapse;"><tr><td class="code"><pre><span class="other_code">Calculer la date de fin de mois
+  Récupérer le compte du groupement
+  Récupérer le compte du prestataire
+  Parcours de tous les mouvements du mois triés par commerçant
+     Pour chaque commerçant
+        Lire le commerçant (Pour récupérer son numéro de compte)
+        Initialiser le cumul des provisions de remises
+        Pour chaque mouvement
+           Cumuler le montant des provisions de remise
+           Cumuler le montant des frais
+           Marquer le mouvement comme comptabilisé (Année/Mois de
+           comptabilisation)
+        Fin Pour
+        Ecrire un mouvement comptable du débit du commerçant au
+        crédit du groupement du cumul du montant des provisions
+     Fin pour
+     Ecrire un mouvement comptable du débit du compte du groupement
+     vers le crédit du compte du prestataire pour le cumul des
+     frais.
+  Fin pour</span></pre></td></tr></table></div>					
+				
+				<br /><h4 class="TitreSection3" id="L7.5.5">7.5.5. Reprise en cas d’erreur</h4>
+					
+					<ul style="list-style-type: disc;">
+						<li>Remettre la marque de comptabilisation du mois à blanc (Ce que vous pouvez faire de manière systèmatiqe. Ceci permet une reprise automatique ...).</li>
+						<li>Relancer le traitement.</li>
+					</ul>					
+					
+				<br /><h4 class="TitreSection3" id="L7.5.6">7.5.6. Diagramme de classe</h4>
+					
+					<div class="image" style="text-align:center;"><a href="./images/Classe-Compta.png"><img src="./images/logo-Classe-Compta.png" alt="Diagramme de classe : Comptabilité"/></a><div style="text-align:center;" class="legimage">Diagramme de classe : Comptabilité</div></div>					
+																											
+			
+			<br /><h3 class="TitreSection2" id="L7.6">7.6. Epilogue</h3>
+				
+				<div class="paragraph">
+					Le même exercice est à faire pour les mouvements de remboursement et les cotisations.<br />
+					Le transfert des fichiers mouvements vers la banque est à décrire. Cette description doit notamment décrire les moyens technique de mise en œuvre du transfert (Protocole, adresse serveur, ...) par un diagramme de déploiement.
+					<br /><br />
+					Le deuxième scénario du cas d’utilisation "Fin de mois", c’est à dire les statistiques est décrit dans le chapitre suivant.
+				</div><br/>				
+																				
+		
+	
+<hr/><div class="barreNavigation"> [ <a class="barreNavigationTexte" href="page_7.html">Précédent</a> ]  [ <a class="barreNavigationTexte" href="sommaire.html">Sommaire</a> ]  [ <a class="barreNavigationTexte" href="page_9.html">Suivant</a> ] </div><hr/><div class="licence">
+		Ce document est soumis à la licence <a href="http://www.gnu.org/copyleft/fdl.html" class="lienArticle">GNU FDL</a> traduit en français <a href="http://cesarx.free.fr/gfdlf.html" class="lienArticle">ici</a>.<br />
+
+		Permission vous est donnée de distribuer, modifier des copies de cette page tant que cette note apparaît clairement.
+
+	</div>
+       											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table></div>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+
+	<tr>
+		<td>
+			<table width="100%" cellpadding="4" class="cachee">
+				<tr>
+					<td class="titrepied">
+			  Vos questions techniques : <b><a href="http://www.developpez.net/forums/" >forum d'entraide Accueil</a></b> - Publiez vos articles, tutoriels, cours
+			  et rejoignez-nous dans l'&eacute;quipe de r&eacute;daction du club d'entraide des d&eacute;veloppeurs francophones. <a href="http://club.developpez.com/contacts/">Nous contacter</a>
+	
+			  - Copyright 2000..2005 www.developpez.com
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
+
+	

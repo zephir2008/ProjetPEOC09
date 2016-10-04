@@ -1,0 +1,7 @@
+2016-09-30 15:35:56,487 [main] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2016-09-30 15:42:43,526 [main] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2016-09-30 15:47:21,111 [Worker-0] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2016-09-30 16:15:07,726 [main] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2016-09-30 16:18:40,112 [main] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2016-09-30 22:02:19,170 [Worker-6] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2016-10-01 11:59:23,069 [Worker-5] WARN  org.eclipse.jgit.util.FS_Win32 - null

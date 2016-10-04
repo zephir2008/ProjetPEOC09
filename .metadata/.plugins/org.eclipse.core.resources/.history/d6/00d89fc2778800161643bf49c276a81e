@@ -1,0 +1,144 @@
+@min-size: 640px;
+
+body {
+	background: linear-gradient(to right, #336666, #ffffff);
+	min-width: @min-size;
+	min-height: @min-size;
+	display: block;
+}
+
+.jumbotron {
+	background-color: transparent;
+}
+
+@keyframes cf3FadeInOut {
+	0% {
+		opacity: 1;
+	}
+
+	35% {
+		opacity: 1;
+	}
+
+	65% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+@clip: rect(0px, 1920px, 740px, 0px );
+@height: 1020px;
+@shadow-size: 12px;
+@button-size: 120px;
+
+#t2 {
+	animation-name: cf3FadeInOut;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-duration: 10s;
+	animation-direction: alternate;
+}
+
+.bandeau {
+	background-color: transparent;
+	background-position: top center;
+	background-repeat: no-repeat;
+}
+#t1 {	/* image de fond */
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -3;
+	max-width:100%;
+	height: auto;
+	clip: @clip;
+	min-width: @min-size;
+}
+#t2 {	/* image du dessus */
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -2;
+	max-width:100%;
+	height: auto;
+	clip: @clip;
+	min-width: @min-size;
+}
+#t3{	/* masque d'adoucissment */
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	width: 100%;
+	min-height:640px;
+	height: 100%;
+	background-color: rgba(255,255,255,0.4);
+	
+}
+.bottom {
+	display: block;
+	position: absolute;
+	z-index: 4;
+	max-width: 100%;
+	width: 100%;
+	height: auto;
+	bottom: 0;
+	text-align: center;
+	min-width: @min-size;
+	text-shadow: 4px 4px 2px #fffff7;
+	color: #d4184d;
+}
+.ontop {
+	z-index:10;
+	display: block;
+	position: absolute;
+	top: 0;
+	width:100%;
+	opacity: 1 !important;
+	background-color: transparent !important;
+}
+.myshade {
+	box-shadow: -@shadow-size @shadow-size @shadow-size/2 #7f7f7f;
+}
+input[type=password]{
+	background-color: #fCC;
+	margin-right: 20px;
+}
+button[type=button] {
+	width: @button-size;
+	height: @button-size;
+	border: 4px inset rgba(0,0,0,0.2);
+	border-radius: 10px;
+}
+nav{
+	position: absolute;
+	width: 100%;
+	top: 280px !important;
+}
+
+.hello {
+	display: inline-block;
+	position: absolute;
+	z-index: 20 !important;
+	top: 0;
+	left: 0;
+	width: 300px;
+	height: 60px;
+	border-radius: 30px;
+	background-color: rgba(0,0,0,0.2);
+/* 	visibility: hidden; */
+	font-size: 14pt;
+	font-weight: bold;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	color: white;
+	box-sizing: border-box;
+	
+}

@@ -1,0 +1,61 @@
+class Test {
+	constructor(){ }
+	// fonction interface de test
+	giveJSON(){
+		return '{ "Charles": { "id":1, "value": "g&co1"}, "Henri":{"id":2,"value":"g&co2"} }';
+	}
+}
+
+class Handlers {
+	test;
+
+	constructor(){
+		test = new Test();
+
+		$("#sz").html($(window).width() + 'x' + $(window).height());
+		$(".tgl").toggle();
+		$("#password").focus();
+
+		$(window).resize( function() { $("#sz").html( $(window).width() + 'x'+ $(window).height()); });
+		$("#t3").click( function() { $("#t3").fadeTo(1600, ($("#t3").css("opacity") == 0) ? 40 : 0, "linear"); });
+
+		// gestion du login
+		$("#password").keypress(function(event){
+			if(event.which == 13){$("#login").trigger("click");}
+		});
+
+		$("#login").click(function() {
+			var user = Handlers.isGoodPassword($("#password").val());
+			$("#password").val(null);						// efface le dernier mot de passe
+
+			if ($("#password").css("display") == "none") {	// on est déjà connecté
+				$(".tglgrp").toggle(800);
+				$("#login").addClass("btn-primary");
+				$("#login").removeClass("btn-danger");
+				$("#login").html("Entrer");
+				$("#password").focus();
+			} else if( user != ""){							// on se connecte
+
+				$(".tglgrp").toggle(800);
+				$("#login").addClass("btn-danger");
+				$("#login").removeClass("btn-primary");
+				$("#login").html("Sortir");
+
+				$(".hello").html("Bonjour "+user+" !");
+			}
+		});
+	}
+	// récupération du JSON des utilisateurs
+	static isGoodPassword(check){
+		var retVal = "";
+
+		var JSONuser = $.parseJSON(this.test.giveJSON());
+		for(var t in JSONuser){
+			if(JSONuser[t]["value"] == check ){
+				retVal = t;
+			}
+		}
+		return retVal;
+	}
+
+}

@@ -1,0 +1,650 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<head>
+  <title> Rédaction des documents d’analyse avec U.M.L - Club d'entraide des d&#233;veloppeurs francophones</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <meta name="generator" content="developpez-com" />
+  <link rel="stylesheet" type="text/css" media="screen" href="./article.css" />
+  
+</head>
+<body>
+<style type="text/css">
+<!--
+body {
+	background-color : #DDEEFF;
+	background: #DDEEFF;
+	font: normal;
+    font-family: Verdana;
+    font-weight: normal;    
+    margin: 0
+}
+
+img {
+    border:0
+}
+form {
+    margin : 0
+}
+td {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size : 10pt;
+	font-weight: normal;
+}
+td.iongl {
+	width : 1px;
+}
+
+td.bgongl {
+	background-image : url(./images/kitint.gif);
+	text-align : center;
+}
+.ntdrub:link {
+	color : #000000;
+	font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:visited {
+    color : #000000;
+    font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:active {
+	color : #000000;
+	font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:hover {
+    color : #FF0000;
+    background-color: #FFF8DD;
+    font-weight : bold;
+	font-size : 8pt;
+	text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+td.trbleu {
+	background-color:#6389D8;
+	text-align : center;
+    margin: 0 ;
+	border: 0;
+	padding-top : 3px;
+	padding-bottom : 3px;
+	height : 34px;
+}
+td.fondart {
+    background-color:#FFFFFF;
+    
+}
+
+table.tbnoir{
+	background-color:#000000;
+}
+.titrepied {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size : 10pt;
+	font: normal;
+	font-weight: normal
+}
+
+-->
+</style>
+<table width="100%" cellspacing="4">
+	<tr>
+	<td align="center">
+		<table width="100%" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+				  <table width="100%" cellspacing="11">
+					<tr>
+						<td>
+						<a href="http://www.developpez.com"><img src="images/kitlogo.gif" alt="Accueil" /></a>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+			<tr>
+    			<td>
+						<table class="cachee" cellpadding="0" cellspacing="0" width="100%">
+							<tr>
+								<td class="iongl"><img src="images/kitbordg.gif" alt=""/></td>
+								<td class="bgongl"><a href="http://www.developpez.com" class="ntdrub">Accueil</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://club.developpez.com" class="ntdrub">Le Club</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://delphi.developpez.com" class="ntdrub">Delphi Kylix</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://c.developpez.com" class="ntdrub">C C++</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://java.developpez.com" class="ntdrub">Java J2EE</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://dotnet.developpez.com" class="ntdrub">DotNET &amp; C#</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://vb.developpez.com" class="ntdrub">Visual Basic</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://access.developpez.com" class="ntdrub">Access</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://pascal.developpez.com" class="ntdrub">Pascal</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://web.developpez.com" class="ntdrub">Dev Web</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://php.developpez.com" class="ntdrub">PHP</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://asp.developpez.com" class="ntdrub">ASP</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://xml.developpez.com" class="ntdrub">XML</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://uml.developpez.com" class="ntdrub">UML</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://sgbd.developpez.com" class="ntdrub">SQLSGBD</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://windows.developpez.com" class="ntdrub">Windows</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://linux.developpez.com" class="ntdrub">Linux</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://www.developpez.com/cours/" class="ntdrub">Autres</a></td>
+								<td class="iongl"><img src="images/kitbordd.gif" alt="" /></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="trbleu">
+					</td>
+				</tr>
+
+				<tr valign="top">
+					<td valign="top" class="fondart">
+						<table cellspacing="1" width="100%" class="tbnoir">
+							<tr>
+								<td class="fondart">
+									<div style="text-align:center;">
+									<table class="cadrearticle" width="90%" cellpadding="10" cellspacing="0">
+										<tr>
+											<td align="center" style="text-align:left">
+
+        <h1> Rédaction des documents d’analyse avec U.M.L</h1><p class="dateArticle">
+		Date de publication : 12/04/2006</p><p style="text-align: center;">
+        Par
+        <a class="auteur" href="mailto:pmeleard@1-618.fr">Pierre Meleard</a><br/>&nbsp;</p><div class="synopsis">
+	Cet article décrit la démarche d’écriture des documents de spécifications en s’appuyant sur la notation UML. Il part de la réponse au cahier des charges jusqu’à la rédaction du dossier de conception.
+
+Il ne prétend pas être une analyse ou un document méthodologique, simplement un exemple essayant de donner la réponse à une question que nous rencontrons souvent lors des formations « Quand dois-je utiliser tel ou tel schéma ? ».
+
+Nous avons préféré mettre en avant les commentaires de la démarche plutôt que la rédaction d’un document de spécification en tant que tel et nous avons privilégié une lecture transversale du document vous permettant de comprendre rapidement comment on s’appuie sur les schémas pour la rédaction.
+
+Le cas exposé est décrit dans le cahier des charges. Il est, comme tout cahier des charges, insuffisant, ce qui introduit la notion de risque inhérente à tout projet. La démarche de construction va donc s’enrichir dans les phases ultérieures de réunions dont nous donnons le résumé par la rédaction de (fictifs) comptes-rendus.
+
+Il ne s’agit pas d’un cours UML, ni d’un plan qualité mais seulement d’une approche vous permettant, nous l’espérons, de visualiser l’apport d’UML dans une rédaction.
+
+Bonne lecture ...
+	
+	
+
+	</div><hr/><div class="barreNavigation"> [ <a class="barreNavigationTexte" href="page_1.html">Suivant</a> ] </div><hr/><div class="sommaire">
+		<a class="summaryIndent0" href="page_1.html">Page 1<br/></a><a class="summaryIndent1" href="page_1.html#LI">L'auteur<br/></a>
+			
+		
+			
+		
+		<a class="summaryIndent0" href="page_2.html">Page 2<br/></a><a class="summaryIndent1" href="page_2.html#L1">1.  Cahier des charges<br/></a>
+			
+			<a class="summaryIndent2" href="page_2.html#L1.1">1.1. Préambule<br/></a>
+				
+							
+			
+			<a class="summaryIndent2" href="page_2.html#L1.2">1.2. Le besoin<br/></a>
+				
+				
+				
+				
+				
+						
+				<a class="summaryIndent3" href="page_2.html#L1.2.1">1.2.1. Architecture<br/></a>
+					
+										
+				
+				<a class="summaryIndent3" href="page_2.html#L1.2.2">1.2.2. Principe<br/></a>
+					
+					
+										
+				
+				<a class="summaryIndent3" href="page_2.html#L1.2.3">1.2.3. Acte de fidélité<br/></a>
+					
+					
+										
+				
+				<a class="summaryIndent3" href="page_2.html#L1.2.4">1.2.4. Site Web<br/></a>
+					
+										
+				
+				<a class="summaryIndent3" href="page_2.html#L1.2.5">1.2.5. La comptabilité<br/></a>
+					
+										
+						
+						
+		
+		<a class="summaryIndent0" href="page_3.html">Page 3<br/></a><a class="summaryIndent1" href="page_3.html#L2">2.  Cas d’utilisation principal<br/></a>
+			
+			<a class="summaryIndent2" href="page_3.html#L2.1">2.1. Préambule<br/></a>
+				
+								
+			
+			<a class="summaryIndent2" href="page_3.html#L2.2">2.2. Use case Principal<br/></a>
+				
+				
+				<a class="summaryIndent3" href="page_3.html#L2.2.1">2.2.1. Diagramme du cas d’utilisation<br/></a>
+					
+					
+					
+					
+					
+					
+																														
+																			
+					
+				<a class="summaryIndent3" href="page_3.html#L2.2.2">2.2.2. Description des acteurs<br/></a>
+					
+						
+				
+				<a class="summaryIndent3" href="page_3.html#L2.2.3">2.2.3. Description des cas d’utilisation<br/></a>
+									
+					
+					
+					
+					
+																							
+			
+			<a class="summaryIndent2" href="page_3.html#L2.3">2.3. Acte de fidélité<br/></a>
+				
+				
+				
+				
+												
+			
+			<a class="summaryIndent2" href="page_3.html#L2.4">2.4. Diagramme de classe<br/></a>
+				
+				
+				
+												
+			
+			<a class="summaryIndent2" href="page_3.html#L2.5">2.5. Epilogue<br/></a>
+				
+								
+															
+		
+		<a class="summaryIndent0" href="page_4.html">Page 4<br/></a><a class="summaryIndent1" href="page_4.html#L3">3. Architecture<br/></a>
+			
+			<a class="summaryIndent2" href="page_4.html#L3.1">3.1. Préambule<br/></a>
+				
+								
+			
+			<a class="summaryIndent2" href="page_4.html#L3.2">3.2. Réunion avec les constructeurs de TPE<br/></a>
+				
+				
+								
+			
+			<a class="summaryIndent2" href="page_4.html#L3.3">3.3. Diagramme de déploiement<br/></a>
+				
+				
+				
+																
+			
+			<a class="summaryIndent2" href="page_4.html#L3.4">3.4. Epilogue<br/></a>
+				
+								
+														
+		
+		<a class="summaryIndent0" href="page_5.html">Page 5<br/></a><a class="summaryIndent1" href="page_5.html#L4">4.  Organisation du projet<br/></a>
+			
+			<a class="summaryIndent2" href="page_5.html#L4.1">4.1.  Préambule<br/></a>
+				
+								
+			
+			<a class="summaryIndent2" href="page_5.html#L4.2">4.2.  Grant du projet<br/></a>
+				
+				
+				
+				
+																
+			
+			<a class="summaryIndent2" href="page_5.html#L4.3">4.3. Description des tâches du projet<br/></a>
+				
+				
+				
+																
+			
+			<a class="summaryIndent2" href="page_5.html#L4.4">4.4. Tâche : Commande des cartes<br/></a>
+				
+				
+								
+					
+			<a class="summaryIndent2" href="page_5.html#L4.5">4.5.  Epilogue<br/></a>
+				
+								
+																
+		
+		<a class="summaryIndent0" href="page_6.html">Page 6<br/></a><a class="summaryIndent1" href="page_6.html#L5">5.  Détaillons ...<br/></a>
+			
+			<a class="summaryIndent2" href="page_6.html#L5.1">5.1. Préambule<br/></a>
+				
+								
+						
+			<a class="summaryIndent2" href="page_6.html#L5.2">5.2. Réunion : L’acte de fidélité<br/></a>
+				
+				
+				
+				<a class="summaryIndent3" href="page_6.html#L5.2.1">5.2.1. Cas dégradés<br/></a>
+					
+										
+				
+				<a class="summaryIndent3" href="page_6.html#L5.2.2">5.2.2. Fonctions annexes<br/></a>
+					
+					
+					
+					
+					
+																														
+																				
+			
+			<a class="summaryIndent2" href="page_6.html#L5.3">5.3. Cas d’utilisation<br/></a>
+				
+				
+				
+				
+				<a class="summaryIndent3" href="page_6.html#L5.3.1">5.3.1. Acteur<br/></a>
+					
+										
+				
+				<a class="summaryIndent3" href="page_6.html#L5.3.2">5.3.2. Liste des scénarios<br/></a>
+					
+										
+																					
+					
+			<a class="summaryIndent2" href="page_6.html#L5.4">5.4. Scénario : Passage d’un achat<br/></a>
+				
+				
+				
+				
+																
+				
+			<a class="summaryIndent2" href="page_6.html#L5.5">5.5. Annexe <br/></a>
+				
+				
+				<a class="summaryIndent3" href="page_6.html#L5.5.1">5.5.1. Message d’échange avec le TPE<br/></a>
+					
+										
+					
+				<a class="summaryIndent3" href="page_6.html#L5.5.2">5.5.2. Diagramme de classes<br/></a>
+					
+					
+															
+					
+					
+					
+					
+					
+																																			
+															
+			
+			<a class="summaryIndent2" href="page_6.html#L5.6">5.6. Autres scénarios<br/></a>
+				
+				
+				
+												
+															
+		
+		<a class="summaryIndent0" href="page_7.html">Page 7<br/></a><a class="summaryIndent1" href="page_7.html#L6">6.  Description d’une interface homme-machine<br/></a>
+			
+			<a class="summaryIndent2" href="page_7.html#L6.1">6.1.  Préambule<br/></a>
+				
+								
+			
+			<a class="summaryIndent2" href="page_7.html#L6.2">6.2. Réunion : L’administration<br/></a>
+				
+				
+				
+				
+				
+				
+								
+			
+			<a class="summaryIndent2" href="page_7.html#L6.3">6.3. Description du cas d’utilisation : Administration<br/></a>
+				
+				
+				
+								
+				
+				
+																				
+			
+			<a class="summaryIndent2" href="page_7.html#L6.4">6.4. Scénario Saisie carte<br/></a>
+				
+				
+				<a class="summaryIndent3" href="page_7.html#L6.4.1">6.4.1. Fonctionnalité<br/></a>
+					
+										
+					
+				<a class="summaryIndent3" href="page_7.html#L6.4.2">6.4.2. Ecran<br/></a>
+					
+										
+				
+				<a class="summaryIndent3" href="page_7.html#L6.4.3">6.4.3. Cinématique<br/></a>
+					
+					<a class="summaryIndent4" href="page_7.html#L6.4.3.a">6.4.3.a. Etape 1<br/></a>
+						
+						
+																		
+					
+					<a class="summaryIndent4" href="page_7.html#L6.4.3.b">6.4.3.b. Etape 2<br/></a>
+						
+						
+						
+						
+																								
+															
+				
+				<a class="summaryIndent3" href="page_7.html#L6.4.4">6.4.4. Contrôles<br/></a>
+					
+					
+															
+				
+				<a class="summaryIndent3" href="page_7.html#L6.4.5">6.4.5. Fonctionnalités supplémentaires<br/></a>
+					
+										
+																							
+			
+			<a class="summaryIndent2" href="page_7.html#L6.5">6.5. Annexes<br/></a>
+				
+				
+								
+								
+			
+			<a class="summaryIndent2" href="page_7.html#L6.6">6.6. Epilogue<br/></a>
+				
+								
+																					
+		
+		<a class="summaryIndent0" href="page_8.html">Page 8<br/></a><a class="summaryIndent1" href="page_8.html#L7">7.  Traitement batch<br/></a>
+			
+			<a class="summaryIndent2" href="page_8.html#L7.1">7.1. préambule<br/></a>
+				
+								
+			
+			<a class="summaryIndent2" href="page_8.html#L7.2">7.2. Réunion : Traitement bancaires<br/></a>
+				
+								
+					
+			<a class="summaryIndent2" href="page_8.html#L7.3">7.3. Cas d’utilisation : Fin de mois<br/></a>
+				
+				
+				
+								
+				
+				
+																								
+								
+			
+			<a class="summaryIndent2" href="page_8.html#L7.4">7.4. Cas d’utilisation : comptabilité<br/></a>
+				
+				
+												
+				
+												
+				
+			<a class="summaryIndent2" href="page_8.html#L7.5">7.5. Comptabilité de fin de mois : Traitement des provisions de remise<br/></a>
+				
+				
+				<a class="summaryIndent3" href="page_8.html#L7.5.1">7.5.1. Objectif<br/></a>
+					
+										
+				
+				<a class="summaryIndent3" href="page_8.html#L7.5.2">7.5.2. Quand<br/></a>
+					
+										
+				
+				<a class="summaryIndent3" href="page_8.html#L7.5.3">7.5.3. Paramètre de lancement<br/></a>
+					
+										
+				
+				<a class="summaryIndent3" href="page_8.html#L7.5.4">7.5.4. Algorithme<br/></a>
+					
+										
+				
+				<a class="summaryIndent3" href="page_8.html#L7.5.5">7.5.5. Reprise en cas d’erreur<br/></a>
+					
+										
+					
+				<a class="summaryIndent3" href="page_8.html#L7.5.6">7.5.6. Diagramme de classe<br/></a>
+					
+										
+																											
+			
+			<a class="summaryIndent2" href="page_8.html#L7.6">7.6. Epilogue<br/></a>
+				
+								
+																				
+		
+		<a class="summaryIndent0" href="page_9.html">Page 9<br/></a><a class="summaryIndent1" href="page_9.html#L8">8.  Description d’une édition<br/></a>
+			
+			<a class="summaryIndent2" href="page_9.html#L8.1">8.1. Préambule<br/></a>
+				
+								
+					
+			<a class="summaryIndent2" href="page_9.html#L8.2">8.2. Réunion : Statistiques fin de mois<br/></a>
+				
+				
+								
+			
+			<a class="summaryIndent2" href="page_9.html#L8.3">8.3. Statistique : Comptabilité commerçant<br/></a>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+								
+				
+				
+				
+				
+				
+				
+				
+				
+																
+			
+			<a class="summaryIndent2" href="page_9.html#L8.4">8.4. Epilogue<br/></a>
+				
+								
+													
+		
+		<a class="summaryIndent0" href="page_10.html">Page 10<br/></a><a class="summaryIndent1" href="page_10.html#L9">9. Conception <br/></a>
+			
+			<a class="summaryIndent2" href="page_10.html#L9.1">9.1. Préambule<br/></a>
+				
+				
+												
+				
+			<a class="summaryIndent2" href="page_10.html#L9.2">9.2.  Découpage en package<br/></a>
+				
+				
+				
+				
+				
+											
+			
+			<a class="summaryIndent2" href="page_10.html#L9.3">9.3. Package Carte<br/></a>
+				
+								
+								
+			
+			<a class="summaryIndent2" href="page_10.html#L9.4">9.4.  Base de données<br/></a>
+				
+				
+												
+			
+			<a class="summaryIndent2" href="page_10.html#L9.5">9.5. Epilogue<br/></a>
+				
+								
+																							
+		
+		<a class="summaryIndent0" href="page_11.html">Page 11<br/></a><a class="summaryIndent1" href="page_11.html#L10">10. Conclusion <br/></a>
+			
+			
+			
+			
+			
+																	
+		
+	</div><br/><br/><hr/><div class="barreNavigation"> [ <a class="barreNavigationTexte" href="page_1.html">Suivant</a> ] </div><hr/><div class="licence">
+		Ce document est soumis à la licence <a href="http://www.gnu.org/copyleft/fdl.html" class="lienArticle">GNU FDL</a> traduit en français <a href="http://cesarx.free.fr/gfdlf.html" class="lienArticle">ici</a>.<br />
+
+		Permission vous est donnée de distribuer, modifier des copies de cette page tant que cette note apparaît clairement.
+
+	</div>
+       											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table></div>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+
+	<tr>
+		<td>
+			<table width="100%" cellpadding="4" class="cachee">
+				<tr>
+					<td class="titrepied">
+			  Vos questions techniques : <b><a href="http://www.developpez.net/forums/" >forum d'entraide Accueil</a></b> - Publiez vos articles, tutoriels, cours
+			  et rejoignez-nous dans l'&eacute;quipe de r&eacute;daction du club d'entraide des d&eacute;veloppeurs francophones. <a href="http://club.developpez.com/contacts/">Nous contacter</a>
+	
+			  - Copyright 2000..2005 www.developpez.com
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
+
+	

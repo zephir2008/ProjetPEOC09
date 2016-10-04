@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;BDCenter/WebContent/lib/script.js&apos; to &apos;HandlersClass.js&apos;" description="Rename resource &apos;script.js&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/lib/script.js" name="HandlersClass.js" stamp="1475397140331" updateReferences="true"/>
+</session>

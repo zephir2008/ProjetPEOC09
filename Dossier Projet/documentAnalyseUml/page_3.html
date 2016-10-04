@@ -1,0 +1,436 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<head>
+  <title> Rédaction des documents d’analyse avec U.M.L - Club d'entraide des d&#233;veloppeurs francophones</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <meta name="generator" content="developpez-com" />
+  <link rel="stylesheet" type="text/css" media="screen" href="./article.css" />
+  
+</head>
+<body>
+<style type="text/css">
+<!--
+body {
+	background-color : #DDEEFF;
+	background: #DDEEFF;
+	font: normal;
+    font-family: Verdana;
+    font-weight: normal;    
+    margin: 0
+}
+
+img {
+    border:0
+}
+form {
+    margin : 0
+}
+td {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size : 10pt;
+	font-weight: normal;
+}
+td.iongl {
+	width : 1px;
+}
+
+td.bgongl {
+	background-image : url(./images/kitint.gif);
+	text-align : center;
+}
+.ntdrub:link {
+	color : #000000;
+	font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:visited {
+    color : #000000;
+    font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:active {
+	color : #000000;
+	font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:hover {
+    color : #FF0000;
+    background-color: #FFF8DD;
+    font-weight : bold;
+	font-size : 8pt;
+	text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+td.trbleu {
+	background-color:#6389D8;
+	text-align : center;
+    margin: 0 ;
+	border: 0;
+	padding-top : 3px;
+	padding-bottom : 3px;
+	height : 34px;
+}
+td.fondart {
+    background-color:#FFFFFF;
+    
+}
+
+table.tbnoir{
+	background-color:#000000;
+}
+.titrepied {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size : 10pt;
+	font: normal;
+	font-weight: normal
+}
+
+-->
+</style>
+<table width="100%" cellspacing="4">
+	<tr>
+	<td align="center">
+		<table width="100%" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+				  <table width="100%" cellspacing="11">
+					<tr>
+						<td>
+						<a href="http://www.developpez.com"><img src="images/kitlogo.gif" alt="Accueil" /></a>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+			<tr>
+    			<td>
+						<table class="cachee" cellpadding="0" cellspacing="0" width="100%">
+							<tr>
+								<td class="iongl"><img src="images/kitbordg.gif" alt=""/></td>
+								<td class="bgongl"><a href="http://www.developpez.com" class="ntdrub">Accueil</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://club.developpez.com" class="ntdrub">Le Club</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://delphi.developpez.com" class="ntdrub">Delphi Kylix</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://c.developpez.com" class="ntdrub">C C++</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://java.developpez.com" class="ntdrub">Java J2EE</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://dotnet.developpez.com" class="ntdrub">DotNET &amp; C#</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://vb.developpez.com" class="ntdrub">Visual Basic</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://access.developpez.com" class="ntdrub">Access</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://pascal.developpez.com" class="ntdrub">Pascal</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://web.developpez.com" class="ntdrub">Dev Web</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://php.developpez.com" class="ntdrub">PHP</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://asp.developpez.com" class="ntdrub">ASP</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://xml.developpez.com" class="ntdrub">XML</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://uml.developpez.com" class="ntdrub">UML</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://sgbd.developpez.com" class="ntdrub">SQLSGBD</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://windows.developpez.com" class="ntdrub">Windows</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://linux.developpez.com" class="ntdrub">Linux</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://www.developpez.com/cours/" class="ntdrub">Autres</a></td>
+								<td class="iongl"><img src="images/kitbordd.gif" alt="" /></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="trbleu">
+					</td>
+				</tr>
+
+				<tr valign="top">
+					<td valign="top" class="fondart">
+						<table cellspacing="1" width="100%" class="tbnoir">
+							<tr>
+								<td class="fondart">
+									<div style="text-align:center;">
+									<table class="cadrearticle" width="90%" cellpadding="10" cellspacing="0">
+										<tr>
+											<td align="center" style="text-align:left">
+
+        <br/><h1> Rédaction des documents d’analyse avec U.M.L</h1><p class="dateArticle">
+		Date de publication : 12/04/2006</p><hr/><div class="barreNavigation"> [ <a class="barreNavigationTexte" href="page_2.html">Précédent</a> ]  [ <a class="barreNavigationTexte" href="sommaire.html">Sommaire</a> ]  [ <a class="barreNavigationTexte" href="page_4.html">Suivant</a> ] </div><hr/>
+	
+	
+	
+	
+	
+	
+	<br /><a class="summaryIndent0" href="#L2">2.  Cas d’utilisation principal</a>
+			
+			<br /><a class="summaryIndent1" href="#L2.1">2.1. Préambule</a>
+				
+								
+			
+			<br /><a class="summaryIndent1" href="#L2.2">2.2. Use case Principal</a>
+				
+				
+				<br /><a class="summaryIndent2" href="#L2.2.1">2.2.1. Diagramme du cas d’utilisation</a>
+					
+					
+					
+					
+					
+					
+																														
+																			
+					
+				<br /><a class="summaryIndent2" href="#L2.2.2">2.2.2. Description des acteurs</a>
+					
+						
+				
+				<br /><a class="summaryIndent2" href="#L2.2.3">2.2.3. Description des cas d’utilisation</a>
+									
+					
+					
+					
+					
+																							
+			
+			<br /><a class="summaryIndent1" href="#L2.3">2.3. Acte de fidélité</a>
+				
+				
+				
+				
+												
+			
+			<br /><a class="summaryIndent1" href="#L2.4">2.4. Diagramme de classe</a>
+				
+				
+				
+												
+			
+			<br /><a class="summaryIndent1" href="#L2.5">2.5. Epilogue</a>
+				
+								
+															
+		
+	
+<br/><br/>
+	
+	
+	
+	
+	
+	
+	<br /><h2 class="TitreSection1" id="L2">2.  Cas d’utilisation principal</h2>
+			
+			<br /><h3 class="TitreSection2" id="L2.1">2.1. Préambule</h3>
+				
+				<div class="paragraph">
+					Vous devez donc répondre au cahier des charges en tant que prestataire et montrer que vous avez compris les besoins du groupement. Vous cherchez aussi à évaluer le budget de réalisation ....
+				</div><br/>				
+			
+			<br /><h3 class="TitreSection2" id="L2.2">2.2. Use case Principal</h3>
+				
+				<div class="paragraph">
+					Vous allez donc à définir les principales actions par lesquels les utilisateurs vont interagir avec le système d’information. Vous ne cherchez pas à entrer dans le détail mais à être exhaustif, c’est à dire couvrir l’ensemble des besoins. Vous déterminez donc un premier découpage de l’application, les acteurs puis les actions des utilisateurs sur les domaines.
+				</div><br/>
+				<br /><h4 class="TitreSection3" id="L2.2.1">2.2.1. Diagramme du cas d’utilisation</h4>
+					
+					<div class="paragraph">
+						Le premier souci est de définir les grands domaines de l’application. On peut en distinguer principalement trois largement identifiés en termes d’acteurs et de moyens mis en oeuvre.
+					</div><br/>
+					<ul style="list-style-type: disc;">
+						<li>L’administration et le paramétrage : L’administration est effectuée par la secrétaire du groupement via une interface Web.</li>
+						<li>La fidélité proprement dite : Les actes de fidélité sont effectués chez les commerçants sur les TPE.</li>
+						<li>Les traitements de fin de mois (statistiques et comptabilité). Ces traitements sont effectués par le prestataire informatique au titre de l’hébergement et de l’exploitation. </li>
+					</ul>
+					<div class="paragraph">
+						Les acteurs principaux sont :						
+					</div><br/>
+					<ul style="list-style-type: disc;">
+						<li>Les commerçants</li>
+						<li>La secrétaire du groupement</li>
+						<li>La banque semble un acteur secondaire qu’il faut mentionner. La banque sera en effet notre correspondant pour les échanges informatiques des virements et prélèvements.</li>
+						<li>Le prestataire est aussi un acteur, notamment lors des opérations de fin de mois. Vous pouvez supposer la nécessité d’un minimum de statistiques.</li>
+					</ul>
+					<div class="paragraph">
+						Il est noté que le client final n’est pas un acteur dans le sens où il n’interagit pas directement avec le système. Le client sera considéré simplement comme une entité du système d’information.
+					</div><br/>
+					<div class="image" style="text-align:center;"><a href="./images/UseCase-principal.png"><img src="./images/Logo-UseCase-principal.png" alt="Cas d'utilisation principal"/></a><div style="text-align:center;" class="legimage">Cas d'utilisation principal</div></div>																									
+					<div class="paragraph">
+						Un schéma n’est jamais explicite en lui-même. Il doit s’accompagner d’un texte d’explication. Vous décrivez donc les acteurs puis chacunes des actions qui feront l’objet d’études plus détaillées.
+					</div><br/>														
+					
+				<br /><h4 class="TitreSection3" id="L2.2.2">2.2.2. Description des acteurs</h4>
+					
+					<div style="text-align:center;"><table class="tableau" cellspacing="0" border="1" style="text-align: left;margin:0px auto;" width="80%">
+						<tr>
+							<th class="colonne_entete" style="width:20%;">Acteur</th>
+							<th class="colonne_entete" style="width:80%;">Role</th>
+						</tr>
+						<tr>
+							<td class="colonne" style="">Secrétaire</td>
+							<td class="colonne" style="">Responsable de l’administration du groupement.</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="">Commerçant</td>
+							<td class="colonne" style="">Réalise les actes de fidélités.</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="">Banque</td>
+							<td class="colonne" style="">Acteur secondaire vers qui le système doit envoyer les virements et prélèvements du compte du groupement.</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="">Prestataire</td>
+							<td class="colonne" style="">Le prestataire est responsable de l’exploitation du système. Il intervient en fin de mois notamment pour déclencher les traitements.</td>
+						</tr>
+					</table></div>	
+				
+				<br /><h4 class="TitreSection3" id="L2.2.3">2.2.3. Description des cas d’utilisation</h4>
+									
+					<div style="text-align:center;"><table class="tableau" cellspacing="0" border="1" style="text-align: left;margin:0px auto;" width="80%">
+						<tr>
+							<th class="colonne_entete" style="width:20%;">Scénarios</th>
+							<th class="colonne_entete" style="width:80%;">Description</th>
+						</tr>
+						<tr>
+							<td class="colonne" style="">Saisie des adresses</td>
+							<td class="colonne" style="">Entrer les adresses dans la base de données avec le numéro de carte associé. Cette base de données doit permettre aux commerçants d’effectuer des mailings.</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="">Interroger</td>
+							<td class="colonne" style="">Interrogation des actes de fidélité pour renseigner les commerçants ou les clients.</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="">Acte de fidélité</td>
+							<td class="colonne" style="">Passage d’un achat de fidélité. Vous pouvez supposer des fonctions complémentaires comme l’annulation, le remboursement ou des demandes de duplicatas.</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="">Mailing</td>
+							<td class="colonne" style="">Demande de fichier d’adresse</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="">Virement - prélèvement</td>
+							<td class="colonne" style="">Calcul de la comptabilité (et des statistiques) et envoi des fichiers de virements - prélèvements à la banque.</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="">Vérifier comptabilité - Suivre l’activité</td>
+							<td class="colonne" style="">Réception des statistiques. Vérification des données comptables.</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="">Exploitation (fin de mois)</td>
+							<td class="colonne" style="">Déclenchement de la clôture du mois. Edition des statistiques.</td>
+						</tr>
+					</table></div>
+					<div class="paragraph">
+						Ce cas d’utilisation vous permet d’obtenir une vision synthétique des fonctionnalités du système. Ils vous a (bien entendu) demandé un peu d’imagination pour prévoir des fonctionnalités non prévues dans le cahier des charges mais qui vous semble indispendables ...
+						<br /><br />
+						Il vous aide à déterminer les principales zones de risques. La notion de risque est toujours subjective suivant les acteurs. Vous devez rassurer votre correspondant chez les commerçants et vous rassurez vous même sur les points qui vous semblent délicats ...
+						<br /><br />
+						Plusieurs points semblent particulièrement importants :
+					</div><br/>
+					<ul style="list-style-type: disc;">
+						<li>L’acte de fidélité. Il est en effet au coeur de l’activité du système. Sa simplicité aidera l’adhésion des commerçants. Un premier dessin du ticket remis au client permettra au groupement de concrétiser l’acte de fidélité.</li>
+						<li>Le fait que le système comporte un TPE. Il y a là une contrainte d’architecture technique primordiale pour l’élaboration de la solution. C’est un facteur de risque important car, n’ayant pas de compétences particulières sur le developpement des TPE, vous préférez sous-traiter la solution.</li>
+						<li>L’organisation du projet. Vous devez tenir compte que la réussite d’un projet n’est pas seulement résumée à l’informatique et que beaucoup d’acteurs vont intervenir pour le démarrage de celui-ci. L’ensemble doit être coordonné dans un temps très court. Pour des raisons commerciales, et ne pas faire peur à votre prospect, vous préférez aborder ce point oralement, et garder la rédaction du rôle de chacun des participants que si l’affaire est signée ....</li>
+					</ul>
+					<div class="paragraph">
+						Les commentaires associés au cas d’utilisation général doivent donc rapidement cerner ces points. Vous rédigez les chapitres correspondants.
+					</div><br/>
+																							
+			
+			<br /><h3 class="TitreSection2" id="L2.3">2.3. Acte de fidélité</h3>
+				
+				<div class="paragraph">
+					Nous devons décrire l’acte de fidélité ou plutôt, puisqu’il est bien détaillé dans le cahier des charges, montrer que vous avez parfaitement compris ce dont il s’agit. Un diagramme de séquence est tout à fait indiqué. Vous ne cherchez pas à rendre exhaustif le diagramme, mais simplement à étudier le cœur du problème dans un fonctionnement nominal.
+				</div><br/>
+				<div class="image" style="text-align:center;"><a href="./images/sequence-acteAchat.png"><img src="./images/Logo-sequence-acteAchat.png" alt="diagramme de séquence : Acte d’achat"/></a><div style="text-align:center;" class="legimage">diagramme de séquence : Acte d’achat</div></div>
+				<div class="paragraph">
+					Vous décrivez ensuite les séquences principales du diagramme (quelque chose qui ressemble à un couper-coller du cahier des charges fera l’affaire ....).
+					<br />
+					Vous décrivez ensuite une proposition pour les deux tickets principaux à éditer. Ceci permet de concrétiser le résultat de l’acte de fidélité :
+				</div><br/>
+				<div style="text-align:center;"><table class="tableau" cellspacing="0" border="0" style="text-align: left;margin:0px auto;" width="80%">
+					<tr>
+				
+						<td class="colonne" style="text-align:center;width:50%;"><img src="./images/ticket1.png" alt=""/></td>
+						<td class="colonne" style="text-align:center;width:50%;"><img src="./images/ticket2.png" alt=""/></td>
+					</tr>
+				</table></div>								
+			
+			<br /><h3 class="TitreSection2" id="L2.4">2.4. Diagramme de classe</h3>
+				
+				<div class="paragraph">
+					Un premier diagramme de classe est possible. Il permet donner une approximation de la complexité du logiciel à construire.
+				</div><br/>
+				<div class="image" style="text-align:center;"><a href="./images/Classe-principal.png"><img src="./images/logo-Classe-principal.png" alt="Premier diagramme de classe"/></a><div style="text-align:center;" class="legimage">Premier diagramme de classe</div></div>
+				<div class="paragraph">
+					La fidélité doit permettre le remboursement des remises provisionnées. Nous appelons « Série » l’ensemble des mouvements d’achats ayant donné lieu à ce remboursement.
+					<br /><br />
+					Plusieurs questions restent en suspend :<br />
+					La carte de fidélité est un acteur du modèle. Elle sert à identifier le client. Le schéma fait porter l’adresse par la carte. Ceci corresponde il à la réalité ? Ne faut-il pas introduire la notion de client pour identifier une personne qui veut changer de carte en cas de perte, ... Une personne peut-elle avoir plusieurs cartes ...
+					Quels sont les besoins statistiques ? Faut-il un journal des remboursements ?
+				</div><br/>								
+			
+			<br /><h3 class="TitreSection2" id="L2.5">2.5. Epilogue</h3>
+				
+				<div class="paragraph">
+					Vous pouvez faire de même pour les autres scénarios. Ils vous permettrons de réaliser une première estimation de votre budget. Mais celui-ci ne peux être complet ou réaliste sans aborder le problème de l’architecture.
+				</div><br/>				
+															
+		
+	
+<hr/><div class="barreNavigation"> [ <a class="barreNavigationTexte" href="page_2.html">Précédent</a> ]  [ <a class="barreNavigationTexte" href="sommaire.html">Sommaire</a> ]  [ <a class="barreNavigationTexte" href="page_4.html">Suivant</a> ] </div><hr/><div class="licence">
+		Ce document est soumis à la licence <a href="http://www.gnu.org/copyleft/fdl.html" class="lienArticle">GNU FDL</a> traduit en français <a href="http://cesarx.free.fr/gfdlf.html" class="lienArticle">ici</a>.<br />
+
+		Permission vous est donnée de distribuer, modifier des copies de cette page tant que cette note apparaît clairement.
+
+	</div>
+       											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table></div>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+
+	<tr>
+		<td>
+			<table width="100%" cellpadding="4" class="cachee">
+				<tr>
+					<td class="titrepied">
+			  Vos questions techniques : <b><a href="http://www.developpez.net/forums/" >forum d'entraide Accueil</a></b> - Publiez vos articles, tutoriels, cours
+			  et rejoignez-nous dans l'&eacute;quipe de r&eacute;daction du club d'entraide des d&eacute;veloppeurs francophones. <a href="http://club.developpez.com/contacts/">Nous contacter</a>
+	
+			  - Copyright 2000..2005 www.developpez.com
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
+
+	

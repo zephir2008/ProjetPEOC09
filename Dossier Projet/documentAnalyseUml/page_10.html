@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<head>
+  <title> Rédaction des documents d’analyse avec U.M.L - Club d'entraide des d&#233;veloppeurs francophones</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <meta name="generator" content="developpez-com" />
+  <link rel="stylesheet" type="text/css" media="screen" href="./article.css" />
+  
+</head>
+<body>
+<style type="text/css">
+<!--
+body {
+	background-color : #DDEEFF;
+	background: #DDEEFF;
+	font: normal;
+    font-family: Verdana;
+    font-weight: normal;    
+    margin: 0
+}
+
+img {
+    border:0
+}
+form {
+    margin : 0
+}
+td {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size : 10pt;
+	font-weight: normal;
+}
+td.iongl {
+	width : 1px;
+}
+
+td.bgongl {
+	background-image : url(./images/kitint.gif);
+	text-align : center;
+}
+.ntdrub:link {
+	color : #000000;
+	font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:visited {
+    color : #000000;
+    font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:active {
+	color : #000000;
+	font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:hover {
+    color : #FF0000;
+    background-color: #FFF8DD;
+    font-weight : bold;
+	font-size : 8pt;
+	text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+td.trbleu {
+	background-color:#6389D8;
+	text-align : center;
+    margin: 0 ;
+	border: 0;
+	padding-top : 3px;
+	padding-bottom : 3px;
+	height : 34px;
+}
+td.fondart {
+    background-color:#FFFFFF;
+    
+}
+
+table.tbnoir{
+	background-color:#000000;
+}
+.titrepied {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size : 10pt;
+	font: normal;
+	font-weight: normal
+}
+
+-->
+</style>
+<table width="100%" cellspacing="4">
+	<tr>
+	<td align="center">
+		<table width="100%" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+				  <table width="100%" cellspacing="11">
+					<tr>
+						<td>
+						<a href="http://www.developpez.com"><img src="images/kitlogo.gif" alt="Accueil" /></a>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+			<tr>
+    			<td>
+						<table class="cachee" cellpadding="0" cellspacing="0" width="100%">
+							<tr>
+								<td class="iongl"><img src="images/kitbordg.gif" alt=""/></td>
+								<td class="bgongl"><a href="http://www.developpez.com" class="ntdrub">Accueil</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://club.developpez.com" class="ntdrub">Le Club</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://delphi.developpez.com" class="ntdrub">Delphi Kylix</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://c.developpez.com" class="ntdrub">C C++</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://java.developpez.com" class="ntdrub">Java J2EE</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://dotnet.developpez.com" class="ntdrub">DotNET &amp; C#</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://vb.developpez.com" class="ntdrub">Visual Basic</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://access.developpez.com" class="ntdrub">Access</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://pascal.developpez.com" class="ntdrub">Pascal</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://web.developpez.com" class="ntdrub">Dev Web</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://php.developpez.com" class="ntdrub">PHP</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://asp.developpez.com" class="ntdrub">ASP</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://xml.developpez.com" class="ntdrub">XML</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://uml.developpez.com" class="ntdrub">UML</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://sgbd.developpez.com" class="ntdrub">SQLSGBD</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://windows.developpez.com" class="ntdrub">Windows</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://linux.developpez.com" class="ntdrub">Linux</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://www.developpez.com/cours/" class="ntdrub">Autres</a></td>
+								<td class="iongl"><img src="images/kitbordd.gif" alt="" /></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="trbleu">
+					</td>
+				</tr>
+
+				<tr valign="top">
+					<td valign="top" class="fondart">
+						<table cellspacing="1" width="100%" class="tbnoir">
+							<tr>
+								<td class="fondart">
+									<div style="text-align:center;">
+									<table class="cadrearticle" width="90%" cellpadding="10" cellspacing="0">
+										<tr>
+											<td align="center" style="text-align:left">
+
+        <br/><h1> Rédaction des documents d’analyse avec U.M.L</h1><p class="dateArticle">
+		Date de publication : 12/04/2006</p><hr/><div class="barreNavigation"> [ <a class="barreNavigationTexte" href="page_9.html">Précédent</a> ]  [ <a class="barreNavigationTexte" href="sommaire.html">Sommaire</a> ]  [ <a class="barreNavigationTexte" href="page_11.html">Suivant</a> ] </div><hr/>
+	
+	
+	
+	
+	
+	
+	<br /><a class="summaryIndent0" href="#L9">9. Conception </a>
+			
+			<br /><a class="summaryIndent1" href="#L9.1">9.1. Préambule</a>
+				
+				
+												
+				
+			<br /><a class="summaryIndent1" href="#L9.2">9.2.  Découpage en package</a>
+				
+				
+				
+				
+				
+											
+			
+			<br /><a class="summaryIndent1" href="#L9.3">9.3. Package Carte</a>
+				
+								
+								
+			
+			<br /><a class="summaryIndent1" href="#L9.4">9.4.  Base de données</a>
+				
+				
+												
+			
+			<br /><a class="summaryIndent1" href="#L9.5">9.5. Epilogue</a>
+				
+								
+																							
+		
+	
+<br/><br/>
+	
+	
+	
+	
+	
+	
+	<br /><h2 class="TitreSection1" id="L9">9. Conception </h2>
+			
+			<br /><h3 class="TitreSection2" id="L9.1">9.1. Préambule</h3>
+				
+				<div class="paragraph">
+					Vous avez au cours des différents cas d’utilisation, recensé l’ensemble des besoins. Il apparaît maintenant nécessaire d’effectuer une synthèse des modèles de classes dessinés à chaque cas d’utilisation. L’objectif est triple :
+				</div><br/>
+				<ul style="list-style-type: disc;">
+					<li>Obtenir une vision « Entité » qui prépare l’étape de design</li>
+					<li>Obtenir un schéma de base de donnée</li>
+					<li>Valider que l’ensemble des scénarios est cohérent.</li>
+				</ul>								
+				
+			<br /><h3 class="TitreSection2" id="L9.2">9.2.  Découpage en package</h3>
+				
+				<div class="paragraph">
+					Auparavant, il semble utile de définir comment nous allons découper les objets métiers en packages.
+				</div><br/>
+				<div class="image" style="text-align:center;"><a href="./images/Package.png"><img src="./images/logo-Package.png" alt="Découpage des pakages"/></a><div style="text-align:center;" class="legimage">Découpage des pakages</div></div>
+				<div class="paragraph">				
+					Ce découpage semble relativement naturel. Il n’offre pas de cycles <a class="signetNoteBasPage" id="signetNoteBasPage2" href="#noteBasPage2">(2)</a> apparents ce qui facilitera le design.
+					<br /><br />
+					Nous avons néanmoins introduit deux classes « AnnulerCarte » et « RemplacerCarte » qui détiendront les algorithmes de ces actions. Il semblait plus naturel de les mettre dans le package Carte mais :
+				</div><br/>
+				<ul style="list-style-type: disc;">
+					<li>L’effort principal de programmation va porter sur les mouvements et non sur les cartes (Modifier les numéros de carte dans les mouvements, modifier leur statut ..).</li>
+					<li>Ceci introduirait un cycle entre le package carte et le package Mouvement.</li>
+				</ul>
+				<div class="paragraph">
+					Nous avons introduit un package de type « FrameWork » qui contient des entités génériques largement réutilisables d’une application à l’autre. Les dépendances par rapport à ce package ne sont pas montrées.
+				</div><br/>							
+			
+			<br /><h3 class="TitreSection2" id="L9.3">9.3. Package Carte</h3>
+				
+				<div class="image" style="text-align:center;"><a href="./images/Classe-PackageCarte-2.png"><img src="./images/logo-Classe-PackageCarte.png" alt=""/></a></div>				
+				<ul style="list-style-type: disc;">
+					<li>L’adresse appartient à un autre package. Nous préférons la considérer dans le package carte comme une interface dont l’implémentation sera une classe du package « Framework ».</li>
+				</ul>				
+			
+			<br /><h3 class="TitreSection2" id="L9.4">9.4.  Base de données</h3>
+				
+				<div class="paragraph">
+					La transformation des classes en entités de la base de données est assez simple. Il suffit d’introduire des identifiants permettant la liaison entre les tables.
+					<br />
+					Contrairement aux diagrammes de classes, le modèle des données doit chercher à être exhaustif. Néanmoins, nous ne représenterons ici que la partie concernant les cartes.
+				</div><br/>
+				<div class="image" style="text-align:center;"><a href="./images/Classe-MCDCarte.png"><img src="./images/logo-Classe-MCDCarte.png" alt=""/></a></div>								
+			
+			<br /><h3 class="TitreSection2" id="L9.5">9.5. Epilogue</h3>
+				
+				<div class="paragraph">
+					Ce modèle de conception donne une vision d’implémentation. Il structure les développements.<br />
+					Mais le travail de programmation transformera encore une fois ce diagramme en introduisant contraintes de design et patterns. Au final le diagramme de classes fera apparaître encore d’autres objets ....
+				</div><br/>				
+																							
+		
+	
+<hr/><div class="barreNavigation"> [ <a class="barreNavigationTexte" href="page_9.html">Précédent</a> ]  [ <a class="barreNavigationTexte" href="sommaire.html">Sommaire</a> ]  [ <a class="barreNavigationTexte" href="page_11.html">Suivant</a> ] </div><hr/><div class="licence">
+		Ce document est soumis à la licence <a href="http://www.gnu.org/copyleft/fdl.html" class="lienArticle">GNU FDL</a> traduit en français <a href="http://cesarx.free.fr/gfdlf.html" class="lienArticle">ici</a>.<br />
+
+		Permission vous est donnée de distribuer, modifier des copies de cette page tant que cette note apparaît clairement.
+
+	</div>
+       											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table></div>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+
+	<tr>
+		<td>
+			<table width="100%" cellpadding="4" class="cachee">
+				<tr>
+					<td class="titrepied">
+			  Vos questions techniques : <b><a href="http://www.developpez.net/forums/" >forum d'entraide Accueil</a></b> - Publiez vos articles, tutoriels, cours
+			  et rejoignez-nous dans l'&eacute;quipe de r&eacute;daction du club d'entraide des d&eacute;veloppeurs francophones. <a href="http://club.developpez.com/contacts/">Nous contacter</a>
+	
+			  - Copyright 2000..2005 www.developpez.com
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
+
+	

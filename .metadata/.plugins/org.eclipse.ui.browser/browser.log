@@ -1,0 +1,68 @@
+
+oct. 01, 2016 20:21:12.33 NEW SESSION
+oct. 01, 2016 20:21:12.33 Vector smash protection is enabled.
+oct. 01, 2016 21:00:43.89 _getDefinitionSite threw an exception: [object Object]
+oct. 01, 2016 21:00:43.89 console.error: 
+oct. 01, 2016 21:00:43.89   _getDefinitionSite threw an exception: [object Object]
+oct. 01, 2016 21:00:45.78 _getDefinitionSite threw an exception: [object Object]
+oct. 01, 2016 21:00:45.78 console.error: 
+oct. 01, 2016 21:00:45.79   _getDefinitionSite threw an exception: [object Object]
+oct. 01, 2016 21:49:32.31 Handler function threw an exception: [Exception... "Component returned failure code: 0x80004001 (NS_ERROR_NOT_IMPLEMENTED) [nsIHttpChannel.loadInfo]"  nsresult: "0x80004001 (NS_ERROR_NOT_IMPLEMENTED)"  location: "JS frame :: resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js :: matchRequest :: line 61"  data: no]
+oct. 01, 2016 21:49:32.31 Stack: matchRequest@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:61:7
+oct. 01, 2016 21:49:32.31 NetworkMonitor.prototype._onRequestHeader@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:1093:10
+oct. 01, 2016 21:49:32.31 NetworkMonitor.prototype.observeActivity<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:931:7
+oct. 01, 2016 21:49:32.31 exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+oct. 01, 2016 21:49:32.31 Line: 61, column: 0
+oct. 01, 2016 21:49:32.31 console.error: 
+oct. 01, 2016 21:49:32.31   Handler function threw an exception: [Exception... "Component returned failure code: 0x80004001 (NS_ERROR_NOT_IMPLEMENTED) [nsIHttpChannel.loadInfo]"  nsresult: "0x80004001 (NS_ERROR_NOT_IMPLEMENTED)"  location: "JS frame :: resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js :: matchRequest :: line 61"  data: no]
+oct. 01, 2016 21:49:32.31 Stack: matchRequest@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:61:7
+oct. 01, 2016 21:49:32.31 NetworkMonitor.prototype._onRequestHeader@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:1093:10
+oct. 01, 2016 21:49:32.31 NetworkMonitor.prototype.observeActivity<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:931:7
+oct. 01, 2016 21:49:32.31 exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+oct. 01, 2016 21:49:32.31 Line: 61, column: 0
+oct. 01, 2016 23:07:32.92 *************************
+oct. 01, 2016 23:07:32.92 A coding exception was thrown and uncaught in a Task.
+oct. 01, 2016 23:07:32.92 
+oct. 01, 2016 23:07:32.92 Full message: TypeError: parent is null
+oct. 01, 2016 23:07:32.92 Full stack: MarkupView.prototype._isImagePreviewTarget<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/markup/markup.js:495:1
+oct. 01, 2016 23:07:32.92 TaskImpl.prototype._run@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js:310:39
+oct. 01, 2016 23:07:32.92 TaskImpl@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js:272:3
+oct. 01, 2016 23:07:32.92 createAsyncFunction/asyncFunction@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js:246:14
+oct. 01, 2016 23:07:32.92 TooltipToggle.prototype.isValidHoverTarget<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/shared/widgets/tooltip/TooltipToggle.js:147:21
+oct. 01, 2016 23:07:32.92 TaskImpl.prototype._run@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js:310:39
+oct. 01, 2016 23:07:32.92 TaskImpl@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js:272:3
+oct. 01, 2016 23:07:32.92 createAsyncFunction/asyncFunction@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js:246:14
+oct. 01, 2016 23:07:32.92 TooltipToggle.prototype._onMouseMove/this.toggleTimer<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/shared/widgets/tooltip/TooltipToggle.js:127:9
+oct. 01, 2016 23:07:32.93 
+oct. 01, 2016 23:07:32.93 *************************
+oct. 01, 2016 23:07:32.93 *************************
+oct. 01, 2016 23:07:32.93 A coding exception was thrown and uncaught in a Task.
+oct. 01, 2016 23:07:32.93 
+oct. 01, 2016 23:07:32.93 Full message: TypeError: parent is null
+oct. 01, 2016 23:07:32.93 Full stack: MarkupView.prototype._isImagePreviewTarget<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/markup/markup.js:495:1
+oct. 01, 2016 23:07:32.93 TaskImpl.prototype._run@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js:310:39
+oct. 01, 2016 23:07:32.93 TaskImpl@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js:272:3
+oct. 01, 2016 23:07:32.93 createAsyncFunction/asyncFunction@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js:246:14
+oct. 01, 2016 23:07:32.93 TooltipToggle.prototype.isValidHoverTarget<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/shared/widgets/tooltip/TooltipToggle.js:147:21
+oct. 01, 2016 23:07:32.93 TaskImpl.prototype._run@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js:310:39
+oct. 01, 2016 23:07:32.93 TaskImpl@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js:272:3
+oct. 01, 2016 23:07:32.93 createAsyncFunction/asyncFunction@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js:246:14
+oct. 01, 2016 23:07:32.93 TooltipToggle.prototype._onMouseMove/this.toggleTimer<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/shared/widgets/tooltip/TooltipToggle.js:127:9
+oct. 01, 2016 23:07:32.93 
+oct. 01, 2016 23:07:32.93 *************************
+oct. 01, 2016 23:07:32.93 console.error: 
+oct. 01, 2016 23:07:32.93   isValidHoverTarget rejected with unexpected reason:
+oct. 01, 2016 23:07:32.93 console.error: 
+oct. 01, 2016 23:07:32.93   Message: TypeError: parent is null
+oct. 01, 2016 23:07:32.93   Stack:
+oct. 01, 2016 23:07:32.93     MarkupView.prototype._isImagePreviewTarget<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/markup/markup.js:495:1
+oct. 01, 2016 23:07:32.93 TaskImpl.prototype._run@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js:310:39
+oct. 01, 2016 23:07:32.93 TaskImpl@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js:272:3
+oct. 01, 2016 23:07:32.93 createAsyncFunction/asyncFunction@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js:246:14
+oct. 01, 2016 23:07:32.93 TooltipToggle.prototype.isValidHoverTarget<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/shared/widgets/tooltip/TooltipToggle.js:147:21
+oct. 01, 2016 23:07:32.93 TaskImpl.prototype._run@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js:310:39
+oct. 01, 2016 23:07:32.93 TaskImpl@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js:272:3
+oct. 01, 2016 23:07:32.93 createAsyncFunction/asyncFunction@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js:246:14
+oct. 01, 2016 23:07:32.93 TooltipToggle.prototype._onMouseMove/this.toggleTimer<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/shared/widgets/tooltip/TooltipToggle.js:127:9
+oct. 01, 2016 23:07:32.93 
+oct. 01, 2016 23:26:22.51 Vector smash protection is enabled.

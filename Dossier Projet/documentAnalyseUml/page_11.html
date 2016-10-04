@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<head>
+  <title> Rédaction des documents d’analyse avec U.M.L - Club d'entraide des d&#233;veloppeurs francophones</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <meta name="generator" content="developpez-com" />
+  <link rel="stylesheet" type="text/css" media="screen" href="./article.css" />
+  
+</head>
+<body>
+<style type="text/css">
+<!--
+body {
+	background-color : #DDEEFF;
+	background: #DDEEFF;
+	font: normal;
+    font-family: Verdana;
+    font-weight: normal;    
+    margin: 0
+}
+
+img {
+    border:0
+}
+form {
+    margin : 0
+}
+td {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size : 10pt;
+	font-weight: normal;
+}
+td.iongl {
+	width : 1px;
+}
+
+td.bgongl {
+	background-image : url(./images/kitint.gif);
+	text-align : center;
+}
+.ntdrub:link {
+	color : #000000;
+	font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:visited {
+    color : #000000;
+    font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:active {
+	color : #000000;
+	font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:hover {
+    color : #FF0000;
+    background-color: #FFF8DD;
+    font-weight : bold;
+	font-size : 8pt;
+	text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+td.trbleu {
+	background-color:#6389D8;
+	text-align : center;
+    margin: 0 ;
+	border: 0;
+	padding-top : 3px;
+	padding-bottom : 3px;
+	height : 34px;
+}
+td.fondart {
+    background-color:#FFFFFF;
+    
+}
+
+table.tbnoir{
+	background-color:#000000;
+}
+.titrepied {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size : 10pt;
+	font: normal;
+	font-weight: normal
+}
+
+-->
+</style>
+<table width="100%" cellspacing="4">
+	<tr>
+	<td align="center">
+		<table width="100%" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+				  <table width="100%" cellspacing="11">
+					<tr>
+						<td>
+						<a href="http://www.developpez.com"><img src="images/kitlogo.gif" alt="Accueil" /></a>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+			<tr>
+    			<td>
+						<table class="cachee" cellpadding="0" cellspacing="0" width="100%">
+							<tr>
+								<td class="iongl"><img src="images/kitbordg.gif" alt=""/></td>
+								<td class="bgongl"><a href="http://www.developpez.com" class="ntdrub">Accueil</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://club.developpez.com" class="ntdrub">Le Club</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://delphi.developpez.com" class="ntdrub">Delphi Kylix</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://c.developpez.com" class="ntdrub">C C++</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://java.developpez.com" class="ntdrub">Java J2EE</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://dotnet.developpez.com" class="ntdrub">DotNET &amp; C#</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://vb.developpez.com" class="ntdrub">Visual Basic</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://access.developpez.com" class="ntdrub">Access</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://pascal.developpez.com" class="ntdrub">Pascal</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://web.developpez.com" class="ntdrub">Dev Web</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://php.developpez.com" class="ntdrub">PHP</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://asp.developpez.com" class="ntdrub">ASP</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://xml.developpez.com" class="ntdrub">XML</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://uml.developpez.com" class="ntdrub">UML</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://sgbd.developpez.com" class="ntdrub">SQLSGBD</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://windows.developpez.com" class="ntdrub">Windows</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://linux.developpez.com" class="ntdrub">Linux</a></td>
+								<td class="iongl"><img src="images/kitbord1.gif" alt="" /></td>
+								<td class="bgongl"><a href="http://www.developpez.com/cours/" class="ntdrub">Autres</a></td>
+								<td class="iongl"><img src="images/kitbordd.gif" alt="" /></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="trbleu">
+					</td>
+				</tr>
+
+				<tr valign="top">
+					<td valign="top" class="fondart">
+						<table cellspacing="1" width="100%" class="tbnoir">
+							<tr>
+								<td class="fondart">
+									<div style="text-align:center;">
+									<table class="cadrearticle" width="90%" cellpadding="10" cellspacing="0">
+										<tr>
+											<td align="center" style="text-align:left">
+
+        <br/><h1> Rédaction des documents d’analyse avec U.M.L</h1><p class="dateArticle">
+		Date de publication : 12/04/2006</p><hr/><div class="barreNavigation"> [ <a class="barreNavigationTexte" href="page_10.html">Précédent</a> ]  [ <a class="barreNavigationTexte" href="sommaire.html">Sommaire</a> ] </div><hr/>
+	
+	
+	
+	
+	
+	
+	<br /><a class="summaryIndent0" href="#L10">10. Conclusion </a>
+			
+			
+			
+			
+			
+																	
+		
+	
+<br/><br/>
+	
+	
+	
+	
+	
+	
+	<br /><h2 class="TitreSection1" id="L10">10. Conclusion </h2>
+			
+			<div class="paragraph">
+				Nous avons essayé de montrer l’apport d’UML dans le travail de spécification.
+				<br /><br />
+				<br />L’utilisation des diagrammes est au choix du rédacteur. Il ne doit pas chercher à poser tel ou tel diagramme à telle ou telle étape de son analyse en fonction d’une méthode d’analyse qui spécifierait chacune des étapes, mais simplement illustrer son propos lorsqu’il le juge opportun.
+				<br />Le niveau de détail (niveau d’abstraction) pose souvent problème lorsque l’on démarre les rédactions de spécification en s’appuyant sur UML. En fait, vous dessinez un diagramme pour un lecteur. Adapter le niveau de détail en fonction de ce qu’il attend. Par analogie, vous pouvez comparer vos diagrammes à une carte. Si vous parlez de la géographie mondiale, une carte du monde est suffisante, vous n’avez pas besoin de dessiner les rues de Paris ou l’entrée du port de Marseille. Votre diagramme, non détaillé, n’est pas faux pour autant ... Mais attention, ne tombez pas dans l’erreur de considérer qu’un diagramme se suffit à lui-même. Un diagramme est un support de communication. Pour être compris, il doit nécessairement être explicité par le « verbe » ...
+				<br />Notre exemple était relativement simple. Nous n’avons pas cherché à être exhaustif dans la spécification mais simplement à montrer les différents cas que vous pouvez rencontrer. Dans une analyse d’ampleur plus importante, les spécifications sont découpés en plusieurs documents qui croisent interlocuteurs et niveaux de détail. Le découpage des documents est alors à définir avec vos interlocuteurs (MOA, architectes, exploitation, ...).
+				<br /><br />
+				Même si UML n’est pas une méthode mais simplement une notation, il prend en compte l’importance des analyses orientées cas d’utilisation. L’important n’est pas dans la notation des cas d’utilisation, somme toute très pauvre, mais dans la démarche implicite :
+			</div><br/>
+			<ul style="list-style-type: disc;">
+				<li>Un cas d’utilisation spécifie ce qu’attend un utilisateur du système. En bref, ne partez pas de la description d’une organisation ou des fonctions intrinsèques à un sujet ... Vous reconstruirez ces deux dernières notions en partant de ce que veut l’utilisateur. C’est en ce sens que les méthodes orientées cas d’utilisation ne sont pas des méthodes fonctionnelles ou organisationnelles (Merise).</li>
+				<li>Les cas d’utilisation structurent l’analyse. Le cas d’utilisation principal définie le domaine de votre projet. Vous reprenez alors chacun des cas pour les affiner dans d’autres cas d’utilisation, ainsi de suite. Cette démarche vous permet de garantir la complétude de l’analyse.</li>
+			</ul>
+			<div class="paragraph">
+				Dans notre exemple, l’arbre des cas d’utilisation est le suivant :
+			</div><br/>
+			<ul style="list-style-type: disc;">
+				<li>carte de fidélité</li>
+				<ul style="list-style-type: disc;">
+					<li>Administration</li>
+					<ul style="list-style-type: disc;">
+						<li>Gestion des cartes</li>
+						<ul style="list-style-type: disc;">
+							<li>Recherche des adresses</li>
+							<li>Saisie adresse</li>
+							<li>Annulation carte</li>
+							<li>Remplacement carte</li>
+							<li>Liste des achats en cours</li>
+							<li>Historique des achats et remboursements d’une carte</li>
+							<li>Demande de mailing</li>
+						</ul>
+						<li>Gestion des commercants</li>
+						<ul style="list-style-type: disc;">
+							<li>Saisie des commerçants</li>
+							<li>Historique des achats et remboursements d’un commerçant</li>
+						</ul>												
+					</ul>
+					<li>Fin de mois</li>
+					<ul style="list-style-type: disc;">
+						<li>Comptabilité</li>
+						<ul style="list-style-type: disc;">
+							<li>Provision de remise</li>
+							<li>Frais</li>
+							<li>Remise</li>
+							<li>Cotisation</li>
+						</ul>
+						<li>Statistiques</li>
+						<ul style="list-style-type: disc;">
+							<li>Statistique détaillée par commerçants</li>
+							<li>Statistique cummulée par commerçant</li>
+						</ul>												
+					</ul>
+					<li>Acte de fidélité</li>
+					<ul style="list-style-type: disc;">
+						<li>Achat</li>
+						<li>Annulation</li>
+						<li>Demande de duplicata</li>
+						<li>Interrogation statistique commerçant</li>
+						<li>Interrogation carte client</li>
+					</ul>																				
+				</ul>				
+			</ul>
+			<div class="paragraph">
+				Le plus souvent, vous ne pourrez obtenir un tel graphe au début de l’analyse. Si vous chiffrez un tel projet, vous savez bien, par expérience qu’il vous faudra écrire quelques statistiques, même si ce besoin n’est pas encore énnoncé par votre client ....
+				<br />Votre démarche doit donc être orientée « par le risque ». Etudier d’abord ce qui vous semble le plus risqué. Dès que le risque vous semble circonscrit, passez au sujet suivant ... Mais circonscrire le risque ne veut pas dire aller au niveau de détail le plus fin. Si vous faites cela, vous laissez d’autres zones d’ombres en jachère ... qui elles peuvent porter d’autres risques encore insoupsonnés ...
+				<br /><br />
+				Bon UML.
+			</div><br/>														
+		
+	
+<hr/><div class="barreNavigation"> [ <a class="barreNavigationTexte" href="page_10.html">Précédent</a> ]  [ <a class="barreNavigationTexte" href="sommaire.html">Sommaire</a> ] </div><hr/><div class="licence">
+		Ce document est soumis à la licence <a href="http://www.gnu.org/copyleft/fdl.html" class="lienArticle">GNU FDL</a> traduit en français <a href="http://cesarx.free.fr/gfdlf.html" class="lienArticle">ici</a>.<br />
+
+		Permission vous est donnée de distribuer, modifier des copies de cette page tant que cette note apparaît clairement.
+
+	</div>
+       											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table></div>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+
+	<tr>
+		<td>
+			<table width="100%" cellpadding="4" class="cachee">
+				<tr>
+					<td class="titrepied">
+			  Vos questions techniques : <b><a href="http://www.developpez.net/forums/" >forum d'entraide Accueil</a></b> - Publiez vos articles, tutoriels, cours
+			  et rejoignez-nous dans l'&eacute;quipe de r&eacute;daction du club d'entraide des d&eacute;veloppeurs francophones. <a href="http://club.developpez.com/contacts/">Nous contacter</a>
+	
+			  - Copyright 2000..2005 www.developpez.com
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
+
+	
