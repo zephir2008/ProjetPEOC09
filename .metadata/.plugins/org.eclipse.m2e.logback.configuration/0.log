@@ -72,3 +72,4 @@ org.eclipse.core.internal.resources.ResourceException: Resource '/BDCenter' does
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1519) ~[org.eclipse.equinox.launcher_1.3.200.v20160318-1642.jar:na]
 2016-10-04 10:33:28,111 [Worker-23] WARN  org.eclipse.jgit.util.FS_Win32 - null
 2016-10-04 15:58:42,472 [Worker-12] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2016-10-04 20:54:50,774 [Worker-13] WARN  org.eclipse.jgit.util.FS_Win32 - null

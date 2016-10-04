@@ -28,8 +28,7 @@
 <link rel="stylesheet" href="lib/normalize.css" />
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 
-<!-- less -->
-<!-- <link rel="stylesheet" type="text/css" href="cfg/app.css" />  -->
+<!-- Feuilles de style less -->
 <link rel="stylesheet/less" type="text/css" href="cfg/app.less" />
 <link rel="stylesheet/less" type="text/css" href="cfg/menu.less" />
 
@@ -55,7 +54,7 @@
 
 <script src="lib/HandlersClass.js"></script>
 <script>
-// Handler document.ready(), initialisation 
+	// Handler document.ready(), initialisation 
 	$(document).ready(
 		function() {
 			var handler = new Handlers();
@@ -66,22 +65,31 @@
 	<!-- Image de fond en fade auto -->
 	<img id="t1" src="img/bandeau1-169.jpg" />
 	<img id="t2" src="img/bandeau2-169.jpg" />
-	<div id="t3"></div>
-	<!--  <button class="hello tgl tglgrp">Bonjour Charles !</button> -->
 
-<!-- La gestion du login -->
-	<div class="container ontop login2">
-		<div class="jumbotron text-center login2">
+	<!--  notre zone de travail -->
+	<div id="t3" class="container-fuild"></div>
 
-			<div class="form-inline login2">
-				<div class="form-group login2">
-					<label class="sr-only" for="password">Password</label>
-					<input tabindex=1 type="password" class="form-control myshade tglgrp" id="password" name="password" placeholder="Mot de passe" />
+		<!-- La gestion du login -->
+		<div class="container ontop login2">
+			<div class="jumbotron text-center login2">
+	
+				<div class="form-inline login2">
+					<div class="form-group login2">
+						<label class="sr-only" for="password">Password</label>
+						<input tabindex=1 type="password" class="form-control myshade tglgrp" id="password" name="password" placeholder="Mot de passe" />
+					</div>
+					<button tabindex=2 type="button" id="login" class="btn btn-primary myshade">Entrer</button>
 				</div>
-				<button tabindex=2 type="button" id="login" class="btn btn-primary myshade">Entrer</button>
+				
 			</div>
 		</div>
-	</div>
+
+
+
+
+
+	<!--  <button class="hello tgl tglgrp">Bonjour Charles !</button> -->
+
 
 <!-- La barre de boutons -->
 	<nav>

@@ -3,7 +3,8 @@
 @shadow-size: 12px;
 @button-size: 120px;
 @min-size: 640px;
-
+@zindex-base: -3;
+ 
 body {
 	background: linear-gradient(to right, #336666, #ffffff);
 	min-width: @min-size;
@@ -29,72 +30,76 @@ body {
 	}
 }
 
+
+
+/*************************************/
+/* Gestion des images de fond d'écran*/
+/*************************************/
+/* annimation n°1 */
 @keyframes cf3FadeInOut {
-	0% {
-		opacity: 1;
-	}
-
-	35% {
-		opacity: 1;
-	}
-
-	65% {
-		opacity: 0;
-	}
-
-	100% {
-		opacity: 0;
-	}
+	0%		{ opacity: 1; }
+	40%		{ opacity: 1; }
+	60%		{ opacity: 0; }
+	100%	{ opacity: 0; }
 }
-
-#t2 {
+#t2 {	/* uniquement sur l'image du dessus */
 	animation-name: cf3FadeInOut;
 	animation-timing-function: ease-in-out;
 	animation-iteration-count: infinite;
-	animation-duration: 10s;
+	animation-duration: 16s;
 	animation-direction: alternate;
 }
 
-.bandeau {
-	background-color: transparent;
-	background-position: top center;
-	background-repeat: no-repeat;
-}
-
-#t1 {	/* image de fond */
+/* Placement des 2 images de fond d'écran */
+#t1, #t2 {
 	display: block;
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: -3;
-	max-width:100%;
-	height: auto;
-	clip: @clip;
+	/*bottom: 0;*/
+	width:100%;
+	max-width: 100%;
+	max-height: 100%;
+	min-height: 100%;
+
+	resize: none;
+	overflow: none !important;
+	/*clip: @clip;*/
 	min-width: @min-size;
+}
+#t1 {	/* image de fond */
+	z-index: @zindex-base;
 }
 #t2 {	/* image du dessus */
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: -2;
-	max-width:100%;
-	height: auto;
-	clip: @clip;
-	min-width: @min-size;
+	z-index: @zindex-base+1;
 }
-#t3{	/* masque d'adoucissment */
+
+#t3{	/* masque d'adoucissment  - zone de travail */
 	display: block;
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 0;
 	width: 100%;
-	min-height:640px;
-	height: 100%;
-	background-color: rgba(128,128,128,0.8);
-	
+ 	bottom:0;
+	z-index: 0;
+
+	background-color: rgba(172,172,128,0.8);
 }
+/*******************************/
+
+.ontop {
+	z-index:10;
+	display: block;
+	position: absolute;
+	top: 0;
+	width:100%;
+/* 	opacity: 1 !important;*/
+	background-color: transparent !important;
+}
+
+
+
+
 .bottom {
 	display: block;
 	position: absolute;
@@ -107,15 +112,6 @@ body {
 	min-width: @min-size;
 	text-shadow: 4px 4px 2px #fffff7;
 	color: #d4184d;
-}
-.ontop {
-	z-index:10;
-	display: block;
-	position: absolute;
-	top: 0;
-	width:100%;
-	opacity: 1 !important;
-	background-color: transparent !important;
 }
 .myshade {
 	box-shadow: -@shadow-size @shadow-size @shadow-size/2 #f7f7f7;
