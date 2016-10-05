@@ -54,15 +54,15 @@ body {
 /* annimation n°1 */
 @keyframes cf3FadeInOut {
 	0%		{ opacity: 1; }
-	40%		{ opacity: 1; }
-	60%		{ opacity: 0; }
+	45%		{ opacity: 1; }
+	55%		{ opacity: 0; }
 	100%	{ opacity: 0; }
 }
 #t2 {	/* uniquement sur l'image du dessus */
 	animation-name: cf3FadeInOut;
 	animation-timing-function: ease-in-out;
 	animation-iteration-count: infinite;
-	animation-duration: 16s;
+	animation-duration: 15s;
 	animation-direction: alternate;
 }
 
@@ -146,6 +146,12 @@ button[type=button] {
 
 /* *************** */
 /* les images de la bibliothèque */
+nav{
+ 	position: absolute;
+	width: 100%;
+	top: 280px !important;
+	min-width: @min-size;
+}
 @keyframes zoomIn {
 	from {
 		height: @imgNormalSize;
@@ -155,10 +161,10 @@ button[type=button] {
 	}
 }
 .biblio {
+	vertical-align: middle;
 	/*margin: 3px;*/
 	/*padding: 10px;*/
 }
-
 .biblio img{
 	height: @imgNormalSize;
 	&:hover{
@@ -169,19 +175,24 @@ button[type=button] {
 .imgok{ box-shadow: @bigshadow @bigshadow @bigshadow/2 @colOk; }
 .imgcommand{ box-shadow: @bigshadow @bigshadow @bigshadow/2 @colCommand; }
 .imgoccasion{ box-shadow: @bigshadow @bigshadow @bigshadow/2 @colOccasion; }
-
-
+.infos{		// les textes d'informations des ouvrages
+	text-align: left;
+	min-height: 80px;
+	vertical-align: middle;
+	width: 350px;
+	border-radius: 10px;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fefcea+0,f1da36+100;Gold+3D */
+	background: rgb(254,252,234); /* Old browsers */
+	background: -moz-linear-gradient(-45deg, rgba(254,252,234,0.8) 0%, rgba(241,218,54,0.8) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg, rgba(254,252,234,0.8) 0%,rgba(241,218,54,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg, rgba(254,252,234,0.8) 0%,rgba(241,218,54,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f1da36',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
 
 
 
 .myshade {
 	box-shadow: -@shadow-size @shadow-size @shadow-size/2 #f7f7f7;
-}
-nav{
- 	position: absolute;
-	width: 100%;
-	top: 280px !important;
-	min-width: @min-size;
 }
 
 .hello {

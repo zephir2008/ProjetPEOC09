@@ -2,12 +2,7 @@ var BDCouv = [
   {
     "Référence":"0",
     "Titre":"Nouvelle édition",
-    "Auteur":"(sans)",
-    "Editeur":0,
     "Photo":"0000NEWNEW.jpg",
-    "Etat":5,
-    "Stock": 4,
-    "Reassort": 0
   },
   {
     "Référence":"0001BLAWAL",

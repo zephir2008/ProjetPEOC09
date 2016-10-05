@@ -1,5 +1,11 @@
 var maBibliotheque;
 
+const VIERGE = [0,""];
+const RUPTURE = [1,"imgrupture"];
+const OCCASION = [2,"imgoccasion"];
+const COMMANDE = [3,"imgcommand"];
+const DISPONIBLE = [4,"imgok"];
+
 class Test {
 	constructor(){ }
 
@@ -14,90 +20,99 @@ class ImgButton{
 		this.reference = JSONObj["Référence"];
 		this.titre = JSONObj["Titre"];
 		this.auteur = JSONObj["Auteur"];
-		this.editeur = editor["frn_nom"];
-		this.contact = editor["frn_contact"];
-		this.telephone = editor["frn_telephone"];
-		this.photo = "img/BD/"+JSONObj["Photo"];
-		this.neuf = JSONObj["Etat"];
 		this.stock = JSONObj["Stock"];
 		this.command = JSONObj["Reassort"];
+
+		this.photo = "img/BD/"+JSONObj["Photo"];
+
+		if(editor != null){
+			this.editeur = editor["frn_nom"];
+			this.contact = editor["frn_contact"];
+			this.telephone = editor["frn_telephone"];
+		}
+
+		this.status = ImgButton.categorie((this.reference != "0"), (JSONObj["Etat"]==5), (JSONObj["Stock"]>0), (JSONObj["Reassort"]>0));
+
 		this.displ = $("<img>",{
 			id: this.reference,
 			src: this.photo,
-			class: 'bibimg'+this.myShadow(),
+			class: 'bibimg'+ this.myShadowClass,
 			title: this.myTitle()
 		});
 
-		this.inactivate();
+		this.infos = $("<div>", {
+			class : "visible-xs-inline visible-sm-inline infos col-md-1 col-xs-2 col-xs-offset-1" + this.myShadowClass,
+			id: this.reference,
+			titre: this.myTitle()
+		}).html(this.myTitle(true));
+
+			// neutre par défaut
+		this.inactivate;
+
 			// affectation des événements
 		$(this.displ).hover(this.onMouseOver);
 		$(this.displ).mouseout(this.onMouseOut);
 		$(this.displ).css("marginBottom","80px");		// marge de mouvement pour l'animation
+		$(this.displ).click([this], ImgButton.onClick);		// click sur une image
+		$(this.infos).click([this], ImgButton.onClick);		// clic sur une informations
 	}
 
-	activate(){
+	get activate(){
 		this.active = true;
-console.log(this.reference+' : je suis actif');
 	}
-	inactivate(){
+	get inactivate(){
 		this.active = false;
-console.log(this.reference+' : je suis inactif');
 	}
-	myTitle(){
+	myTitle(html){
 		var retVal = "";
-		retVal = this.reference+" - "+this.titre
-			+"\nAuteur : "+this.auteur
-			+"\nEditeur : "+this.editeur
-			+"\nEn stock : " +this.stock
-			+"\nRéappro : "+this.command;
+		var crlf = (html)?"<br>":"\n";
+		retVal = this.reference+" - "+this.titre+crlf
+			//+(html)?"<hr>" : ""+crlf
+			+"Auteur   : "+this.auteur+crlf
+			+"Editeur  : "+this.editeur+crlf
+			+"En stock : "+this.stock+crlf
+			+"Réappro  : "+this.command;
 		return retVal;
 	}
-
-	myShadow(){
-		var retVal = "";
-		if(this.neuf!=5){
-			retVal = "imgoccasion";
-		} else {
-			if(this.stock==0){
-				retVal = (this.command == 0 ) ? "imgrupture" : "imgcommand";
-			} else {
-				retVal = "imgok";
-			}
-		}
-		return " "+retVal;
+	get myShadowClass(){
+		return ((this.status[1]>"")? " "+this.status[1] : "");
 	}
 	onMouseOver(){
 		var t = this;
 		$(t).animate({
 			height: '210px',
-			//duration: "200",
+			duration: "200",
 			marginBottom: "10px"
-		},400,'swing');
+		}, 200, 'swing');
 	}
 	onMouseOut(){
 		var t = this;
 		$(t).animate({
 			height: '140px',
-			//duration: "100",
 			marginBottom: "80px"
-		},200,'swing').delay(300);
-		/*$(t).css("height","140px");*/
+		}, 200, 'swing');
 	}
-	onClick(){
-console.log(this.reference+" : actif : "+this.activate);
-		if(this.active){
-console.log($(this).attr("id"));
+	static onClick(evt){
+		var self = evt.data[0]; 
+		if(self.active){
+console.log("je suis : "+self.titre);
+// qque chose a faire ?!
 		}
 	}
+	static categorie(livre, neuf, enStock, enCommande){
+		var retVal = VIERGE;
+		if(livre){
+			retVal = COMMANDE;
+			if(!enCommande){
+				retVal = RUPTURE;
+				if(enStock){
+					retVal = (neuf) ? DISPONIBLE : OCCASION;
+				}
+			}
+		}
+		return retVal;
+	}
 }
-
-//class CreateButton extends ImgButton{
-//
-//}
-//class EnRupture extends ImgButtons{
-//	
-//}
-
 
 class Bibliotheque{
 		// peuple la bibliothèque à partir de la liste des BD
@@ -106,12 +121,12 @@ class Bibliotheque{
 		this.buttonList = [];
 		this.divList = [];
 
-		var x;
-		for(x in BDAuth) {				// liste les éditeurs
-			this.Editeur.push( BDAuth[x] );
+		for(var x in BDAuth){				// récupère les éditeurs
+			this.Editeur.push(BDAuth[x]);
 		}
+
 		var img;
-		for(x in Objs){					// peuple la bibliothèque
+		for(var x in Objs){					// peuple la bibliothèque
 			img = new ImgButton( Objs[x], this.Editeur[ Objs[x]["Editeur"] ] );
 			this.buttonList.push( img );
 		}
@@ -124,15 +139,18 @@ class Bibliotheque{
 			class: "row text-center"
 		});
 
-		for(x in this.buttonList){		// créatoin des boutons de l'interface
+		for(var x in this.buttonList){		// créatoin des boutons de l'interface
 			t = this.buttonList[x];
 			div = $('<div>', {
-				class: "col-md-2 biblio"// + ((i==0) ? " col-md-offset-2" : "")
-			}).html( t.displ );
+				class: "col-md-2 biblio"
+			}).html( t.displ ).append(t.infos);
+			
 			mainDiv.append( div );
+			
 			this.divList.push( t );
 			i++;
 			i %= 6;	// 6 boutton par ligne
+			
 			if(i == 0){
 				$("#biblio").append( mainDiv );
 				var mainDiv = $('<div>', {
@@ -146,15 +164,15 @@ class Bibliotheque{
 		}
 	}
 
+
 	stepLogin(){	// a faire suite au login réussi
-		this.buttonList.forEach(function(element){
-			this.activate();
-			$(this.displ).click(this.onClick);
+		this.buttonList.forEach(function(x){
+			x.activate;
 		});
 	}
 	stepLogout(){	// a faire suite au logout
-		this.buttonList.forEach(function(element){
-			element.inactivate();
+		this.buttonList.forEach(function(x){
+			x.inactivate;
 		});
 	}
 }
@@ -169,9 +187,8 @@ class Handlers {
 				$(window).width() + 'x'+ $(window).height()
 			);
 		});
-/*		$("#t3").click( function() { $("#t3").fadeTo(1600, ($("#t3").css("opacity") == 0) ? 40 : 0, "linear"); });*/
 
-		// gestion du login - recrée le fonctionnement d'un formulaire (touche "enter")
+			// gestion du login - recrée le fonctionnement d'un formulaire (touche "enter")
 		$("#password").keypress(function(event){
 			if(event.which == 13){
 				$("#login").trigger("click");
@@ -190,8 +207,6 @@ class Handlers {
 				$("#login").html("Entrer");
 				$("#password").focus();
 				$("#login").attr("title","Je suis là pour vous faire entrer !")
-				// @button-size: 120px;
-				// border-radius: 10px;
 				$("#login").animate({
 					height: '120px',
 					width: '120px', 
@@ -202,7 +217,6 @@ class Handlers {
 				$("#login").animate({
 					height: '60px',
 					width: '300px', 
-					//backgroundColor: 'transparent',
 					borderRadius: '30px'
 				});
 
@@ -210,17 +224,11 @@ class Handlers {
 				$("#login").addClass("btn-danger");
 				$("#login").removeClass("btn-primary");
 				$("#login").attr("title","Je suis là pour vous aider à sortir !")
-				//$("#login").html("Sortir");
 
 				$("#login").html("Bonjour "+user+" !");
 				$(maBibliotheque).trigger("login");			// login bibliothèque
 			}
 		});
-
-//		$("#menu1").click(function(){
-//			//$('.tgl').toggle(400);
-//			//$("#workspace1").toggle(600);
-//		});
 	}
 
 		/* initialisation de l'interface */

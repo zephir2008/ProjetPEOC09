@@ -30,7 +30,7 @@
 
 <!-- Feuilles de style less -->
 <link rel="stylesheet/less" type="text/css" href="cfg/app.less" />
-<link rel="stylesheet/less" type="text/css" href="cfg/menu.less" />
+<!-- <link rel="stylesheet/less" type="text/css" href="cfg/menu.less" /> -->
 
 	<!-- set options before less.js script -->
 	<script>
@@ -97,8 +97,7 @@
 <!-- La barre de boutons -->
 	<nav>
 	<div class="container">
-		<div id="biblio" class="row text-center">
-
+		<div id="biblio" class="row text-center ">
 		</div>
 	</div>
 	</nav>

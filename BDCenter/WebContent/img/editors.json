@@ -1,4 +1,4 @@
-var BDAuth = [
+[
 	{
 		"id_fournisseur" : 0,
 		"frn_nom" : "HACHETTE",
@@ -47,4 +47,4 @@ var BDAuth = [
 		"frn_contact" : "Alain TERIEUR",
 		"frn_telephone" : "87.25.96.12.01"
 	}
-];
+]
