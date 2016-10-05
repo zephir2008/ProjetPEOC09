@@ -1,6 +1,6 @@
 var BDCouv = [
   {
-    "Référence":"0000NEWNEW",
+    "Référence":"0",
     "Titre":"Nouvelle édition",
     "Auteur":"(sans)",
     "Editeur":0,
@@ -10,7 +10,7 @@ var BDCouv = [
     "Reassort": 0
   },
   {
-    "Référence":"0001BLANWAL",
+    "Référence":"0001BLAWAL",
     "Titre":"Blanche-neige et les 7 nains",
     "Auteur":"Walt DISNEY",
     "Editeur":0,

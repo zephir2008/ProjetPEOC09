@@ -8,14 +8,21 @@
 @button-size: 120px;
 @min-size: 640px;
 @zindex-base: -3;
- 
+@imgNormalSize: 140px;
+@imgZoom: 210px;
+
+/* élément pour les ombres des images */
+@bigshadow: 12px;
+@colRupture: red;
+@colOk : navy;
+@colCommand : gold;
+@colOccasion: green;
 
 /* paramètre de base de la page */
 body {
-	background: linear-gradient(to right, #336666, #ffffff);
 	min-width: @min-size;
 	min-height: @min-size;
-	display: block;
+	background-color: linear-gradient(to right, #336666, #ffffff);
 }
 
 .jumbotron {
@@ -41,7 +48,6 @@ body {
 }
 
 
-
 /*************************************/
 /* Gestion des images de fond d'écran*/
 /*************************************/
@@ -63,7 +69,7 @@ body {
 /* Placement des 2 images de fond d'écran */
 #t1, #t2 {
 	display: block;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	/*bottom: 0;*/
@@ -86,7 +92,8 @@ body {
 
 #t3{	/* masque d'adoucissment  - zone de travail */
 	display: block;
-	position: absolute;
+	/*position: absolute;*/
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -100,7 +107,7 @@ body {
 /* La mention légale en bas de page */
 .bottom {
 	display: block;
-	position: absolute;
+	position: fixed;
 	z-index: 1;
 	max-width: 100%;
 	min-width: @min-size;
@@ -118,7 +125,7 @@ body {
 .ontop {
 	z-index: 10;
 	display: block;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	width:100%;
 }
@@ -137,6 +144,33 @@ button[type=button] {
 	border-radius: 10px;
 }
 
+/* *************** */
+/* les images de la bibliothèque */
+@keyframes zoomIn {
+	from {
+		height: @imgNormalSize;
+	}
+	to {
+		height: @imgZoom;
+	}
+}
+.biblio {
+	/*margin: 3px;*/
+	/*padding: 10px;*/
+}
+
+.biblio img{
+	height: @imgNormalSize;
+	&:hover{
+		border: 2px solid black;
+	}
+}
+.imgrupture{ box-shadow: @bigshadow @bigshadow @bigshadow/2 @colRupture; }
+.imgok{ box-shadow: @bigshadow @bigshadow @bigshadow/2 @colOk; }
+.imgcommand{ box-shadow: @bigshadow @bigshadow @bigshadow/2 @colCommand; }
+.imgoccasion{ box-shadow: @bigshadow @bigshadow @bigshadow/2 @colOccasion; }
+
+
 
 
 
@@ -144,10 +178,10 @@ button[type=button] {
 	box-shadow: -@shadow-size @shadow-size @shadow-size/2 #f7f7f7;
 }
 nav{
-	position: absolute;
+ 	position: absolute;
 	width: 100%;
 	top: 280px !important;
-	min-width: @min-size
+	min-width: @min-size;
 }
 
 .hello {

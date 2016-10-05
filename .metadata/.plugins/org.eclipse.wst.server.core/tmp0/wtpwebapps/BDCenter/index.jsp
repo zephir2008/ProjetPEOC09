@@ -98,13 +98,8 @@
 	<nav>
 	<div class="container">
 		<div id="biblio" class="row text-center">
-			<!-- <div class="col-xs-4">
-				<button type="button" class="tgl tglgrp btn btn-primary myshade">Achat</button>
-				<button type="button" class="tgl tglgrp btn btn-success myshade">Vente</button>
-				<button type="button" class="tgl tglgrp btn btn-info myshade">Bibliothèque</button>
-			</div> -->
+
 		</div>
-		<!-- warning -->
 	</div>
 	</nav>
 
