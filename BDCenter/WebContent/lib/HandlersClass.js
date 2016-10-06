@@ -1,3 +1,5 @@
+'use strict';
+
 var maBibliotheque;
 
 const VIERGE = [0,""];
@@ -15,21 +17,28 @@ class Test {
 	}
 }
 
+	// Chacune des images de ma bibliothèque affichées
 class ImgButton{
+		// initialisation des valeurs de l'objet
 	constructor(JSONObj, editor){
-		this.reference = JSONObj["Référence"];
-		this.titre = JSONObj["Titre"];
-		this.auteur = JSONObj["Auteur"];
-		this.stock = JSONObj["Stock"];
-		this.command = JSONObj["Reassort"];
+		var bStg = maBibliotheque.BibStorage; 
+		this.ref = JSONObj["Référence"];
 
-		this.photo = "img/BD/"+JSONObj["Photo"];
-
-		if(editor != null){
-			this.editeur = editor["frn_nom"];
-			this.contact = editor["frn_contact"];
-			this.telephone = editor["frn_telephone"];
-		}
+		bStg.setItem(
+			this.ref, JSON.stringify({
+				titre : JSONObj["Titre"],
+				auteur : JSONObj["Auteur"],
+				stock : JSONObj["Stock"],
+				command : JSONObj["Reassort"],
+				photo : "img/BD/"+JSONObj["Photo"],
+				editeur : {
+					nom : editor["frn_nom"],
+					contact : editor["frn_contact"],
+					telephone : editor["frn_telephone"]
+				},
+				description : this.myTitle() 
+			})
+		);
 
 		this.status = ImgButton.categorie((this.reference != "0"), (JSONObj["Etat"]==5), (JSONObj["Stock"]>0), (JSONObj["Reassort"]>0));
 
@@ -77,15 +86,17 @@ class ImgButton{
 	get myShadowClass(){
 		return ((this.status[1]>"")? " "+this.status[1] : "");
 	}
-	onMouseOver(){
+	onMouseOver(evt){
+		evt.stopPropagation();
 		var t = this;
 		$(t).animate({
 			height: '210px',
 			duration: "200",
 			marginBottom: "10px"
-		}, 200, 'swing');
+		}, 200, 'swing').delay(300);
 	}
-	onMouseOut(){
+	onMouseOut(evt){
+		evt.stopPropagation();
 		var t = this;
 		$(t).animate({
 			height: '140px',
@@ -93,7 +104,7 @@ class ImgButton{
 		}, 200, 'swing');
 	}
 	static onClick(evt){
-		var self = evt.data[0]; 
+		var self = evt.data[0];
 		if(self.active){
 console.log("je suis : "+self.titre);
 // qque chose a faire ?!
@@ -150,7 +161,7 @@ class Bibliotheque{
 			this.divList.push( t );
 			i++;
 			i %= 6;	// 6 boutton par ligne
-			
+
 			if(i == 0){
 				$("#biblio").append( mainDiv );
 				var mainDiv = $('<div>', {
@@ -181,6 +192,7 @@ class Bibliotheque{
 class Handlers {
 	constructor(){
 		Handlers.init();
+		maBibliotheque.BibStorage = Handlers.myStorage;
 
 		$(window).resize( function(){
 			$("#sz").html( 
@@ -243,7 +255,6 @@ class Handlers {
 		$(maBibliotheque).on("logout",maBibliotheque.stepLogout);	// déclencheur pour logout
 	}
 
-
 	// récupération du JSON des utilisateurs
 	static isGoodPassword(check){
 		var retVal = "";
@@ -254,6 +265,20 @@ class Handlers {
 			if(JSONuser[t]["value"] == check ){
 				retVal = t;
 			}
+		}
+		return retVal;
+	}
+
+		// initialise le WebStorage
+	static get myStorage(){
+		var retVal;
+		if (typeof(Storage) !== "undefined") {
+			localStorage.clear();
+			retVal = localStorage;
+			// Code for localStorage/sessionStorage.
+		} else {
+		    // Sorry! No Web Storage support..
+			retVal = sessionStorage;
 		}
 		return retVal;
 	}
