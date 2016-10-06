@@ -1,13 +1,16 @@
 'use strict';
 
-var maBibliotheque;
+//***********************************************************
+var maBibliotheque = {};
 
+//***********************************************************
 const VIERGE = [0,""];
 const RUPTURE = [1,"imgrupture"];
 const OCCASION = [2,"imgoccasion"];
 const COMMANDE = [3,"imgcommand"];
 const DISPONIBLE = [4,"imgok"];
 
+//***********************************************************
 class Test {
 	constructor(){ }
 
@@ -16,129 +19,178 @@ class Test {
 		return '{ "Charles": { "id":1, "value": "g&co1"}, "Henri":{"id":2,"value":"g&co2"} }';
 	}
 }
+//***********************************************************
 
-	// Chacune des images de ma bibliothèque affichées
+
+
+
+
+
+//***********************************************************
+// Chacune des images de ma bibliothèque affichées
+//***********************************************************
 class ImgButton{
-		// initialisation des valeurs de l'objet
+	//***********************************************************
+	// initialisation des valeurs de l'objet
 	constructor(JSONObj, editor){
 		var bStg = maBibliotheque.BibStorage; 
-		this.ref = JSONObj["Référence"];
-
-		bStg.setItem(
-			this.ref, JSON.stringify({
-				titre : JSONObj["Titre"],
-				auteur : JSONObj["Auteur"],
-				stock : JSONObj["Stock"],
-				command : JSONObj["Reassort"],
-				photo : "img/BD/"+JSONObj["Photo"],
+		bStg.setItem(													// Créer un objet dans le localStorage
+			JSONObj["Référence"],
+			JSON.stringify({
+				reference :	JSONObj["Référence"],
+				titre :		JSONObj["Titre"],
+				auteur :	JSONObj["Auteur"],
+				stock :		JSONObj["Stock"],
+				command :	JSONObj["Reassort"],
+				photo :		"img/BD/"+JSONObj["Photo"],
 				editeur : {
-					nom : editor["frn_nom"],
-					contact : editor["frn_contact"],
-					telephone : editor["frn_telephone"]
-				},
-				description : this.myTitle() 
+					nom :		editor["frn_nom"],
+					contact :	editor["frn_contact"],
+					telephone :	editor["frn_telephone"]
+				}
 			})
 		);
 
-		this.status = ImgButton.categorie((this.reference != "0"), (JSONObj["Etat"]==5), (JSONObj["Stock"]>0), (JSONObj["Reassort"]>0));
+		this.ORef = JSON.parse( bStg[ JSONObj["Référence"] ] );			// ORef = "bean" de mon objet
+		this.ORef.ref = JSONObj["Référence"];
+		//this.ORef.helper = this.myTitle(false);
+		this.ORef.helperHTML = this.myTitle();
+		this.ORef.helperTitle = this.myTitle(true);
 
-		this.displ = $("<img>",{
-			id: this.reference,
-			src: this.photo,
-			class: 'bibimg'+ this.myShadowClass,
-			title: this.myTitle()
+		this.ORef.active = false;										// bouton inactif par défaut
+		this.ORef.status = ImgButton.categorie(
+			(this.ORef.ref != "0"),
+			(JSONObj["Etat"]==5),
+			(JSONObj["Stock"]>0),
+			(JSONObj["Reassort"]>0)
+		);
+
+		this.ORef.displ = $("<img>",{
+			id: this.ref,
+			src: this.ORef.photo,
+			class: 'bibimg'+ this.myShadowClass
 		});
 
-		this.infos = $("<div>", {
+		this.ORef.infos = $("<div>", {
 			class : "visible-xs-inline visible-sm-inline infos col-md-1 col-xs-2 col-xs-offset-1" + this.myShadowClass,
-			id: this.reference,
-			titre: this.myTitle()
-		}).html(this.myTitle(true));
-
-			// neutre par défaut
-		this.inactivate;
+			id: this.ORef.ref
+		}).html(this.ORef.helperHTML);
 
 			// affectation des événements
-		$(this.displ).hover(this.onMouseOver);
-		$(this.displ).mouseout(this.onMouseOut);
-		$(this.displ).css("marginBottom","80px");		// marge de mouvement pour l'animation
-		$(this.displ).click([this], ImgButton.onClick);		// click sur une image
-		$(this.infos).click([this], ImgButton.onClick);		// clic sur une informations
+		$(this.ORef.displ).css("marginBottom","80px");				// marge de mouvement pour l'animation
+		$(this.ORef.displ).click([this], ImgButton.onClick);		// click sur une image
+		$(this.ORef.displ).mouseover([this], ImgButton.onMouseOver);
+		$(this.ORef.displ).mouseout([this], ImgButton.onMouseOut);
+		$(this.ORef.infos).click([this], ImgButton.onClick);		// clic sur une informations
 	}
 
-	get activate(){
-		this.active = true;
+	//***********************************************************
+	get activate(){													// active le bouton
+		this.ORef.active = true;
 	}
-	get inactivate(){
-		this.active = false;
+
+	//***********************************************************
+	get inactivate(){												// désactive le bouton 
+		this.ORef.active = false;
 	}
-	myTitle(html){
+
+	//***********************************************************
+	myTitle(isTitle){													// Création du titre (bulles d'aides)
 		var retVal = "";
-		var crlf = (html)?"<br>":"\n";
-		retVal = this.reference+" - "+this.titre+crlf
-			//+(html)?"<hr>" : ""+crlf
-			+"Auteur   : "+this.auteur+crlf
-			+"Editeur  : "+this.editeur+crlf
-			+"En stock : "+this.stock+crlf
-			+"Réappro  : "+this.command;
+		var crlf = "<br>";
+		if(isTitle){
+			retVal = this.ORef.ref + '-' + this.ORef.titre
+		} else {
+			retVal = "<b>Auteur</b>   : " + this.ORef.auteur + crlf
+				+ "<b>Editeur</b>  : " + this.ORef.editeur.nom + crlf
+				+ "<b>En stock</b> : " + this.ORef.stock + crlf
+				+ "<b>Réappro</b>  : " + this.ORef.command;
+		}
 		return retVal;
 	}
-	get myShadowClass(){
-		return ((this.status[1]>"")? " "+this.status[1] : "");
+
+	//***********************************************************
+	get myShadowClass(){			// classe de l'ombre (= couleur)
+		return ((this.ORef.status[1]>"")? " "+this.ORef.status[1] : "");
 	}
-	onMouseOver(evt){
-		evt.stopPropagation();
-		var t = this;
-		$(t).animate({
-			height: '210px',
-			duration: "200",
-			marginBottom: "10px"
-		}, 200, 'swing').delay(300);
+
+	//***********************************************************
+	static onMouseOver(evt){		// lorsque la sourie entre sur l'image/la div
+		var self = evt.data[0].ORef;
+		if(self.ref != "0"){
+			$(this).animate({
+				height: '210px',
+				duration: "200",
+				marginBottom: "10px"
+			}, 200, 'swing').delay(300);
+		}
 	}
-	onMouseOut(evt){
-		evt.stopPropagation();
-		var t = this;
-		$(t).animate({
-			height: '140px',
-			marginBottom: "80px"
-		}, 200, 'swing');
+	//***********************************************************
+	static onMouseOut(evt){			// lorsque la sourie sort de l'image/la div
+		var self = evt.data[0].ORef;
+		if(self.ref != "0"){
+			$(this).animate({
+				height: '140px',
+				marginBottom: "80px"
+			}, 200, 'swing');
+		}
 	}
-	static onClick(evt){
-		var self = evt.data[0];
+	//***********************************************************
+	static onClick(evt){			// lorsqu'on clic sur l'image
+		var self = evt.data[0].ORef;
 		if(self.active){
 console.log("je suis : "+self.titre);
 // qque chose a faire ?!
 		}
 	}
-	static categorie(livre, neuf, enStock, enCommande){
-		var retVal = VIERGE;
+	//***********************************************************
+	static categorie(livre, neuf, enStock, enCommande){		// détermine l'état du livre
+		var retVal = VIERGE;		// pour la création
 		if(livre){
-			retVal = COMMANDE;
+			retVal = COMMANDE;		// en commande
 			if(!enCommande){
-				retVal = RUPTURE;
+				retVal = RUPTURE;	// en rupture
 				if(enStock){
-					retVal = (neuf) ? DISPONIBLE : OCCASION;
+					retVal = (neuf) ? DISPONIBLE : OCCASION;	// dispo ou occas
 				}
 			}
 		}
 		return retVal;
 	}
 }
+//***********************************************************
 
+
+
+
+
+
+
+//***********************************************************
+// Le regroupement de toutes les images/boutons de la bibliothèque
+//***********************************************************
 class Bibliotheque{
-		// peuple la bibliothèque à partir de la liste des BD
+	//***********************************************************
+	// peuple la bibliothèque à partir de la liste des BD
 	constructor(Objs){
+		maBibliotheque.BibStorage = Handlers.myStorage;
+		var nbImagePerLine = 6;
+
 		this.Editeur = [];
 		this.buttonList = [];
 		this.divList = [];
 
-		for(var x in BDAuth){				// récupère les éditeurs
+		for(var x in BDAuth){					// récupère les éditeurs
 			this.Editeur.push(BDAuth[x]);
 		}
 
 		var img;
-		for(var x in Objs){					// peuple la bibliothèque
-			img = new ImgButton( Objs[x], this.Editeur[ Objs[x]["Editeur"] ] );
+		var f;
+		for(var x in Objs){						// peuple la bibliothèque
+			img = new ImgButton(
+				Objs[x],
+				(x > 0) ? this.Editeur[ Objs[x]["Editeur"] ] : {frn_nom: "Création", frn_contact: "n.a.", frn_telephone: "n.a."}
+			);
 			this.buttonList.push( img );
 		}
 
@@ -150,22 +202,34 @@ class Bibliotheque{
 			class: "row text-center"
 		});
 
-		for(var x in this.buttonList){		// créatoin des boutons de l'interface
+		for(var x in this.buttonList){				// créatoin des boutons de l'interface
 			t = this.buttonList[x];
+			this.divList.push( t );
+
 			div = $('<div>', {
 				class: "col-md-2 biblio"
-			}).html( t.displ ).append(t.infos);
-			
+			});
+//			div.popover({
+			div.tooltip({
+				animation: true,
+				html: true,
+//				container: 'body', // !tooltip
+				placement: (x % nbImagePerLine < 2) ? 'right' : 'left',
+				title: t.ORef.helperTitle + "<hr>" + t.ORef.helperHTML,
+//				content: t.ORef.helperHTML,		//!tooltip
+				//delay: { "show": 500, "hide": 100 }
+				delay: 300
+			});
+			div.html( t.ORef.displ ).append( t.ORef.infos );
+
 			mainDiv.append( div );
-			
-			this.divList.push( t );
+
 			i++;
-			i %= 6;	// 6 boutton par ligne
+			i %= nbImagePerLine;					// 6 boutton par ligne
 
 			if(i == 0){
 				$("#biblio").append( mainDiv );
 				var mainDiv = $('<div>', {
-					//id: "biblio"+i,
 					class: "row text-center"
 				});
 			}
@@ -175,24 +239,34 @@ class Bibliotheque{
 		}
 	}
 
-
+	//***********************************************************
 	stepLogin(){	// a faire suite au login réussi
 		this.buttonList.forEach(function(x){
 			x.activate;
 		});
 	}
+	//***********************************************************
 	stepLogout(){	// a faire suite au logout
 		this.buttonList.forEach(function(x){
 			x.inactivate;
 		});
 	}
 }
+//***********************************************************
 
-	// Gestion de l'ensemble des événements génériques de la page
+
+
+
+
+
+//***********************************************************
+// Gestion de l'ensemble des événements génériques de la page
+//***********************************************************
 class Handlers {
+
+	//***********************************************************
 	constructor(){
 		Handlers.init();
-		maBibliotheque.BibStorage = Handlers.myStorage;
 
 		$(window).resize( function(){
 			$("#sz").html( 
@@ -218,11 +292,17 @@ class Handlers {
 				$("#login").removeClass("btn-danger");
 				$("#login").html("Entrer");
 				$("#password").focus();
-				$("#login").attr("title","Je suis là pour vous faire entrer !")
 				$("#login").animate({
-					height: '120px',
-					width: '120px', 
+					height: '80px',
+					width: '80px', 
 					borderRadius: '10px'
+				});
+				$("#login").tooltip({
+					animation: true,
+					html: true,
+					delay: 300,
+					placement: 'bottom',
+					title: "Je suis là pour vous faire entrer !"
 				});
 				$(maBibliotheque).trigger("logout");		// logout bibliothèque
 			} else if( user != ""){							// on se connecte
@@ -235,26 +315,71 @@ class Handlers {
 				$(".tglgrp").toggle(800);
 				$("#login").addClass("btn-danger");
 				$("#login").removeClass("btn-primary");
-				$("#login").attr("title","Je suis là pour vous aider à sortir !")
+				$("#login").tooltip({
+					animation: true,
+					html: true,
+					delay: 300,
+					placement: 'bottom',
+					title: "Je suis là pour vous aider à sortir !"
+				});
 
 				$("#login").html("Bonjour "+user+" !");
 				$(maBibliotheque).trigger("login");			// login bibliothèque
 			}
 		});
+		$('[data-toggle="tooltip"]').tooltip();
+//		$('[data-toggle="popover"]').popover();
 	}
 
-		/* initialisation de l'interface */
+	//***********************************************************
+	/* initialisation de l'interface */
 	static init(){
 		$("#sz").html($(window).width() + 'x' + $(window).height());
 		$(".tgl").toggle();
 		$("#workspace1").toggle();
 		$("#password").focus();
+		$("#login").tooltip({
+			animation: true,
+			html: true,
+			delay: 300,
+			placement: 'right',
+			title: "Je suis là pour vous faire entrer !"
+		});
+
+		$('li a').click(function (e) {
+			e.preventDefault();
+			var selector = "";
+			$(this).tab('show');
+			var x = "."+RUPTURE[1]+",."+OCCASION[1]+",."+COMMANDE[1]+",."+DISPONIBLE[1];
+			switch(this.innerHTML){
+				case 'En rupture' :
+					selector = '.'+RUPTURE[1];
+					break;
+				case 'Réassort' :
+					selector = '.'+COMMANDE[1];
+					break;
+				case 'Occasion':
+					selector = '.'+OCCASION[1];
+					break;
+				default:
+					selector = x;
+			}
+			$(x).hide(300);
+			$(selector).show(300);
+
+//RUPTURE = [1,"imgrupture"];
+// OCCASION = [2,"imgoccasion"];
+// COMMANDE = [3,"imgcommand"];
+// DISPONIBLE = [4,"imgok"];			$()
+//console.log(this.innerHTML);
+		});
 
 		maBibliotheque = new Bibliotheque( BDCouv );		// crée les boutons
 		$(maBibliotheque).on("login",maBibliotheque.stepLogin);		// déclencheur pour login réussi
 		$(maBibliotheque).on("logout",maBibliotheque.stepLogout);	// déclencheur pour logout
 	}
 
+	//***********************************************************
 	// récupération du JSON des utilisateurs
 	static isGoodPassword(check){
 		var retVal = "";
@@ -269,7 +394,8 @@ class Handlers {
 		return retVal;
 	}
 
-		// initialise le WebStorage
+	//***********************************************************
+	// initialise le WebStorage
 	static get myStorage(){
 		var retVal;
 		if (typeof(Storage) !== "undefined") {
@@ -283,3 +409,4 @@ class Handlers {
 		return retVal;
 	}
 }
+//***********************************************************

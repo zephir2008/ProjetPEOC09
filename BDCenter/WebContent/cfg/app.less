@@ -5,7 +5,7 @@
 @clip: rect(0px, 1920px, 740px, 0px );
 @height: 1020px;
 @shadow-size: 12px;
-@button-size: 120px;
+@button-size: 80px;
 @min-size: 640px;
 @zindex-base: -3;
 @imgNormalSize: 140px;
@@ -30,6 +30,7 @@ body {
 /*opacity: 0.5;*/
 	background-color: rgba(127,127,127,0.5);
 	border-radius: 60px !important;
+	padding: 5px;
 }
 
 @keyframes buttonlogin {
@@ -99,7 +100,6 @@ body {
 	width: 100%;
  	bottom:0;
 	z-index: 0;
-
 	background-color: rgba(172,172,128,0.8);
 }
 
@@ -128,18 +128,20 @@ body {
 	position: fixed;
 	top: 0;
 	width:100%;
+	max-height: 170px !important;
 }
 .login2 {
-/* 	opacity: 1.0;
-	background-color: gold;*/
+/* 	opacity: 1.0;*/
+	/*background-color: gold;*/
+	padding: 10px;
 }
 input[type=password]{
 	background-color: #fcc;
 	margin-right: 20px;
 }
 button[type=button] {
-	width: @button-size;
-	height: @button-size;
+	/*width: @button-size;
+	height: @button-size;*/
 	border: 4px inset rgba(0,0,0,0.2);
 	border-radius: 10px;
 }
@@ -149,9 +151,17 @@ button[type=button] {
 nav{
  	position: absolute;
 	width: 100%;
-	top: 280px !important;
+	top: 90px !important;
 	min-width: @min-size;
 }
+/* la barre de navigation */
+#nav {
+	/*position: fixed;*/
+	background-color: rgba(192,192,192,0.7);
+	border-radius: 20px;
+}
+
+/* les icones de livres */
 @keyframes zoomIn {
 	from {
 		height: @imgNormalSize;
@@ -169,6 +179,7 @@ nav{
 	height: @imgNormalSize;
 	&:hover{
 		border: 2px solid black;
+		cursor: pointer;
 	}
 }
 .imgrupture{ box-shadow: @bigshadow @bigshadow @bigshadow/2 @colRupture; }
@@ -177,18 +188,30 @@ nav{
 .imgoccasion{ box-shadow: @bigshadow @bigshadow @bigshadow/2 @colOccasion; }
 .infos{		// les textes d'informations des ouvrages
 	text-align: left;
+	font-size: 8pt;
 	min-height: 80px;
 	vertical-align: middle;
-	width: 350px;
+	width: 280px;
 	border-radius: 10px;
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fefcea+0,f1da36+100;Gold+3D */
 	background: rgb(254,252,234); /* Old browsers */
-	background: -moz-linear-gradient(-45deg, rgba(254,252,234,0.8) 0%, rgba(241,218,54,0.8) 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(-45deg, rgba(254,252,234,0.8) 0%,rgba(241,218,54,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(135deg, rgba(254,252,234,0.8) 0%,rgba(241,218,54,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: -moz-linear-gradient(-45deg, rgba(254,252,234,0.8) 0%, rgba(241,218,54,0.8) 100%);			/* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg, rgba(254,252,234,0.8) 0%,rgba(241,218,54,0.8) 100%);		/* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg, rgba(254,252,234,0.8) 0%,rgba(241,218,54,0.8) 100%);				/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f1da36',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
-
+/* Tooltip */
+/*.test + .tooltip >*/ .tooltip-inner {
+    /*background-color: #73AD21;*/
+    background-color: gold;
+    color: black; /* #FFFFFF;*/
+    border: 1px solid black;
+    padding: 15px;
+    font-size: 9pt;
+    border-radius: 10px;
+    text-align : left !important;
+    font-style: italic !important;
+}
 
 
 .myshade {

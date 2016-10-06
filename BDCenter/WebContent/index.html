@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="fr">
+	<head>
+		<title>G&amp;Co - La boutique &agrave; BD</title>
+		<meta charset="utf-8" />
+
+	<!-- pour les portables et tablettes -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0 shrink-to-fit=yes" />
+
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+		<meta name="description" content="" />
+		<meta name="author" content="" />
+
+	<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="lib/img/favicon.ico" />
+		<link rel="apple-touch-icon" href="lib/img/apple-touch-icon.png" />
+
+	<!-- jQuery et jQuery-ui -->
+		<link rel="stylesheet" href="lib/jquery-ui.css" />
+		<link rel="stylesheet" href="lib/jquery-ui.structure.css" />
+		<link rel="stylesheet" href="lib/jquery-ui.theme.css" />
+		<script src="lib/external/jquery/jquery.js"></script>
+
+	<!-- Bootstrap -->
+		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="lib/normalize.css" />
+		<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- Feuilles de style less -->
+		<link rel="stylesheet/less" type="text/css" href="cfg/app.less" />
+		<script src="lib/less/less.min.js"></script>
+
+	<!-- Les scripts de tests / validation -->
+		<script src="img/BD.js"></script>
+		<script src="img/editors.js"></script>
+		<script src="lib/HandlersClass.js"></script>
+
+		<script>					// Handler document.ready(), initialisation 
+			$(document).ready(function() {
+				var handler = new Handlers();
+			});
+		</script>
+	</head>
+
+<!-- L'espace de travail -->
+	<body>
+
+	<!-- Image de fond en fade auto -->
+		<img id="t1" src="img/bandeau1-169.jpg" />
+		<img id="t2" src="img/bandeau2-169.jpg" />
+		<div id="t3" class="container-fuild"></div>	<!-- Masque d'adoucissement -->
+
+
+	<!-- La gestion du login -->
+		<div class="container text-center ontop">
+			<div class="form-inline login2">
+				<div id="nav" class="form-inline col-lg-10 col-lg-offset-1" >
+					<ul class="nav nav-tabs">
+						<li role="presentation" class="active"><a href="#">Tous</a></li>
+						<li role="presentation"><a href="#">En rupture</a></li>
+						<li role="presentation"><a href="#">Réassort</a></li>
+						<li role="presentation"><a href="#">Occasion</a></li>
+						<div class="form-group">
+							<label class="sr-only" for="password">Password</label>
+							<input tabindex=1 type="password" class="form-control" id="password" name="password" placeholder="Mot de passe" />
+						</div>
+						<button tabindex=2 type="button" id="login" class="btn btn-primary">Entrer</button>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	<!-- La biblioth�que -->
+		<nav>
+			<div class="container">
+				<div id="biblio" class="row text-center "></div>
+			</div>
+		</nav>
+
+
+	<!-- La mention l�gale en bas de page -->
+		<div class="text-center bottom">
+			<span id="cprt">&copy; 2016 - IMIE Nantes</span>&nbsp;<span id="sz">--</span>
+		</div>
+
+
+	</body>
+</html>
