@@ -81,3 +81,5 @@ org.eclipse.core.internal.resources.ResourceException: Resource '/BDCenter' does
 2016-10-06 09:36:00,303 [Worker-1] WARN  org.eclipse.jgit.util.FS_Win32 - null
 2016-10-06 11:47:17,160 [Worker-0] WARN  org.eclipse.jgit.util.FS_Win32 - null
 2016-10-06 19:18:49,824 [Worker-0] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2016-10-07 09:20:44,619 [Worker-9] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2016-10-07 19:19:41,049 [Worker-2] WARN  org.eclipse.jgit.util.FS_Win32 - null
