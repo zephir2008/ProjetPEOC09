@@ -57,7 +57,8 @@ class ImgButton{
 		this.ORef.helperHTML = this.myTitle();
 		this.ORef.helperTitle = this.myTitle(true);
 
-		this.ORef.active = false;										// bouton inactif par défaut
+		//this.ORef.active = false;										// bouton inactif par défaut
+		ImgButton.prototype.active = false;								// variable static : bouton inactif par défaut
 		this.ORef.status = ImgButton.categorie(
 			(this.ORef.ref != "0"),
 			(JSONObj["Etat"]==5),
@@ -68,7 +69,7 @@ class ImgButton{
 		this.ORef.displ = $("<img>",{
 			id: this.ref,
 			src: this.ORef.photo,
-			class: 'bibimg'+ this.myShadowClass
+			class: 'hidden-xs bibimg'+ this.myShadowClass
 		});
 
 		this.ORef.infos = $("<div>", {
@@ -85,14 +86,15 @@ class ImgButton{
 	}
 
 	//***********************************************************
-	get activate(){													// active le bouton
-		this.ORef.active = true;
-	}
+	/*get activate(){													// active le bouton
+		ImgButton.active = true;
+		//this.ORef.active = true;
+	}*/
 
 	//***********************************************************
-	get inactivate(){												// désactive le bouton 
+	/*get inactivate(){												// désactive le bouton 
 		this.ORef.active = false;
-	}
+	}*/
 
 	//***********************************************************
 	myTitle(isTitle){													// Création du titre (bulles d'aides)
@@ -138,11 +140,11 @@ class ImgButton{
 	//***********************************************************
 	static onClick(evt){			// lorsqu'on clic sur l'image
 		var self = evt.data[0].ORef;
-		if(self.active){
+		if(ImgButton.prototype.active){
 console.log("je suis : "+self.titre);
 // qque chose a faire ?!
 		} else {
-			$("#modal").modal('show');
+			Handlers.doLogin();
 		}
 	}
 	//***********************************************************
@@ -204,7 +206,7 @@ class Bibliotheque{
 			class: "row text-center"
 		});
 
-		for(var x in this.buttonList){				// créatoin des boutons de l'interface
+		for(var x in this.buttonList){				// création des boutons de l'interface
 			t = this.buttonList[x];
 			this.divList.push( t );
 
@@ -243,15 +245,17 @@ class Bibliotheque{
 
 	//***********************************************************
 	stepLogin(){	// a faire suite au login réussi
-		this.buttonList.forEach(function(x){
-			x.activate;
-		});
+		ImgButton.prototype.active = true;
+		//this.buttonList.forEach(function(x){
+		//	x.activate;
+		//});
 	}
 	//***********************************************************
 	stepLogout(){	// a faire suite au logout
-		this.buttonList.forEach(function(x){
-			x.inactivate;
-		});
+		ImgButton.prototype.active = false;
+		//this.buttonList.forEach(function(x){
+		//	x.inactivate;
+		//});
 	}
 }
 //***********************************************************
@@ -283,72 +287,43 @@ class Handlers {
 			}
 		});
 
-			// vérification du login
-		$("#login").click(function() {
-			$("#modal").modal('show');
+			// vérification du login (clic sur le bouton login de la fenetre modal
+		$("#login").click(function() {						// connexion de l'utilisateur
 			var user = Handlers.isGoodPassword($("#password").val());
 			$("#password").val(null);						// efface le dernier mot de passe
-
-			if ($("#password").css("display") == "none") {	// on est déjà connecté => déconnexion
-				$(".tglgrp").toggle(800);
-				$("#login").addClass("btn-primary");
-				$("#login").removeClass("btn-danger");
-				$("#login").html("Entrer");
-				$("#password").focus();
-/*				$("#login").animate({
-					height: '80px',
-					width: '80px', 
-					borderRadius: '10px'
-				});*/
-				$("#login").tooltip({
-					animation: true,
-					html: true,
-					delay: 300,
-					placement: 'bottom',
-					title: "Je suis là pour vous faire entrer !"
-				});
-				$(maBibliotheque).trigger("logout");		// logout bibliothèque
-			} else if( user != ""){							// on se connecte
-/*				$("#login").animate({
-					height: '60px',
-					width: '300px', 
-					borderRadius: '30px'
-				});
-
-				$(".tglgrp").toggle(800);
-*/				$("#login").addClass("btn-danger");
-				$("#login").removeClass("btn-primary");
-				$("#login").tooltip({
-					animation: true,
-					html: true,
-					delay: 300,
-					placement: 'bottom',
-					title: "Je suis là pour vous aider à sortir !"
-				});
-
-				$("#login").html("Bonjour "+user+" !");
+			$("#modal").modal("hide");
+			if( user != ""){								// on se connecte
+				$("#logout").html("Bonjour "+user+" !");
+				$("#logout").removeClass("invisible");
+				$("#logout").addClass("show");
 				$(maBibliotheque).trigger("login");			// login bibliothèque
 			}
 		});
+
+		$("#logout").click(function(){
+			$(maBibliotheque).trigger("logout");			// login bibliothèque
+			$("#logout").removeClass("show");
+			$("#logout").addClass("invisible");
+		});
+
 		$('[data-toggle="tooltip"]').tooltip();
-//		$('[data-toggle="popover"]').popover();
 	}
 
 	//***********************************************************
 	/* initialisation de l'interface */
 	static init(){
 		$("#sz").html($(window).width() + 'x' + $(window).height());
-		$(".tgl").toggle();
+		//$(".tgl").toggle();
 		$("#workspace1").toggle();
-		$("#password").focus();
-		$("#login").tooltip({
+		//$("#password").focus();
+/*		$("#login").tooltip({
 			animation: true,
 			html: true,
 			delay: 300,
 			placement: 'right',
 			title: "Je suis là pour vous faire entrer !"
 		});
-
+*/
 		$('li a').click(function (e) {
 			e.preventDefault();
 			var selector = "";
@@ -369,12 +344,6 @@ class Handlers {
 			}
 			$(x).hide(300);
 			$(selector).show(300);
-
-//RUPTURE = [1,"imgrupture"];
-// OCCASION = [2,"imgoccasion"];
-// COMMANDE = [3,"imgcommand"];
-// DISPONIBLE = [4,"imgok"];			$()
-//console.log(this.innerHTML);
 		});
 
 		maBibliotheque = new Bibliotheque( BDCouv );		// crée les boutons
@@ -395,6 +364,14 @@ class Handlers {
 			}
 		}
 		return retVal;
+	}
+
+	static doLogin(){
+		$("#modal").modal({
+			keyboard: true		// touche 'esc' ferme la modal
+		});
+		$("#modal").modal('show').delay(200);
+		$("#password").focus();
 	}
 
 	//***********************************************************

@@ -40,12 +40,13 @@
 
 		<script>					// Handler document.ready(), initialisation 
 			$(document).ready(function() {
-				var handler = new Handlers();
-				var viewport = ResponsiveBootstrapToolkit;
+				var handler = new Handlers();	// initialisation de la page
+
+/*				var viewport = ResponsiveBootstrapToolkit;
 			    $(window).resize(
 		           viewport.changed(Handlers.viewportHandler(viewport))
 		        );
-			});
+*/			});
 		</script>
 	</head>
 
@@ -63,20 +64,17 @@
 	<!-- La gestion du login -->
 		<div class="container text-center ontop">
 			<div class="form-inline login2">
-				<div id="nav" class="form-inline col-lg-10 col-lg-offset-1" >
+				<div id="nav" class="form-inline col-lg-6 col-lg-offset-1" >
 					<ul class="nav nav-tabs">
 						<li role="presentation" class="active"><a href="#">Tous</a></li>
 						<li role="presentation"><a href="#">En rupture</a></li>
 						<li role="presentation"><a href="#">Réassort</a></li>
 						<li role="presentation"><a href="#">Occasion</a></li>
-	
-<!-- 						<div class="form-group">
-							<label class="sr-only" for="password">Password</label>
-							<input tabindex=1 type="password" class="form-control" id="password" name="password" placeholder="Mot de passe" />
-						</div>
-						<button tabindex=2 type="button" id="login" class="btn btn-primary">Entrer</button>
--->					</ul>
+					</ul>
 				</div>
+			<div class="col-lg-2">
+				<button type="button" id="logout" class="btn btn-success invisible">Entrer</button>
+			</div>
 			</div>
 		</div>
 
@@ -105,7 +103,7 @@
       <div class="modal-body">
 <div class="col-lg-6">
     <div class="input-group">
-      <input id="password" type="password" class="form-control" placeholder="Mot de passe...">
+      <input id="password" type="password" class="form-control" placeholder="Identifiant de connexion" tabindex="-1">
 <!--       <span class="input-group-btn">
         <button id="login" class="btn btn-default" type="button">Entrer</button>
       </span>
@@ -115,7 +113,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-        <button id="login" type="button" class="btn btn-primary">Entrer</button>
+        <button id="login" type="button" class="btn btn-warning">Entrer</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
