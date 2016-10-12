@@ -1,5 +1,9 @@
 package com.bdcenter.utils;
 
+import java.util.HashMap;
+import java.util.Map;
+
+
 public enum EInterfaces {
 	TITLES ("Titre","get_titles","gco_livres.liv_titre"),
 	AUTHORS ("Auteur","get_authors","gco_livres.liv_auteur"),
@@ -9,7 +13,43 @@ public enum EInterfaces {
 	private String Label;
 	private String CallBck;
 	private String SQLField;
+	
+	
+	////
+	private String item;
+	private String procedure;
+	
+	private EInterfaces(String item, String procedure) {
+	    this.item = item;
+	    this.procedure = procedure;
+	}
 
+	HashMap<String, String> collproc = new HashMap<String, String>(5);
+	
+	public String trouvenomproc(String item) {
+		
+		
+		String nomproc = "";
+		
+		for (EInterfaces enumit : EInterfaces.values()) {
+			collproc.put(enumit.item,enumit.procedure);			
+		}
+		
+		
+		for (Map.Entry mapentry: collproc.entrySet()) {
+			
+		           if (item == mapentry.getKey())
+		           {
+		                nomproc = (mapentry.getValue().toString());
+		           }
+		        	   	           
+		        }
+		
+		return nomproc;
+		
+	}
+	
+	/////
 	public String getLabel() {
 		return this.Label;
 	}

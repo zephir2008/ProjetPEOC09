@@ -1,11 +1,20 @@
 package com.bdcenter.utils;
 
+
 public class JSONify implements IJSONify {
 
+	JSONObject objJSON = new JSONObject();
+
+	
 	@Override
 	public String parse(String data) {
 		// TODO Auto-generated method stub
-		return null;
+		// 
+		objJSON = JSON.parse(data);
+		
+		//Appel de la fonction qui retourne le nom de la procédure à utiliser:
+		EInterfaces.trouvenomproc(objJSON.id); 
+		
 	}
 
 	@Override
@@ -14,4 +23,8 @@ public class JSONify implements IJSONify {
 		return null;
 	}
 
+	// constructor
+	public void IJSONify(){
+		
+	} 
 }
