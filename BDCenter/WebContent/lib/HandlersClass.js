@@ -176,7 +176,7 @@ console.log("je suis : "+self.titre);
 class Bibliotheque{
 	//***********************************************************
 	// peuple la bibliothèque à partir de la liste des BD
-	constructor(Objs){
+	constructor( which ){
 		maBibliotheque.BibStorage = Handlers.myStorage;
 		var nbImagePerLine = 6;
 
@@ -190,12 +190,31 @@ class Bibliotheque{
 
 		var img;
 		var f;
-		for(var x in Objs){						// peuple la bibliothèque
-			img = new ImgButton(
-				Objs[x],
-				(x > 0) ? this.Editeur[ Objs[x]["Editeur"] ] : {frn_nom: "Création", frn_contact: "n.a.", frn_telephone: "n.a."}
-			);
-			this.buttonList.push( img );
+		var insert;
+		var x;
+		for(var x in BDCouv){						// peuple la bibliothèque
+			insert = false;
+			switch( which ){
+				case "S":
+					insert = (BDCouv[x].Stock == 0);
+					break;
+				case "R":
+					insert = (BDCouv[x].Reassort > 0 );
+					break;
+				case "E":
+					insert = (BDCouv[x].Etat != 5);
+					break;
+				default:
+					insert = true;
+			}
+			insert = (x==0) || insert;
+			if(insert){
+				img = new ImgButton(
+					BDCouv[x],
+					(x > 0) ? this.Editeur[ BDCouv[x]["Editeur"] ] : {frn_nom: "Création", frn_contact: "n.a.", frn_telephone: "n.a."}
+				);
+				this.buttonList.push( img );
+			}
 		}
 
 		var div = "";
@@ -269,16 +288,15 @@ class Bibliotheque{
 // Gestion de l'ensemble des événements génériques de la page
 //***********************************************************
 class Handlers {
-
+	
 	//***********************************************************
 	constructor(){
 		Handlers.init();
+console.log(decodeURIComponent($.urlParam('voir')));
+		maBibliotheque = Handlers.initBibliotheque(decodeURIComponent($.urlParam('voir')));
+		$(maBibliotheque).on("login",maBibliotheque.stepLogin);		// déclencheur pour login réussi
+		$(maBibliotheque).on("logout",maBibliotheque.stepLogout);	// déclencheur pour logout
 
-		$(window).resize( function(){
-			$("#sz").html( 
-				$(window).width() + 'x'+ $(window).height()
-			);
-		});
 
 			// gestion du login - recrée le fonctionnement d'un formulaire (touche "enter")
 		$("#password").keypress(function(event){
@@ -289,7 +307,7 @@ class Handlers {
 
 			// vérification du login (clic sur le bouton login de la fenetre modal
 		$("#login").click(function() {						// connexion de l'utilisateur
-			var user = Handlers.isGoodPassword($("#password").val());
+			var user = Handlers.getUserByPassword($("#password").val());
 			$("#password").val(null);						// efface le dernier mot de passe
 			$("#modal").modal("hide");
 			if( user != ""){								// on se connecte
@@ -313,17 +331,8 @@ class Handlers {
 	/* initialisation de l'interface */
 	static init(){
 		$("#sz").html($(window).width() + 'x' + $(window).height());
-		//$(".tgl").toggle();
-		$("#workspace1").toggle();
-		//$("#password").focus();
-/*		$("#login").tooltip({
-			animation: true,
-			html: true,
-			delay: 300,
-			placement: 'right',
-			title: "Je suis là pour vous faire entrer !"
-		});
-*/
+//		$("#workspace1").toggle();
+
 		$('li a').click(function (e) {
 			e.preventDefault();
 			var selector = "";
@@ -331,29 +340,46 @@ class Handlers {
 			var x = "."+RUPTURE[1]+",."+OCCASION[1]+",."+COMMANDE[1]+",."+DISPONIBLE[1];
 			switch(this.innerHTML){
 				case 'En rupture' :
-					selector = '.'+RUPTURE[1];
+					selector = "Stock";
 					break;
 				case 'Réassort' :
-					selector = '.'+COMMANDE[1];
+					selector = "Reassort";
 					break;
 				case 'Occasion':
-					selector = '.'+OCCASION[1];
+					selector = "Etat";
 					break;
 				default:
-					selector = x;
+					selector = "Tous";
 			}
+			//document.url("...?voir="+selector);
 			$(x).hide(300);
 			$(selector).show(300);
 		});
-
-		maBibliotheque = new Bibliotheque( BDCouv );		// crée les boutons
-		$(maBibliotheque).on("login",maBibliotheque.stepLogin);		// déclencheur pour login réussi
-		$(maBibliotheque).on("logout",maBibliotheque.stepLogout);	// déclencheur pour logout
 	}
 
+	static initBibliotheque(which){
+		var selector;
+
+		switch(which){
+			case 'Rupture' :
+				selector = "S";
+				break;
+			case 'Reassort' :
+				selector = "R";
+				break;
+			case 'Occasion':
+				selector = "E";
+				break;
+			default:	// Tous
+				selector = "T";
+		}
+console.log("voir = "+selector);
+		$("#_"+selector).addClass="active";
+		return new Bibliotheque( selector );		// crée les boutons
+	}
 	//***********************************************************
 	// récupération du JSON des utilisateurs
-	static isGoodPassword(check){
+	static getUserByPassword(check){
 		var retVal = "";
 		var test = new Test();
 
@@ -370,7 +396,7 @@ class Handlers {
 		$("#modal").modal({
 			keyboard: true		// touche 'esc' ferme la modal
 		});
-		$("#modal").modal('show').delay(200);
+		$("#modal").modal('show');
 		$("#password").focus();
 	}
 
