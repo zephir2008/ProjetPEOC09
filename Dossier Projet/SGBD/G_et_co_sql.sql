@@ -35,10 +35,11 @@ CREATE TABLE `gco_etat_livre` (
 --
 -- Dumping data for table `gco_etat_livre`
 --
+-- ORDER BY:  `id_etat`
 
 LOCK TABLES `gco_etat_livre` WRITE;
 /*!40000 ALTER TABLE `gco_etat_livre` DISABLE KEYS */;
-INSERT INTO `gco_etat_livre` VALUES (1,'Abimé'),(2,'Moyen'),(3,'Correct'),(4,'Bon'),(5,'Très bon'),(6,'Neuf');
+INSERT  IGNORE INTO `gco_etat_livre` (`id_etat`, `eta_value`) VALUES (1,'Abimé'),(2,'Moyen'),(3,'Correct'),(4,'Bon'),(5,'Très bon'),(6,'Neuf');
 /*!40000 ALTER TABLE `gco_etat_livre` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -64,10 +65,11 @@ CREATE TABLE `gco_fournisseurs` (
 --
 -- Dumping data for table `gco_fournisseurs`
 --
+-- ORDER BY:  `id_fournisseur`
 
 LOCK TABLES `gco_fournisseurs` WRITE;
 /*!40000 ALTER TABLE `gco_fournisseurs` DISABLE KEYS */;
-INSERT INTO `gco_fournisseurs` VALUES (1,'HACHETTE','Jean-Paul HOCHON','33.25.48.36.75'),(2,'Dupuis','Abby DOCHON','16.28.32.44.16'),(3,'Petit-à-petit','Jessica MEMBERT','28.16.38.44.44'),(4,'SePP','Raoul BRISEFER','44.32.16.48.12'),(5,'Casterman','Etore PISSENLIT','85.25.14.96.12'),(6,'BD Trésors','Anatole FRANCE','45.85.63.21.74'),(7,'Lombard','Amélie POULAIN','25.36.98.01.78'),(8,'Dargaud - Lombard','Alain TERIEUR','87.25.96.12.01'),(9,'Vents d\'Ouest','Eda SOUFLEDAZUR','87.20.21.54.56'),(10,'Dargaud','Alain TERIEUR','87.25.96.12.01'),(11,'Ankana','Alex TERIEUR','60.12.98.23.23'),(12,'Delcourt','John YALIDAYE','82.01.01.98.12'),(13,'Clair de lune','Marc OSSOL','45.65.78.32.25'),(14,'Soleil','Hubert REEVES','14.36.96.74.24'),(15,'Urban Comics','Loise LAINE','95.75.35.15.91');
+INSERT  IGNORE INTO `gco_fournisseurs` (`id_fournisseur`, `frn_nom`, `frn_contact`, `frn_telephone`) VALUES (1,'HACHETTE','Jean-Paul HOCHON','33.25.48.36.75'),(2,'Dupuis','Abby DOCHON','16.28.32.44.16'),(3,'Petit-à-petit','Jessica MEMBERT','28.16.38.44.44'),(4,'SePP','Raoul BRISEFER','44.32.16.48.12'),(5,'Casterman','Etore PISSENLIT','85.25.14.96.12'),(6,'BD Trésors','Anatole FRANCE','45.85.63.21.74'),(7,'Lombard','Amélie POULAIN','25.36.98.01.78'),(8,'Dargaud - Lombard','Alain TERIEUR','87.25.96.12.01'),(9,'Vents d\'Ouest','Eda SOUFLEDAZUR','87.20.21.54.56'),(10,'Dargaud','Alain TERIEUR','87.25.96.12.01'),(11,'Ankana','Alex TERIEUR','60.12.98.23.23'),(12,'Delcourt','John YALIDAYE','82.01.01.98.12'),(13,'Clair de lune','Marc OSSOL','45.65.78.32.25'),(14,'Soleil','Hubert REEVES','14.36.96.74.24'),(15,'Urban Comics','Loise LAINE','95.75.35.15.91');
 /*!40000 ALTER TABLE `gco_fournisseurs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -105,10 +107,11 @@ CREATE TABLE `gco_livres` (
 --
 -- Dumping data for table `gco_livres`
 --
+-- ORDER BY:  `id_livre`
 
 LOCK TABLES `gco_livres` WRITE;
 /*!40000 ALTER TABLE `gco_livres` DISABLE KEYS */;
-INSERT INTO `gco_livres` VALUES (1,'0','Nouvelle édition',NULL,'0000NEWNEW.jpg',0,0,NULL,NULL),(2,'0001BLAWAL','Blanche-neigne et les 7 nains','Walt DISNEY','0001BLAWAL.jpg',0,5,0,3),(3,'0002BOUJEA','Boule et Bill - 15','Jean ROBA','0002BOUJEA.jpg',6,0,1,5),(4,'0003JIMOLI','Jimy Hendrix en BD','Oliv et Ben','0003JIMOLI.jpg',1,0,2,4),(5,'0004LABCOL','Torpille - La base secrette','(Collectif)','0004LABCOL.jpg',1,4,3,4),(6,'0005BAUCOL','Poèmes de Baudelaire en Bandes dessinées','(Collectif)','0005BAUCOL.jpg',9,0,2,5),(7,'0006CHAGEL','Le Chat 1999,9999','Philippe GELUCK','0006CHAGEL.jpg',6,0,5,5),(8,'0007PIEFOR','Les Nouvelles Aventures des PIEDS NICKELES','Louis FORTON','0007PIEFOR.jpg',5,0,7,5),(9,'0008SCHPEY','Schtroumpf les Bains','Peyo','0008SCHPEY.jpg',5,0,7,5),(10,'0009SPIROB','Spirou et Fantasio - 55','Rob-Vel','0009SPIROB.jpg',4,0,1,5),(11,'0010ETEPRA','Un été Indien','Pratt-Manara','0010ETEPRA.jpg',0,0,4,5),(12,'ACH0208GRE','Achille Talon - Vive les vacances','Greg','ACH0208GRE.jpg',1,8,7,5),(13,'ACH0416GRE','Achille Talon - L\'age ingrat','Greg','ACH0416GRE.jpg',0,0,7,5),(14,'ACH8874GRE','Achille Talon - Le maître est talon','Grep','ACH8874GRE.jpg',0,5,7,5),(15,'BEM6654SEJ','Blake et Mortimer - Le baton de Plutarque','Sente et Juillard','BEM6654SEJ.jpg',3,10,7,5),(16,'BEM6685SEJ','Blake et Mortimer - L\'affaire Francis Blake','Sente et Juillard','BEM6685SEJ.jpg',0,0,7,5),(17,'BEM6602SEJ','Blake et Mortimer - La machination Voronov','Sente et Juillard','BEM6602SEJ.jpg',1,0,7,4),(18,'LEO7798DGT','Léonard - Génie civil','De Groot et Turk','LEO7798DGT.jpg',2,0,7,5),(19,'LEO7702DGT','Leonard - Ciel mon génie !','De Groot et Turk','LEO7702DGT.jpg',8,0,7,5),(20,'LEO7714DGT','Leonard - Y a du Genie dans l\'air','De Groot et Turk','LEO7714DGT.jpg',0,7,7,5),(21,'LEO7785DGT','Léonard - Tour de génie','De Groot et Turk','LEO7785DGT.jpg',1,0,7,5),(22,'AZI5582JAL','Azimut','Jean-Baptiste Andreae - Lupano','AZI5582JAL.jpg',1,0,8,4),(23,'MAS6598LEO','Les mondes d\'Aldebaran Survivants : anomalies quantiques','Léo','MAS6598LEO.jpg',3,1,9,5),(24,'TER8521SJP','Terminus 1','Serge Le Tendre - Jean-Michel Ponzio','TER8521SJP.jpg',0,0,10,5),(25,'CEN7463ZJL','Centaurus','Zoran Janjetov - Léo','CEN7463ZJL.jpg',1,0,11,5),(26,'SGA8533JMO','Space gangsters - 1 Palais aquatique','Julien MOTTELER','SGA8533JMO.jpg',2,0,12,5);
+INSERT  IGNORE INTO `gco_livres` (`id_livre`, `liv_reference`, `liv_titre`, `liv_auteur`, `liv_photo`, `liv_en_stock`, `liv_appro`, `gco_fournisseur_id_fournisseur`, `gco_etat_livre_id_etat`) VALUES (1,'0','Nouvelle édition',NULL,'0000NEWNEW.jpg',0,0,NULL,NULL),(2,'0001BLAWAL','Blanche-neigne et les 7 nains','Walt DISNEY','0001BLAWAL.jpg',0,5,0,3),(3,'0002BOUJEA','Boule et Bill - 15','Jean ROBA','0002BOUJEA.jpg',6,0,1,5),(4,'0003JIMOLI','Jimy Hendrix en BD','Oliv et Ben','0003JIMOLI.jpg',1,0,2,4),(5,'0004LABCOL','Torpille - La base secrette','(Collectif)','0004LABCOL.jpg',1,4,3,4),(6,'0005BAUCOL','Poèmes de Baudelaire en Bandes dessinées','(Collectif)','0005BAUCOL.jpg',9,0,2,5),(7,'0006CHAGEL','Le Chat 1999,9999','Philippe GELUCK','0006CHAGEL.jpg',6,0,5,5),(8,'0007PIEFOR','Les Nouvelles Aventures des PIEDS NICKELES','Louis FORTON','0007PIEFOR.jpg',5,0,7,5),(9,'0008SCHPEY','Schtroumpf les Bains','Peyo','0008SCHPEY.jpg',5,0,7,5),(10,'0009SPIROB','Spirou et Fantasio - 55','Rob-Vel','0009SPIROB.jpg',4,0,1,5),(11,'0010ETEPRA','Un été Indien','Pratt-Manara','0010ETEPRA.jpg',0,0,4,5),(12,'ACH0208GRE','Achille Talon - Vive les vacances','Greg','ACH0208GRE.jpg',1,8,7,5),(13,'ACH0416GRE','Achille Talon - L\'age ingrat','Greg','ACH0416GRE.jpg',0,0,7,5),(14,'ACH8874GRE','Achille Talon - Le maître est talon','Grep','ACH8874GRE.jpg',0,5,7,5),(15,'BEM6654SEJ','Blake et Mortimer - Le baton de Plutarque','Sente et Juillard','BEM6654SEJ.jpg',3,10,7,5),(16,'BEM6685SEJ','Blake et Mortimer - L\'affaire Francis Blake','Sente et Juillard','BEM6685SEJ.jpg',0,0,7,5),(17,'BEM6602SEJ','Blake et Mortimer - La machination Voronov','Sente et Juillard','BEM6602SEJ.jpg',1,0,7,4),(18,'LEO7798DGT','Léonard - Génie civil','De Groot et Turk','LEO7798DGT.jpg',2,0,7,5),(19,'LEO7702DGT','Leonard - Ciel mon génie !','De Groot et Turk','LEO7702DGT.jpg',8,0,7,5),(20,'LEO7714DGT','Leonard - Y a du Genie dans l\'air','De Groot et Turk','LEO7714DGT.jpg',0,7,7,5),(21,'LEO7785DGT','Léonard - Tour de génie','De Groot et Turk','LEO7785DGT.jpg',1,0,7,5),(22,'AZI5582JAL','Azimut','Jean-Baptiste Andreae - Lupano','AZI5582JAL.jpg',1,0,8,4),(23,'MAS6598LEO','Les mondes d\'Aldebaran Survivants : anomalies quantiques','Léo','MAS6598LEO.jpg',3,1,9,5),(24,'TER8521SJP','Terminus 1','Serge Le Tendre - Jean-Michel Ponzio','TER8521SJP.jpg',0,0,10,5),(25,'CEN7463ZJL','Centaurus','Zoran Janjetov - Léo','CEN7463ZJL.jpg',1,0,11,5),(26,'SGA8533JMO','Space gangsters - 1 Palais aquatique','Julien MOTTELER','SGA8533JMO.jpg',2,0,12,5);
 /*!40000 ALTER TABLE `gco_livres` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -129,10 +132,11 @@ CREATE TABLE `gco_utilisateurs` (
 --
 -- Dumping data for table `gco_utilisateurs`
 --
+-- ORDER BY:  `utl_login`
 
 LOCK TABLES `gco_utilisateurs` WRITE;
 /*!40000 ALTER TABLE `gco_utilisateurs` DISABLE KEYS */;
-INSERT INTO `gco_utilisateurs` VALUES ('Charles','g&co1'),('Jean-romain','marvel'),('Henri','tintin');
+INSERT  IGNORE INTO `gco_utilisateurs` (`utl_nom`, `utl_login`) VALUES ('Charles','g&co1'),('Jean-romain','marvel'),('Henri','tintin');
 /*!40000 ALTER TABLE `gco_utilisateurs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -344,4 +348,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-10-12 12:13:22
+-- Dump completed on 2016-10-12 12:22:24
