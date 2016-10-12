@@ -41,6 +41,10 @@
 		<script>					// Handler document.ready(), initialisation 
 			$(document).ready(function() {
 				var handler = new Handlers();
+				var viewport = ResponsiveBootstrapToolkit;
+			    $(window).resize(
+		           viewport.changed(Handlers.viewportHandler(viewport))
+		        );
 			});
 		</script>
 	</head>
@@ -65,12 +69,13 @@
 						<li role="presentation"><a href="#">En rupture</a></li>
 						<li role="presentation"><a href="#">Réassort</a></li>
 						<li role="presentation"><a href="#">Occasion</a></li>
-						<div class="form-group">
+	
+<!-- 						<div class="form-group">
 							<label class="sr-only" for="password">Password</label>
 							<input tabindex=1 type="password" class="form-control" id="password" name="password" placeholder="Mot de passe" />
 						</div>
 						<button tabindex=2 type="button" id="login" class="btn btn-primary">Entrer</button>
-					</ul>
+-->					</ul>
 				</div>
 			</div>
 		</div>
@@ -88,6 +93,33 @@
 			<span id="cprt">&copy; 2016 - IMIE Nantes</span>&nbsp;<span id="sz">--</span>
 		</div>
 
+
+	<!--  La fenêtre modal de connexion -->
+<div id="modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Connexion</h4>
+      </div>
+      <div class="modal-body">
+<div class="col-lg-6">
+    <div class="input-group">
+      <input id="password" type="password" class="form-control" placeholder="Mot de passe...">
+<!--       <span class="input-group-btn">
+        <button id="login" class="btn btn-default" type="button">Entrer</button>
+      </span>
+ -->    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+<!-- /.row -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+        <button id="login" type="button" class="btn btn-primary">Entrer</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 	</body>
 </html>

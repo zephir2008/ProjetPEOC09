@@ -141,6 +141,8 @@ class ImgButton{
 		if(self.active){
 console.log("je suis : "+self.titre);
 // qque chose a faire ?!
+		} else {
+			$("#modal").modal('show');
 		}
 	}
 	//***********************************************************
@@ -283,6 +285,7 @@ class Handlers {
 
 			// vérification du login
 		$("#login").click(function() {
+			$("#modal").modal('show');
 			var user = Handlers.isGoodPassword($("#password").val());
 			$("#password").val(null);						// efface le dernier mot de passe
 
@@ -292,11 +295,11 @@ class Handlers {
 				$("#login").removeClass("btn-danger");
 				$("#login").html("Entrer");
 				$("#password").focus();
-				$("#login").animate({
+/*				$("#login").animate({
 					height: '80px',
 					width: '80px', 
 					borderRadius: '10px'
-				});
+				});*/
 				$("#login").tooltip({
 					animation: true,
 					html: true,
@@ -306,14 +309,14 @@ class Handlers {
 				});
 				$(maBibliotheque).trigger("logout");		// logout bibliothèque
 			} else if( user != ""){							// on se connecte
-				$("#login").animate({
+/*				$("#login").animate({
 					height: '60px',
 					width: '300px', 
 					borderRadius: '30px'
 				});
 
 				$(".tglgrp").toggle(800);
-				$("#login").addClass("btn-danger");
+*/				$("#login").addClass("btn-danger");
 				$("#login").removeClass("btn-primary");
 				$("#login").tooltip({
 					animation: true,
@@ -407,6 +410,29 @@ class Handlers {
 			retVal = sessionStorage;
 		}
 		return retVal;
+	}
+
+	//***********************************************************
+	// Gestion des changements de taille de la fenêtre (dynamique)
+	// ou des différents affichages des périphériques (PC, tablette, cellphone)
+	static viewportHandler(viewport){
+	    // Executes only in XS breakpoint
+	    if( viewport.is('xs') ) {
+	console.log('xs mode');
+	        // ...
+	    }
+
+	    // Executes in SM, MD and LG breakpoints
+	    if( viewport.is('>=sm') ) {
+	console.log('SM, MD & LG mode');
+	        // ...
+	    }
+
+	    // Executes in XS and SM breakpoints
+	    if( viewport.is('<md') ) {
+	console.log('xs & sm mode');
+	        // ...
+	    }
 	}
 }
 //***********************************************************

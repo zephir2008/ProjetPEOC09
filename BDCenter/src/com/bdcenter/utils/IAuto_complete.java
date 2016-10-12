@@ -1,4 +1,4 @@
-package com.bdcenter.webservices;
+package com.bdcenter.utils;
 
 	// Interface du WebService pour les listes autocompletes
 public interface IAuto_complete {

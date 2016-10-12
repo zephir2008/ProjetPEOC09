@@ -1,4 +1,4 @@
-package com.bdcenter.webservices;
+package com.bdcenter.utils;
 
 public enum EInterfaces {
 	TITLES ("Titre","get_titles","gco_livres.liv_titre"),

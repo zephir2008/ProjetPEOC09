@@ -26,7 +26,7 @@ var BDCouv = [
   },
   {
     "Référence":"0003JIMOLI",
-    "Titre":"Jimmy Endrix en BD",
+    "Titre":"Jimy Hendrix en BD",
     "Auteur":"Oliv et Ben",
     "Editeur":2,
     "Photo":"0003JIMOLI.jpg",
@@ -137,7 +137,7 @@ var BDCouv = [
   {
     "Référence": "BEM6654SEJ",
     "Titre": "Blake et Mortimer - Le baton de Plutarque",
-    "Auteur": "Sente Juillard",
+    "Auteur": "Sente et Juillard",
     "Editeur": 7,
     "Photo": "BEM6654SEJ.jpg",
     "Etat": 5,
@@ -212,6 +212,56 @@ var BDCouv = [
     "Photo": "LEO7785DGT.jpg",
     "Etat": 5,
     "Stock": 1,
+    "Reassort": 0
+  },
+  {
+    "Référence": "AZI5582JAL",
+    "Titre": "Azimut",
+    "Auteur": "Jean-Baptiste Andreae - Lupano",
+    "Editeur": 8,
+    "Photo": "AZI5582JAL.jpg",
+    "Etat": 4,
+    "Stock": 1,
+    "Reassort": 0
+  },
+  {
+    "Référence": "MAS6598LEO",
+    "Titre": "Les mondes d'Aldebaran Survivants : anomalies quantiques",
+    "Auteur": "Léo",
+    "Editeur": 9,
+    "Photo": "MAS6598LEO.jpg",
+    "Etat": 5,
+    "Stock": 3,
+    "Reassort": 1
+  },
+  {
+    "Référence": "TER8521SJP",
+    "Titre": "Terminus 1",
+    "Auteur": "Serge Le Tendre - Jean-Michel Ponzio",
+    "Editeur": 10,
+    "Photo": "TER8521SJP.jpg",
+    "Etat": 5,
+    "Stock": 0,
+    "Reassort": 0
+  },
+  {
+    "Référence": "CEN7463ZJL",
+    "Titre": "Centaurus",
+    "Auteur": "Zoran Janjetov - Léo",
+    "Editeur": 11,
+    "Photo": "CEN7463ZJL.jpg",
+    "Etat": 5,
+    "Stock": 1,
+    "Reassort": 0
+  },
+  {
+    "Référence": "SGA8533JMO",
+    "Titre": "Space gangsters - 1 Palais aquatique",
+    "Auteur": "Julien MOTTELER",
+    "Editeur": 12,
+    "Photo": "SGA8533JMO.jpg",
+    "Etat": 5,
+    "Stock": 2,
     "Reassort": 0
   }
 ];
