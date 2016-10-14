@@ -1,9 +1,6 @@
 'use strict';
 
 //***********************************************************
-var maBibliotheque = {};
-
-//***********************************************************
 const VIERGE = [0,""];
 const RUPTURE = [1,"imgrupture"];
 const OCCASION = [2,"imgoccasion"];
@@ -33,8 +30,8 @@ class ImgButton{
 	//***********************************************************
 	// initialisation des valeurs de l'objet
 	constructor(JSONObj, editor){
-		var bStg = maBibliotheque.BibStorage; 
-		bStg.setItem(													// Créer un objet dans le localStorage
+		var self;														// pour la gestion des événements
+		myStorage.setItem(													// Créer un objet dans le localStorage
 			JSONObj["Référence"],
 			JSON.stringify({
 				reference :	JSONObj["Référence"],
@@ -51,7 +48,7 @@ class ImgButton{
 			})
 		);
 
-		this.ORef = JSON.parse( bStg[ JSONObj["Référence"] ] );			// ORef = "bean" de mon objet
+		this.ORef = JSON.parse( myStorage[ JSONObj["Référence"] ] );			// ORef = "bean" de mon objet
 		this.ORef.ref = JSONObj["Référence"];
 		//this.ORef.helper = this.myTitle(false);
 		this.ORef.helperHTML = this.myTitle();
@@ -100,13 +97,14 @@ class ImgButton{
 	myTitle(isTitle){													// Création du titre (bulles d'aides)
 		var retVal = "";
 		var crlf = "<br>";
+		var ttl = (this.ORef.ref == '0') ? 'Nouvelle' : this.ORef.ref; 
 		if(isTitle){
-			retVal = this.ORef.ref + '-' + this.ORef.titre
+			retVal = '<h3>'+ttl+'</h3>' + crlf + this.ORef.titre
 		} else {
-			retVal = "<b>Auteur</b>   : " + this.ORef.auteur + crlf
-				+ "<b>Editeur</b>  : " + this.ORef.editeur.nom + crlf
-				+ "<b>En stock</b> : " + this.ORef.stock + crlf
-				+ "<b>Réappro</b>  : " + this.ORef.command;
+			retVal = "<b>Auteur</b>   : " + ((this.ORef.auteur) ? this.ORef.auteur : '--') + crlf
+				+ "<b>Editeur</b>  : " + ((this.ORef.editeur.nom) ? this.ORef.editeur.nom : '--') + crlf
+				+ "<b>En stock</b> : " + ((this.ORef.stock)?this.ORef.stock:0) + crlf
+				+ "<b>Réappro</b>  : " + ((this.ORef.command)?this.ORef.command:0);
 		}
 		return retVal;
 	}
@@ -118,30 +116,42 @@ class ImgButton{
 
 	//***********************************************************
 	static onMouseOver(evt){		// lorsque la sourie entre sur l'image/la div
-		var self = evt.data[0].ORef;
+		self = evt.data[0].ORef;
 		if(self.ref != "0"){
-			$(this).animate({
+			$(this).stop(true, true).delay(600).animate({
 				height: '210px',
 				duration: "200",
-				marginBottom: "10px"
-			}, 200, 'swing').delay(300);
+				marginBottom: "10px",
+				delay: 300
+			}, 200, 'swing');
 		}
+//console.log('visible : '+self.infos.css('display'));	// block ou none (none = ok)
+		//evt.stopPropagation();
 	}
 	//***********************************************************
 	static onMouseOut(evt){			// lorsque la sourie sort de l'image/la div
 		var self = evt.data[0].ORef;
 		if(self.ref != "0"){
-			$(this).animate({
+			$(this).stop(true, true).delay(200).animate({
 				height: '140px',
 				marginBottom: "80px"
 			}, 200, 'swing');
 		}
+		//evt.stopPropagation();
 	}
 	//***********************************************************
 	static onClick(evt){			// lorsqu'on clic sur l'image
 		var self = evt.data[0].ORef;
+		var toto = $("<img>",{
+			id: self.ref,
+			src: self.photo,
+			class: 'hidden-xs bibimg'
+		});
 		if(ImgButton.prototype.active){
 console.log("je suis : "+self.titre);
+			$("#formular").modal('show');
+			$("#formular #vide").html(toto);
+			$('[data-toggle="tooltip"]').tooltip('hide');
 // qque chose a faire ?!
 		} else {
 			Handlers.doLogin();
@@ -177,12 +187,11 @@ class Bibliotheque{
 	//***********************************************************
 	// peuple la bibliothèque à partir de la liste des BD
 	constructor( which ){
-		maBibliotheque.BibStorage = Handlers.myStorage;
 		var nbImagePerLine = 6;
 
 		this.Editeur = [];
 		this.buttonList = [];
-		this.divList = [];
+		//this.divList = [];
 
 		for(var x in BDAuth){					// récupère les éditeurs
 			this.Editeur.push(BDAuth[x]);
@@ -202,12 +211,12 @@ class Bibliotheque{
 					insert = (BDCouv[x].Reassort > 0 );
 					break;
 				case "E":
-					insert = (BDCouv[x].Etat != 5);
+					insert = (x != 0) && (BDCouv[x].Etat != 5);
 					break;
 				default:
 					insert = true;
 			}
-			insert = (x==0) || insert;
+			//insert = (x==0) || insert;
 			if(insert){
 				img = new ImgButton(
 					BDCouv[x],
@@ -221,45 +230,81 @@ class Bibliotheque{
 		var t;
 		var i = 0;
 		var mainDiv = $('<div>', {
-			id: "biblio"+i,
 			class: "row text-center"
 		});
 
 		for(var x in this.buttonList){				// création des boutons de l'interface
 			t = this.buttonList[x];
-			this.divList.push( t );
+			//this.divList.push( t );
 
+/*			t.ORef.displ
+				.tooltip({
+					animation: false,
+					html: true,
+					placement: (x % nbImagePerLine < 2) ? 'right' : 'left',
+					title: t.ORef.helperTitle + "<hr>" + t.ORef.helperHTML,
+					delay: { show: 900, hide: 300 }
+				});
+*/
 			div = $('<div>', {
-				class: "col-md-2 biblio"
-			});
-//			div.popover({
-			div.tooltip({
-				animation: true,
+					class: "col-md-2 biblio"
+				})
+				.html( t.ORef.displ )
+				.append( t.ORef.infos )
+				.tooltip({
+					animation: false,
+					html: true,
+					placement: (x % nbImagePerLine < 2) ? 'right' : 'left',
+					title: t.ORef.helperTitle + "<hr>" + t.ORef.helperHTML,
+					delay: { show: 900, hide: 300 }
+				});
+
+/*			div.tooltip({
+				animation: false,
 				html: true,
-//				container: 'body', // !tooltip
 				placement: (x % nbImagePerLine < 2) ? 'right' : 'left',
 				title: t.ORef.helperTitle + "<hr>" + t.ORef.helperHTML,
-//				content: t.ORef.helperHTML,		//!tooltip
-				//delay: { "show": 500, "hide": 100 }
-				delay: 300
+				delay: { show: 900, hide: 300 }
 			});
-			div.html( t.ORef.displ ).append( t.ORef.infos );
-
+*/
+			//div.html( t.ORef.displ ).append( t.ORef.infos );
 			mainDiv.append( div );
-
 			i++;
 			i %= nbImagePerLine;					// 6 boutton par ligne
 
 			if(i == 0){
 				$("#biblio").append( mainDiv );
-				var mainDiv = $('<div>', {
+				mainDiv = $('<div>', {
 					class: "row text-center"
 				});
 			}
 		}
+
 		if(i>0){
 			$("#biblio").append( mainDiv );
 		}
+
+		$("#selector")						// les boutons de filtres du menu
+			.append($('<li>', {
+					id: "_T",
+					role: "presentation",
+					class: ((which == 'T') ? "active" : "")
+				}).append($("<a>",{href: "?voir=Tous"}).html("Tous")))
+			.append($('<li>', {
+					id: "_S",
+					role: "presentation",
+					class: ((which == 'S') ? "active" : "")
+				}).append($("<a>",{href: "?voir=Rupture"}).html("En rupture")))
+			.append($('<li>', {
+					id: "_R",
+					role: "presentation",
+					class: ((which == 'R') ? "active" : "")
+				}).append($("<a>",{href: "?voir=Reassort"}).html("R&eacute;assort")))
+			.append($('<li>', {
+					id: "_E",
+					role: "presentation",
+					class: ((which == 'E') ? "active" : "")
+				}).append($("<a>",{href: "?voir=Occasion"}).html("Occasion")));
 	}
 
 	//***********************************************************
@@ -292,13 +337,24 @@ class Handlers {
 	//***********************************************************
 	constructor(){
 		Handlers.init();
-console.log(decodeURIComponent($.urlParam('voir')));
-		maBibliotheque = Handlers.initBibliotheque(decodeURIComponent($.urlParam('voir')));
-		$(maBibliotheque).on("login",maBibliotheque.stepLogin);		// déclencheur pour login réussi
-		$(maBibliotheque).on("logout",maBibliotheque.stepLogout);	// déclencheur pour logout
 
+		myStorage = Handlers.WebStorage;
+		_maBibliotheque = Handlers.initBibliotheque(decodeURIComponent($.urlParam('voir')));
+		$(_maBibliotheque).on("login",_maBibliotheque.stepLogin);		// déclencheur pour login réussi
+		$(_maBibliotheque).on("logout",_maBibliotheque.stepLogout);	// déclencheur pour logout
 
-			// gestion du login - recrée le fonctionnement d'un formulaire (touche "enter")
+		if(myStorage.whosLogged){
+			Handlers.logMe( myStorage.whosLogged );
+		}
+		//$('[data-toggle="tooltip"]').tooltip();
+		//$('[data-toggle="popover"]').popover();
+	}
+
+	//***********************************************************
+	/* initialisation de l'interface */
+	static init(){
+		$("#sz").html($(window).width() + 'x' + $(window).height());
+		// gestion du login - recrée le fonctionnement d'un formulaire (touche "enter")
 		$("#password").keypress(function(event){
 			if(event.which == 13){
 				$("#login").trigger("click");
@@ -310,51 +366,16 @@ console.log(decodeURIComponent($.urlParam('voir')));
 			var user = Handlers.getUserByPassword($("#password").val());
 			$("#password").val(null);						// efface le dernier mot de passe
 			$("#modal").modal("hide");
-			if( user != ""){								// on se connecte
-				$("#logout").html("Bonjour "+user+" !");
-				$("#logout").removeClass("invisible");
-				$("#logout").addClass("show");
-				$(maBibliotheque).trigger("login");			// login bibliothèque
-			}
+			Handlers.logMe( user );
 		});
 
 		$("#logout").click(function(){
-			$(maBibliotheque).trigger("logout");			// login bibliothèque
+			$(_maBibliotheque).trigger("logout");			// login bibliothèque
 			$("#logout").removeClass("show");
 			$("#logout").addClass("invisible");
+			myStorage.clear("whosLogged");
 		});
-
-		$('[data-toggle="tooltip"]').tooltip();
-	}
-
-	//***********************************************************
-	/* initialisation de l'interface */
-	static init(){
-		$("#sz").html($(window).width() + 'x' + $(window).height());
-//		$("#workspace1").toggle();
-
-		$('li a').click(function (e) {
-			e.preventDefault();
-			var selector = "";
-			$(this).tab('show');
-			var x = "."+RUPTURE[1]+",."+OCCASION[1]+",."+COMMANDE[1]+",."+DISPONIBLE[1];
-			switch(this.innerHTML){
-				case 'En rupture' :
-					selector = "Stock";
-					break;
-				case 'Réassort' :
-					selector = "Reassort";
-					break;
-				case 'Occasion':
-					selector = "Etat";
-					break;
-				default:
-					selector = "Tous";
-			}
-			//document.url("...?voir="+selector);
-			$(x).hide(300);
-			$(selector).show(300);
-		});
+		Handlers.autocomplete();
 	}
 
 	static initBibliotheque(which){
@@ -373,10 +394,23 @@ console.log(decodeURIComponent($.urlParam('voir')));
 			default:	// Tous
 				selector = "T";
 		}
-console.log("voir = "+selector);
-		$("#_"+selector).addClass="active";
 		return new Bibliotheque( selector );		// crée les boutons
 	}
+
+	//***********************************************************
+	// récupération du JSON des utilisateurs
+	static logMe( user ){
+		if( user != "" ){								// on se connecte
+			$("#logout")
+				.html("Bonjour "+user+" !")
+				.removeClass("invisible")
+				.addClass("show");
+			$(_maBibliotheque).trigger("login");			// login bibliothèque
+			myStorage.whosLogged = user;
+		}
+	}
+
+	
 	//***********************************************************
 	// récupération du JSON des utilisateurs
 	static getUserByPassword(check){
@@ -396,21 +430,21 @@ console.log("voir = "+selector);
 		$("#modal").modal({
 			keyboard: true		// touche 'esc' ferme la modal
 		});
-		$("#modal").modal('show');
-		$("#password").focus();
+		$("#modal").modal('show').delay(500);
+		$("#password").delay(800).focus();
 	}
 
 	//***********************************************************
 	// initialise le WebStorage
-	static get myStorage(){
-		var retVal;
+	static get WebStorage(){
+		var retVal = null;
 		if (typeof(Storage) !== "undefined") {
-			localStorage.clear();
+			//localStorage.clear();
 			retVal = localStorage;
 			// Code for localStorage/sessionStorage.
 		} else {
 		    // Sorry! No Web Storage support..
-			retVal = sessionStorage;
+			//retVal = sessionStorage;
 		}
 		return retVal;
 	}
@@ -436,6 +470,52 @@ console.log("voir = "+selector);
 	console.log('xs & sm mode');
 	        // ...
 	    }
+	}
+	
+	
+	//***********************************************************
+	//*** Gestion des autocompletes
+	static autocomplete(){
+		$.widget( "custom.catcomplete", $.ui.autocomplete, {
+			_create: function() {
+				this._super();
+				this.widget().menu( "option", "items", "> :not(.ui-autocomplete-category)" );
+			},
+			_renderMenu: function( ul, items ) {
+				var that = this,
+				currentCategory = "";
+				$.each( items, function( index, item ) {
+					var li;
+					if ( item.category != currentCategory ) {
+						ul.append( "<li class='ui-autocomplete-category'>" + item.category + "</li>" );
+						currentCategory = item.category;
+					}
+					li = that._renderItemData( ul, item );
+					if ( item.category ) {
+						li.attr( "aria-label", item.category + " : " + item.label );
+					}
+				});
+			}
+		});
+
+		var data = [
+			{ label: "anders", category: "" },
+			{ label: "andreas", category: "" },
+			{ label: "antal", category: "" },
+			{ label: "annhhx10", category: "Products" },
+			{ label: "annk K12", category: "Products" },
+			{ label: "annttop C13", category: "Products" },
+			{ label: "Noëm", category: "Products" },
+			{ label: "éthàrnet", category: "Products" },
+			{ label: "anders andersson", category: "People" },
+			{ label: "andreas andersson", category: "People" },
+			{ label: "andreas johnson", category: "People" }
+		];
+
+		$( "#gsearch" ).catcomplete({
+			delay: 0,
+			source: data
+		});
 	}
 }
 //***********************************************************

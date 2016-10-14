@@ -6,23 +6,31 @@
 @height: 1020px;
 @shadow-size: 12px;
 @button-size: 80px;
-@min-size: 640px;
+@min-size: 360px;
 @zindex-base: -3;
 @imgNormalSize: 140px;
 @imgZoom: 210px;
 
 /* élément pour les ombres des images */
 @bigshadow: 12px;
-@colRupture: red;
-@colOk : navy;
-@colCommand : gold;
-@colOccasion: green;
+@colRupture: rgba(255, 102, 102, 0.8); // red;
+@colOk : rgba(153, 204, 255, 0.5); //navy;
+@colCommand : rgba(255, 255, 204, 0.8); // gold;
+@colOccasion: rgba(204, 255, 204, 0.8); //green;
 
 /* paramètre de base de la page */
 body {
 	min-width: @min-size;
 	min-height: @min-size;
 	background-color: linear-gradient(to right, #336666, #ffffff);
+}
+
+hr {
+	width: 80%;
+	height: 2px;
+	border-color: red;
+	margin: 0;
+	padding: 0;
 }
 
 .jumbotron {
@@ -91,6 +99,10 @@ body {
 	z-index: @zindex-base+1;
 }
 
+@keyframes colorChange {
+	from { background-color: rgba(225,225,209,0.8); }
+	to	{ background-color: rgba(139,139,91,0.8); }
+}
 #t3{	/* masque d'adoucissment  - zone de travail */
 	display: block;
 	/*position: absolute;*/
@@ -100,7 +112,13 @@ body {
 	width: 100%;
  	bottom:0;
 	z-index: 0;
-	background-color: rgba(172,172,128,0.8);
+	background-color: rgba(139,139,91,0.8); //rgba(172,172,128,0.8);
+/*	animation-name: colorChange;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-duration: 6s;
+	animation-direction: alternate;
+*/
 }
 
 /*******************************/
@@ -130,11 +148,6 @@ body {
 	width:100%;
 	max-height: 170px !important;
 }
-.login2 {
-/* 	opacity: 1.0;*/
-	/*background-color: gold;*/
-	padding: 10px;
-}
 input[type=password]{
 	background-color: #fcc;
 	margin-right: 20px;
@@ -149,10 +162,12 @@ button[type=button] {
 /* *************** */
 /* les images de la bibliothèque */
 nav{
+ 	display: block;
  	position: absolute;
 	width: 100%;
 	top: 90px !important;
 	min-width: @min-size;
+	margin: 0;
 }
 /* la barre de navigation */
 #nav {
@@ -178,7 +193,7 @@ nav{
 .biblio img{
 	height: @imgNormalSize;
 	&:hover{
-		border: 2px solid black;
+		border: 2px solid white;
 		cursor: pointer;
 	}
 }
@@ -193,6 +208,8 @@ nav{
 	vertical-align: middle;
 	width: 280px;
 	border-radius: 10px;
+	padding: 5px;
+	margin: 10px 0px;
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fefcea+0,f1da36+100;Gold+3D */
 	background: rgb(254,252,234); /* Old browsers */
 	background: -moz-linear-gradient(-45deg, rgba(254,252,234,0.8) 0%, rgba(241,218,54,0.8) 100%);			/* FF3.6-15 */
@@ -203,14 +220,27 @@ nav{
 /* Tooltip */
 /*.test + .tooltip >*/ .tooltip-inner {
     /*background-color: #73AD21;*/
-    background-color: gold;
+    background-color: rgba(255, 255, 204, 1);
     color: black; /* #FFFFFF;*/
-    border: 1px solid black;
-    padding: 15px;
+    border: 1px solid #36f;
+    padding: 10px;
     font-size: 9pt;
     border-radius: 10px;
-    text-align : left !important;
-    font-style: italic !important;
+    text-align : left ;
+    font-style: italic;
+    & h3{
+    	background-color: rgba(153, 204, 255, 0.6);
+    	font-size: 10pt;
+    	font-weight: bold;
+    	text-align: center;
+    	width: 95%;
+    	margin: 0 auto;
+    	/*margin-bottom: 2px;*/
+    	padding: 2px;
+    	border-radius: 4px;
+    }
+    //.hidden-xs
+    //.hidden-sm
 }
 
 
@@ -249,4 +279,40 @@ nav{
 	height:100%;
 	z-index: 4;
 	background-color: rgba(192,192,192,0.7);
+}
+
+// Surcharge Bootstrap
+.modal-header {
+	border-radius: 5px 5px 0 0;
+	text-align: center;
+	padding: 5px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fcfff4+0,dfe5d7+40,b3bead+100;Wax+3D+%233 */
+	background: rgb(252,255,244); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(252,255,244,1) 0%, rgba(223,229,215,1) 40%, rgba(179,190,173,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 ); /* IE6-9 */	
+}
+.modal-body{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fefcea+0,f1da36+100;Gold+3D */
+	background: rgb(254,252,234); /* Old browsers */
+	background: -moz-linear-gradient(-45deg, rgba(254,252,234,0.8) 0%, rgba(241,218,54,0.8) 100%);			/* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg, rgba(254,252,234,0.8) 0%,rgba(241,218,54,0.8) 100%);		/* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg, rgba(254,252,234,0.8) 0%,rgba(241,218,54,0.8) 100%);				/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f1da36',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+.modal-footer {
+	padding: 5px;
+	border-radius: 0 0 5px 5px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fcfff4+0,dfe5d7+40,b3bead+100;Wax+3D+%233 */
+	background: rgb(252,255,244); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(252,255,244,1) 0%, rgba(223,229,215,1) 40%, rgba(179,190,173,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 ); /* IE6-9 */	
+}
+.close {
+	background-color : red !important;
+	padding: 1px 7px !important;
+	border-radius: 2px !important;
 }

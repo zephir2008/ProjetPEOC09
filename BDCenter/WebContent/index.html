@@ -23,6 +23,7 @@
 		<link rel="stylesheet" href="lib/jquery-ui.structure.css" />
 		<link rel="stylesheet" href="lib/jquery-ui.theme.css" />
 		<script src="lib/external/jquery/jquery.js"></script>
+		<script src="lib/jquery-ui.js"></script>
 
 	<!-- Bootstrap -->
 		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
@@ -39,6 +40,11 @@
 		<script src="lib/HandlersClass.js"></script>
 
 		<script>					// Handler document.ready(), initialisation
+		//***********************************************************
+			_maBibliotheque = {};			// l'objet bibiliothèque complet
+			myStorage = null;				// web storage pour conserver les infos utiles
+			displayMode = 'full';			// variable globale d'état de l'affichage
+
 			$.urlParam = function(name){
 				var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
 				if(results) { return results[1] || 0; }
@@ -73,64 +79,109 @@
 		<div id="t3" class="container-fuild"></div>	<!-- Masque d'adoucissement -->
 
 
-	<!-- La gestion du login -->
+	<!-- Le menu de gestion du stock en direct -->
 		<div class="container text-center ontop">
-			<div class="form-inline login2">
-				<div id="nav" class="form-inline col-lg-6 col-lg-offset-1" >
-					<ul class="nav nav-tabs">
-						<!-- <li id="_T" role="presentation" class="active"><a href="#">Tous</a></li>-->
-						<li id="_T" role="presentation"><a href="#">Tous</a></li>
-						<li id="_S" role="presentation"><a href="#">En rupture</a></li>
-						<li id="_R" role="presentation"><a href="#">Réassort</a></li>
-						<li id="_E" role="presentation"><a href="#">Occasion</a></li>
+			<div class="row vertical-middle">
+			
+			<!-- bouton de déconnexion -->
+				<div class="col-lg-1">
+					<button type="button" id="logout" class="btn btn-success invisible">Entrer</button>
+				</div>
+
+			<!-- Les boutons de sélection de l'affichage -->
+				<div id="nav" class="col-lg-4 col-lg-offset-1">
+					<ul id="selector" class="nav nav-tabs">
 					</ul>
 				</div>
-			<div class="col-lg-2">
-				<button type="button" id="logout" class="btn btn-success invisible">Entrer</button>
-			</div>
+
+			<!-- l'autocomplete de recherche globale -->
+				<div class="input-group col-lg-offset-7 col-lg-4">
+					<span id="basic-addon1" class="input-group-addon glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+					<input id="gsearch" type="text" class="form-control" placeholder="Recherche" size="60" aria-describedby="basic-addon1" />
+				</div>
+
 			</div>
 		</div>
 
-	<!-- La biblioth�que -->
+
+	<!-- La bibliothèque -->
 		<nav>
 			<div class="container">
-				<div id="biblio" class="row text-center "></div>
+				<div id="biblio" class="text-center">
+				</div>
 			</div>
 		</nav>
 
 
-	<!-- La mention l�gale en bas de page -->
+	<!-- La mention légale en bas de page -->
 		<div class="text-center bottom">
 			<span id="cprt">&copy; 2016 - IMIE Nantes</span>&nbsp;<span id="sz">--</span>
 		</div>
 
 
 	<!--  La fenêtre modal de connexion -->
-<div id="modal" class="modal fade" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Connexion</h4>
-      </div>
-      <div class="modal-body">
-<div class="col-lg-6">
-    <div class="input-group">
-      <input id="password" type="password" class="form-control" placeholder="Identifiant de connexion" tabindex="-1">
-<!--       <span class="input-group-btn">
-        <button id="login" class="btn btn-default" type="button">Entrer</button>
-      </span>
- -->    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
-<!-- /.row -->
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-        <button id="login" type="button" class="btn btn-warning">Entrer</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+		<div id="modal" class="modal fade" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+		
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Connexion</h4>
+					</div>
+		
+					<div class="modal-body">
+						<div class="input-group">
+							<input id="password" type="password" class="form-control" placeholder="Identifiant de connexion">
+						</div>
+					</div>
+		
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+						<button id="login" type="button" class="btn btn-warning">Entrer</button>
+					</div>
+		
+				</div>
+			</div>
+		</div>
+
+
+
+	<!--  La fenêtre modal de gestion du stock -->
+		<div id="formular" class="modal fade" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+
+					<div class="modal-header text-center">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Gestion du stock</h4>
+					</div>
+
+					<div class="modal-body">
+						<div>
+							<span id="vide"></span>
+						</div> 
+						<div class="input-group">
+							<input id="fred" type="text" size="30" class="form-control" placeholder="Référence" tabindex="-1" />
+						</div>
+
+						<div class="alert alert-danger" role="alert">
+							<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+							<span class="sr-only">Error:</span>Enter a valid email address
+						</div>
+					</div>
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+						<button id="newit" type="button" class="btn btn-info">Nouveau</button>
+						<button id="saveit" type="button" class="btn btn-warning">Enregistrer</button>
+					</div>
+		
+				</div>
+			</div>
+		</div>
+
+
+
 
 	</body>
 </html>
