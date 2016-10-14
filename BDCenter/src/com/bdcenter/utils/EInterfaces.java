@@ -1,21 +1,27 @@
 package com.bdcenter.utils;
 
-		// les informations nécessaires pour l'autocomplete
+import java.util.Hashtable;
+
+	//********************************************************************
+	// la classe de sélection des procédure SQL pour
+	// les informations nécessaires à l'autocomplete
 public enum EInterfaces {
 	// utilisation : 
 	/*
-	 * 	p.ex. :		x = TITLES.getLabel();
+	 * 	p.ex. :		String x = TITLES.getLabel();
+	 * 				String y = EDITORS.getLabel(); 
 	 * ou
 	 *  			EInterface myVar = new EInterfaces;
-	 *  			x = myVar.getCallback('Titre');
+	 *  			String x = myVar.getCallback('Titre');
+	 *  			String y = myVar.getMyLabel(TITLES);
 	 */
 	
 	
 		//**************************** Partie utile *********************************//
-	TITLES ("Titre","get_titles","gco_livres.liv_titre"),
-	AUTHORS ("Auteur","get_authors","gco_livres.liv_auteur"),
-	REFERENCE ("Reference","get_references","gco_livres.liv_references"),
-	EDITORS ("Editeur", "get_editors","gco_fournisseurs.frn_nom");
+	TITLE ("Titre","get_titles"),
+	AUTHOR ("Auteur","get_authors"),
+	REFERENCE ("Reference","get_references"),
+	EDITOR ("Editeur", "get_editors");
 
 	
 		//**************************** Partie à ne pas modifier *********************************//
@@ -23,11 +29,16 @@ public enum EInterfaces {
 	private String CallBck;
 	private String SQLField;
 
-	private Object enumCollection;
+	private Hashtable<String,String> enumTable;
 
+	public String getMyLabel(String lName){
+		String retVal = "";
+		retVal = enumTable.get(lName);
+		return retVal;
+	}
 	public String getCallback(String label){
 		String retVal = "";
-
+		retVal = enumTable.get(label);
 		return retVal;
 	}
 	public String getLabel() {
@@ -54,10 +65,11 @@ public enum EInterfaces {
 		this.SQLField = sQLField;
 	}
 
-	EInterfaces(String label, String callbck, String sqlField){
+	EInterfaces(String label, String callbck){
+		this.enumTable.put(label, callbck);			// pour retrouver la commande SQL en fonction du label
+		this.enumTable.put(this.toString(), label);	// pour retrouver le label en fonction de l'identifiant Enum (TITLE, AUTOR, etc.)
+
 		this.setLabel(label);
 		this.setCallBck(callbck);
-		this.setSQLField(sqlField);
-		//this.enumCollection("");
 	}
 }

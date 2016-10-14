@@ -288,22 +288,22 @@ class Bibliotheque{
 			.append($('<li>', {
 					id: "_T",
 					role: "presentation",
-					class: ((which == 'T') ? "active" : "")
-				}).append($("<a>",{href: "?voir=Tous"}).html("Tous")))
+					class: "myMenu"+((which == 'T') ? " active" : "")
+				}).append($("<a>",{href: "?voir=Tous"}).html("Tous")))		// on force le rechargement de la bibliothèque (destruction de la précédente)
 			.append($('<li>', {
 					id: "_S",
 					role: "presentation",
-					class: ((which == 'S') ? "active" : "")
+					class: "myMenu"+((which == 'S') ? " active" : "")
 				}).append($("<a>",{href: "?voir=Rupture"}).html("En rupture")))
 			.append($('<li>', {
 					id: "_R",
 					role: "presentation",
-					class: ((which == 'R') ? "active" : "")
+					class: "myMenu"+((which == 'R') ? " active" : "")
 				}).append($("<a>",{href: "?voir=Reassort"}).html("R&eacute;assort")))
 			.append($('<li>', {
 					id: "_E",
 					role: "presentation",
-					class: ((which == 'E') ? "active" : "")
+					class: "myMenu"+((which == 'E') ? " active" : "")
 				}).append($("<a>",{href: "?voir=Occasion"}).html("Occasion")));
 	}
 
