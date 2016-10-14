@@ -361,6 +361,11 @@ class Handlers {
 			}
 		});
 
+		$("#login").on('show',function(){
+console.log("activé !");
+			this.focus();
+		});
+
 			// vérification du login (clic sur le bouton login de la fenetre modal
 		$("#login").click(function() {						// connexion de l'utilisateur
 			var user = Handlers.getUserByPassword($("#password").val());
