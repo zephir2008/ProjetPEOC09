@@ -31,13 +31,15 @@ public class BDCenterServlet extends HttpServlet {
 		
 		//Reception de l'username et password provenants du POST
 
-		response.setContentType("text/plaine;charset=UTF-8");
+		response.setContentType("text/plain;charset=UTF-8");
         
 		//PrintWriter out = response.getWriter();
 		String pwd = request.getParameter("password");	
 		
 		Servlet_filter servlet_filter = new Servlet_filter();			
 		String JSONpwd = servlet_filter.check_password(pwd);
+		
+		System.out.println(JSONpwd);
 		
 			response.getWriter().append(JSONpwd);
 
