@@ -150,7 +150,7 @@ class ImgButton{
 		if(ImgButton.prototype.active){
 console.log("je suis : "+self.titre);
 			$("#formular").modal('show');
-			$("#formular #vide").html(toto);
+			$("#formular #couv").html(toto);
 			$('[data-toggle="tooltip"]').tooltip('hide');
 // qque chose a faire ?!
 		} else {
