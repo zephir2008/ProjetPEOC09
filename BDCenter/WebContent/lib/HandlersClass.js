@@ -422,12 +422,30 @@ console.log("activé !");
 		var retVal = "";
 		var test = new Test();
 
+		$.ajax({
+			url: '/Bibliotheque',												// mon Url d'applet JEE
+			type: 'GET',														// en méthode GET
+			data: { 'password' : check },											// le paramètre à vérifier
+			contentType : 'application/x-www-form-urlencoded; charset=UTF-8',		// j'envois au format ...
+			dataType: 'json'													// j'attends un résultat au format ...
+		}).always(function(jsonResult){
+			var json = $.parseJSON(jsonResult); 
+
+			if(json.utilisateur = "erreur"){
+				
+			} else {
+				retVal = jsonResult;
+			}
+			
+		})
+/*
 		var JSONuser = $.parseJSON(test.giveJSONpassword());
 		for(var t in JSONuser){
 			if(JSONuser[t]["value"] == check ){
 				retVal = t;
 			}
 		}
+*/
 		return retVal;
 	}
 
