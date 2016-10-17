@@ -20,16 +20,16 @@ public class SQLConnector implements ICommunicationSQL {
 		return null;
 	}
 	
-	private void get_new_connection(){
+	private void get_new_connection(String user, String JSONpwd){
 		try {
 		    conn =
 		       DriverManager.getConnection("jdbc:mysql://localhost/test?" +
 		                                   "user=minty&password=greatsqldb");
 
 		    // Do something with the Connection
-		    SQLConnector sc = SQLConnector();
-		    sc.call_sql(reason, parameters);
-		    chaine = "Call" + reason +"("+parameters+")";
+		    SQLConnector sc = new SQLConnector();
+		    sc.call_sql(user, JSONpwd);
+		    chaine = "Call" + user +"("+JSONpwd+")";
 		    resultat = sc.get_new_connection();
 		    JSONobject jo = new 
 
