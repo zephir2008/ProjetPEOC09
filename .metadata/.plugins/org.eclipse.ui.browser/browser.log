@@ -66,3 +66,10 @@ oct. 01, 2016 23:07:32.93 createAsyncFunction/asyncFunction@resource://gre/modul
 oct. 01, 2016 23:07:32.93 TooltipToggle.prototype._onMouseMove/this.toggleTimer<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/shared/widgets/tooltip/TooltipToggle.js:127:9
 oct. 01, 2016 23:07:32.93 
 oct. 01, 2016 23:26:22.51 Vector smash protection is enabled.
+
+oct. 13, 2016 18:51:06.72 NEW SESSION
+oct. 13, 2016 18:51:06.72 1476377466725	addons.webextension.rested@restedclient	WARN	Loading extension 'rested@restedclient': Reading manifest: Error processing contributors: An unexpected property was found in the WebExtension manifest.
+oct. 13, 2016 18:51:06.75 1476377466725	addons.webextension.rested@restedclient	WARN	Loading extension 'rested@restedclient': Reading manifest: Error processing license: An unexpected property was found in the WebExtension manifest.
+oct. 13, 2016 18:51:06.75 1476377466755	addons.webextension.rested@restedclient	WARN	Please specify whether you want browser_style or not in your browser_action options.
+oct. 13, 2016 19:00:06.75 console.warn: nsLoginManager: searchLogins: `formSubmitURL` or `httpRealm` is recommended
+oct. 13, 2016 19:18:34.98 console.warn: nsLoginManager: searchLogins: `formSubmitURL` or `httpRealm` is recommended
