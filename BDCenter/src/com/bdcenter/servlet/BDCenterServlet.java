@@ -36,17 +36,17 @@ public class BDCenterServlet extends HttpServlet {
 		//PrintWriter out = response.getWriter();
 		String pwd = request.getParameter("password");	
 		
-		System.out.println(pwd);
+System.out.println(pwd);
 		
 		Servlet_filter servlet_filter = new Servlet_filter();			
-		String JSONpwd = servlet_filter.check_password(pwd);
+		String utilisateur = servlet_filter.check_password(pwd);
 		
-		System.out.println(JSONpwd);
-			response.getWriter().append(JSONpwd);
+System.out.println(utilisateur);
+			response.getWriter().append(utilisateur);
 	}
-	
+
 	/**
-	 * @param String 
+	 * @param String
 	 * @throws Exception 
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 * Utilisation : opération sur le stock (ajout/retrait, bascule, etc.) 
