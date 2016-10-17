@@ -73,3 +73,40 @@ oct. 13, 2016 18:51:06.75 1476377466725	addons.webextension.rested@restedclient	
 oct. 13, 2016 18:51:06.75 1476377466755	addons.webextension.rested@restedclient	WARN	Please specify whether you want browser_style or not in your browser_action options.
 oct. 13, 2016 19:00:06.75 console.warn: nsLoginManager: searchLogins: `formSubmitURL` or `httpRealm` is recommended
 oct. 13, 2016 19:18:34.98 console.warn: nsLoginManager: searchLogins: `formSubmitURL` or `httpRealm` is recommended
+
+oct. 15, 2016 15:18:31.69 NEW SESSION
+oct. 15, 2016 15:18:31.69 1476537511700	addons.webextension.rested@restedclient	WARN	Loading extension 'rested@restedclient': Reading manifest: Error processing contributors: An unexpected property was found in the WebExtension manifest.
+oct. 15, 2016 15:18:31.69 1476537511700	addons.webextension.rested@restedclient	WARN	Loading extension 'rested@restedclient': Reading manifest: Error processing license: An unexpected property was found in the WebExtension manifest.
+oct. 15, 2016 15:18:31.71 1476537511727	addons.webextension.rested@restedclient	WARN	Please specify whether you want browser_style or not in your browser_action options.
+oct. 15, 2016 15:19:33.46 1476537573463	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+oct. 15, 2016 15:28:31.36 1476538111369	addons.repository	WARN	Search failed when repopulating cache
+oct. 15, 2016 15:28:31.48 1476538111484	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+oct. 15, 2016 15:28:31.48 1476538111485	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+oct. 15, 2016 15:28:31.48 1476538111486	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+oct. 15, 2016 15:28:31.48 1476538111487	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+oct. 15, 2016 15:28:31.48 1476538111488	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+oct. 15, 2016 15:28:31.49 1476538111490	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+oct. 15, 2016 15:28:31.49 1476538111492	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+oct. 15, 2016 15:28:31.49 1476538111493	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+oct. 15, 2016 15:28:31.49 1476538111493	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+oct. 15, 2016 15:28:31.49 1476538111494	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+oct. 15, 2016 15:28:31.49 1476538111495	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+oct. 15, 2016 15:28:31.49 1476538111496	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+oct. 15, 2016 15:28:31.49 1476538111497	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+oct. 15, 2016 15:28:31.49 1476538111497	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+oct. 15, 2016 15:28:31.49 1476538111498	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+oct. 15, 2016 15:28:31.50 1476538111500	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+oct. 15, 2016 15:28:31.50 1476538111500	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+oct. 15, 2016 15:28:31.50 1476538111501	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+oct. 15, 2016 15:28:31.50 1476538111502	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+oct. 15, 2016 15:28:31.50 1476538111503	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+oct. 15, 2016 15:28:31.50 1476538111503	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+oct. 15, 2016 15:28:31.50 1476538111504	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+oct. 15, 2016 15:28:31.50 1476538111505	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+oct. 15, 2016 15:28:31.50 1476538111506	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+
+oct. 15, 2016 20:47:25.45 NEW SESSION
+oct. 15, 2016 20:47:25.45 1476557245449	addons.webextension.rested@restedclient	WARN	Loading extension 'rested@restedclient': Reading manifest: Error processing contributors: An unexpected property was found in the WebExtension manifest.
+oct. 15, 2016 20:47:25.45 1476557245449	addons.webextension.rested@restedclient	WARN	Loading extension 'rested@restedclient': Reading manifest: Error processing license: An unexpected property was found in the WebExtension manifest.
+oct. 15, 2016 20:47:25.46 1476557245466	addons.webextension.rested@restedclient	WARN	Please specify whether you want browser_style or not in your browser_action options.
+oct. 15, 2016 20:48:26.43 1476557306436	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error

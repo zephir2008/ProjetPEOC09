@@ -9,7 +9,7 @@ public enum EInterfaces {
 	// utilisation : 
 	/*
 	 * 	p.ex. :		String x = TITLES.getLabel();
-	 * 				String y = EDITORS.getLabel(); 
+	 * 				String y = EDITORS.Callback(); 
 	 * ou
 	 *  			EInterface myVar = new EInterfaces;
 	 *  			String x = myVar.getCallback('Titre');
