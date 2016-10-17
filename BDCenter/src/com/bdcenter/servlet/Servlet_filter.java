@@ -18,7 +18,7 @@ public class Servlet_filter {
 		
 		try {	 
 		
-		//retValpwd = sr.getUser();
+	//retValpwd = sr.getUser();
 		
 retValpwd =  "{\"utilisateur\":\"David\"}";
 			
