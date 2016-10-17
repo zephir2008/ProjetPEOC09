@@ -28,29 +28,32 @@ public class BDCenterServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		//Reception de l'username et password provenants du POST
+
+		response.setContentType("text/plain;charset=UTF-8");
+        
+		//PrintWriter out = response.getWriter();
+		String pwd = request.getParameter("password");	
+		
+System.out.println(pwd);
+		
+		Servlet_filter servlet_filter = new Servlet_filter();			
+		String utilisateur = servlet_filter.check_password(pwd);
+		
+System.out.println(utilisateur);
+			response.getWriter().append(utilisateur);
 	}
 
 	/**
-	 * @param String 
+	 * @param String
 	 * @throws Exception 
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 * Utilisation : opération sur le stock (ajout/retrait, bascule, etc.) 
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response, Object String) throws Exception {
-
-		//Reception de l'username et password provenants du POST
-
-		response.setContentType("text/html;charset=UTF-8");
-        
-		//PrintWriter out = response.getWriter();
-		String pwd = request.getParameter("passWord");	
-		Servlet_filter sf = new Servlet_filter(pwd);		
-		ppwd = sf.getPwd();
-	
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		}
-	}  
+	protected void doPost(HttpServletRequest request, HttpServletResponse response, Object String) throws Exception {	
+				response.getWriter().append("Served at: ").append(request.getContextPath());
+			} 
+}
 						
 	

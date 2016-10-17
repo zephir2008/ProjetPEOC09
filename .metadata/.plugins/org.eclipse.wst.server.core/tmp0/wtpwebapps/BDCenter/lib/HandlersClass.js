@@ -150,7 +150,7 @@ class ImgButton{
 		if(ImgButton.prototype.active){
 console.log("je suis : "+self.titre);
 			$("#formular").modal('show');
-			$("#formular #vide").html(toto);
+			$("#formular #couv").html(toto);
 			$('[data-toggle="tooltip"]').tooltip('hide');
 // qque chose a faire ?!
 		} else {
@@ -368,10 +368,11 @@ console.log("activé !");
 
 			// vérification du login (clic sur le bouton login de la fenetre modal
 		$("#login").click(function() {						// connexion de l'utilisateur
-			var user = Handlers.getUserByPassword($("#password").val());
-			$("#password").val(null);						// efface le dernier mot de passe
-			$("#modal").modal("hide");
-			Handlers.logMe( user );
+			Handlers.getUserByPassword($("#password").val());
+//			$("#password").val(null);						// efface le dernier mot de passe
+//			$("#modal").modal("hide");
+//console.log('login =' + user);
+//			Handlers.logMe( user );
 		});
 
 		$("#logout").click(function(){
@@ -405,6 +406,8 @@ console.log("activé !");
 	//***********************************************************
 	// récupération du JSON des utilisateurs
 	static logMe( user ){
+		$("#password").val(null);						// efface le dernier mot de passe
+		$("#modal").modal("hide");
 		if( user != "" ){								// on se connecte
 			$("#logout")
 				.html("Bonjour "+user+" !")
@@ -419,18 +422,27 @@ console.log("activé !");
 	//***********************************************************
 	// récupération du JSON des utilisateurs
 	static getUserByPassword(check){
-		var retVal = "";
-		var test = new Test();
-
-		var JSONuser = $.parseJSON(test.giveJSONpassword());
-		for(var t in JSONuser){
-			if(JSONuser[t]["value"] == check ){
-				retVal = t;
+console.log("password : '" + check+ "'");
+		$.ajax({
+			url: '/BDCenter/Bibliotheque',										// mon Url d'applet JEE
+			type: 'GET',														// en méthode GET
+			data: { 'password' : check },											// le paramètre à vérifier
+			contentType : 'application/x-www-form-urlencoded; charset=UTF-8',		// j'envois au format ...
+			dataType: 'json'													// j'attends un résultat au format ...
+		}).complete(function(data){
+			var json;
+			json = data.responseJSON;
+			if(json.utilisateur == "erreur"){
+				// Raise error div
+			} else {
+				Handlers.logMe( json.utilisateur );
 			}
-		}
-		return retVal;
+		}).fail(function(data){
+			// Raise error div (pb accès au serveur)
+		});
 	}
 
+	//***********************************************************
 	static doLogin(){
 		$("#modal").modal({
 			keyboard: true		// touche 'esc' ferme la modal

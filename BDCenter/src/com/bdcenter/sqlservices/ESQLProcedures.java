@@ -5,7 +5,7 @@ package com.bdcenter.sqlservices;
 	// Utiliser pour obtenir le nom de la procédure SQL à utiliser
 public enum ESQLProcedures {
 
-	
+
 		//**************************** Partie utile *********************************//
 	USERBYLOGIN("get_user_by_login"),		// (parametre : string "login") Renvois l'utilisateur correspondant au login
 

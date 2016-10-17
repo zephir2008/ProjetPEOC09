@@ -1,42 +1,28 @@
 package com.bdcenter.servlet;
 
+import com.bdcenter.sqlservices.ESQLProcedures;
+import com.bdcenter.sqlservices.SQLConnector;
+
 public class Servlet_filter {
-	
-	//Gestion du POST
-	
-	private String pwd;
-	static String NULL = null;
-	boolean state = false;
 
-	
-	public String getMessage() {
-		String errVal = "Identifiant ou Mot de passe utilisateur incorrect";
-		return errVal;
-	}
+	public String check_password(String pwd) {
+		String retVal = "";
+		ESQLProcedures mon_callback;
+		String chaine;
 
-	public String getPwd() {
-		return pwd;
-	}
+		try {
+			SQLConnector sc = new SQLConnector();		// connexion à la base
+			mon_callback = ESQLProcedures.USERBYLOGIN;	// ma procédure SQL à appeler
+			chaine = "Call " + mon_callback.getCallback() + "('" + pwd + "')";
 
-	public Servlet_filter(String pwd) throws Exception {
+			retVal = sc.call_sql( mon_callback.getCallback(), "'"+pwd+"'" );
 		
-	//	String retValpwd = null;
-		
-		try {	 
-			
-		if (!(pwd == NULL)){
-			
-			this.pwd = pwd;
-			
-		}
 		} catch(Exception e) {
-			
-			e.getMessage();
-		
+			retVal =  "{\"utilisateur -Servletfilter\":\"Erreur\"}";
 		}
-		
-		return;
-}
+	
+		return retVal;
+	}
 
 	
 }

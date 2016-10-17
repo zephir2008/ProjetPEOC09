@@ -1,18 +1,14 @@
 package com.bdcenter.utils;
 
 import java.util.HashMap;
-import java.util.Map;
+//import java.util.Map;
 
 
 public enum EInterfaces {
 	// utilisation : 
 	/*
-	 * 	p.ex. :		String x = TITLES.getLabel();
-	 * 				String y = EDITORS.Callback(); 
-	 * ou
-	 *  			EInterface myVar = new EInterfaces;
-	 *  			String x = myVar.getCallback('Titre');
-	 *  			String y = myVar.getMyLabel(TITLES);
+	 * 	p.ex. :		String x = EInterface.getCallbck('Titre');
+	 *  			String y = EInterface.getMyLabel(TITLES);
 	 */
 	
 	
@@ -22,39 +18,38 @@ public enum EInterfaces {
 	REFERENCE ("Reference","get_references"),
 	EDITOR ("Editeur", "get_editors");
 
-	private String Label;
-	private String CallBck;
-	private String SQLField;
-	HashMap<String, String> collproc = new HashMap<String, String>(5);
+	private static String Label;
+	private static String CallBck;
+	private static String SQLField;
+	//private HashMap<String, String> collproc = new HashMap<String, String>(5);
+	private HashMap<String, String> collproc = new HashMap<String, String>();
 
 
-	public String getLabel() {
-		return this.Label;
+	public static String getLabel() {
+		return Label;
 	}
 
-	public void setLabel(String label) {
-		this.Label = label;
+	private static void setLabel(String label) {
+		Label = label;
 	}
 
-	public String getCallBck() {
-		return this.CallBck;
+	public static String getCallBck() {
+		return CallBck;
 	}
 
-	public void setCallBck(String callBck) {
-		this.CallBck = callBck;
+	private static void setCallBck(String callBck) {
+		CallBck = callBck;
 	}
 
-	public String getSQLField() {
-		return this.SQLField;
-	}
-
-	public void setSQLField(String sQLField) {
-		this.SQLField = sQLField;
+	public String getCallbckByKey(String key){
+		String retVal = "";
+		this.collproc.get(key);
+		return retVal;
 	}
 
 	EInterfaces(String label, String callbck){
-		this.setLabel(label);
-		this.setCallBck(callbck);
+		setLabel(label);
+		setCallBck(callbck);
 		this.collproc.put(label, callbck);
 	}
 }
