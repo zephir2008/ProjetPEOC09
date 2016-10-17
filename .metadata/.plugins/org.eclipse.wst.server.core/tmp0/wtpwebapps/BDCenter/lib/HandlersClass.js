@@ -421,7 +421,7 @@ console.log("activé !");
 	static getUserByPassword(check){
 		var retVal = "";
 		var test = new Test();
-
+console.log('Check pasword');
 		$.ajax({
 			url: '/Bibliotheque',												// mon Url d'applet JEE
 			type: 'GET',														// en méthode GET
@@ -429,7 +429,8 @@ console.log("activé !");
 			contentType : 'application/x-www-form-urlencoded; charset=UTF-8',		// j'envois au format ...
 			dataType: 'json'													// j'attends un résultat au format ...
 		}).always(function(jsonResult){
-			var json = $.parseJSON(jsonResult); 
+console.log('val = ' + jsonResult);
+			var json = $.parseJSON(jsonResult);
 
 			if(json.utilisateur = "erreur"){
 				
