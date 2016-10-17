@@ -362,7 +362,7 @@ class Handlers {
 		});
 
 		$("#login").on('show',function(){
-console.log("activé !");
+//console.log("activé !");
 			this.focus();
 		});
 
@@ -422,7 +422,6 @@ console.log("activé !");
 	//***********************************************************
 	// récupération du JSON des utilisateurs
 	static getUserByPassword(check){
-console.log("password : '" + check+ "'");
 		$.ajax({
 			url: '/BDCenter/Bibliotheque',										// mon Url d'applet JEE
 			type: 'GET',														// en méthode GET

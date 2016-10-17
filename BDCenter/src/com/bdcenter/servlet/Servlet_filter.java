@@ -12,6 +12,7 @@ public class Servlet_filter {
 
 		try {
 			SQLConnector sc = new SQLConnector();		// connexion à la base
+
 			mon_callback = ESQLProcedures.USERBYLOGIN;	// ma procédure SQL à appeler
 			chaine = "Call " + mon_callback.getCallback() + "('" + pwd + "')";
 

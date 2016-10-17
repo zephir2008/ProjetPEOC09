@@ -31,7 +31,7 @@ public class BDCenterServlet extends HttpServlet {
 		
 		//Reception de l'username et password provenants du POST
 
-		response.setContentType("text/plain;charset=UTF-8");
+		response.setContentType("text/json; charset=UTF-8");
         
 		//PrintWriter out = response.getWriter();
 		String pwd = request.getParameter("password");	

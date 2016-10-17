@@ -29,19 +29,12 @@ public class SQLConnector implements ICommunicationSQL {
 
 	    chaine = "Call " + reason + "(" + parameters + ")";
 		try {
-System.out.println("1");
 			this.conn = this.get_new_connection();
-System.out.println("1b");
 			this.stmt = this.conn.createStatement();
-System.out.println("2 : (" + chaine+")");
-
 			this.rs = this.stmt.executeQuery( chaine );
 //			retVal = new JSONify(rs);
-System.out.println("3");
 			this.rs.next();
-System.out.println("4");
-			retVal = "{ utilisateur: \""+this.rs.getString("utl_nom")+"\"}";
-System.out.println("5");
+			retVal = "{ \"utilisateur\": \""+this.rs.getString("utl_nom")+"\"}";
 		} catch (SQLException ex){
 			// erreur
 		    System.out.println("SQLException: " + ex.getMessage());
@@ -73,7 +66,6 @@ System.out.println("5");
 		    	this.conn = null;
 		    }
 		}
-
 		return retVal;
 	}
 	
@@ -82,7 +74,7 @@ System.out.println("5");
 		try {
 			//jdbc:mysql://192.168.137.102:3306/
 			//jdbc:mysql://localhost:3306/
-		    retVal = DriverManager.getConnection("jdbc:mysql://192.168.137.102:3306/g_et_co_bdtheque","gore", "gore44");
+		    retVal = DriverManager.getConnection("jdbc:mysql://localhost:3306/g_et_co_bdtheque","gore", "gore44");
 		} catch (SQLException ex) {
 		    // handle any errors
 		    System.out.println("SQLException: " + ex.getMessage());
