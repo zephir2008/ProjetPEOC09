@@ -1,41 +1,34 @@
 package com.bdcenter.servlet;
 
+import com.bdcenter.sqlservices.SQLConnector;
+
 public class Servlet_filter {
 	
-	//Gestion du POST
-	
-	private String pwd;
-	static String NULL = null;
-	boolean state = false;
+	String user;
 
-	
-	public String getMessage() {
-		String errVal = "Identifiant ou Mot de passe utilisateur incorrect";
-		return errVal;
+	public String getUser() {
+		return user;
 	}
 
-	public String getPwd() {
-		return pwd;
-	}
-
-	public Servlet_filter(String pwd) throws Exception {
+	public String check_password(String pwd) {
 		
-	//	String retValpwd = null;
+	String retValpwd = "";
+	
+	//SQLConnector sr = new SQLConnector();
 		
 		try {	 
+		
+		//retValpwd = sr.getUser();
+		
+retValpwd =  "{\"utilisateur\":\"David\"}";
 			
-		if (!(pwd == NULL)){
-			
-			this.pwd = pwd;
-			
-		}
 		} catch(Exception e) {
 			
-			e.getMessage();
+			retValpwd =  "{\"utilisateur\":\"Erreur\"}";
 		
 		}
-		
-		return;
+	
+		return retValpwd;
 }
 
 	

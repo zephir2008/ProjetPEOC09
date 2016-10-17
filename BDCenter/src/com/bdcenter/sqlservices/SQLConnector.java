@@ -8,6 +8,11 @@ import java.sql.SQLException;
 
 public class SQLConnector implements ICommunicationSQL {
 	private Connection conn = null;
+	private String user;
+
+	public String getUser() {
+		return user;
+	}
 
 	@Override
 	public String call_sql(String reason, String parameters) {
@@ -22,6 +27,11 @@ public class SQLConnector implements ICommunicationSQL {
 		                                   "user=minty&password=greatsqldb");
 
 		    // Do something with the Connection
+		    SQLConnector sc = SQLConnector();
+		    sc.call_sql(reason, parameters);
+		    chaine = "Call" + reason +"("+parameters+")";
+		    resultat = sc.get_new_connection();
+		    JSONobject jo = new 
 
 /*		   ... */
 		} catch (SQLException ex) {

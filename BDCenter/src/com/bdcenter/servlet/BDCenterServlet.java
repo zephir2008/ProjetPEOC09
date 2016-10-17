@@ -28,8 +28,21 @@ public class BDCenterServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		//Reception de l'username et password provenants du POST
+
+		response.setContentType("json;charset=UTF-8");
+        
+		//PrintWriter out = response.getWriter();
+		String pwd = request.getParameter("password");	
+		
+		Servlet_filter servlet_filter = new Servlet_filter();			
+		String JSONpwd = servlet_filter.check_password(pwd);
+		
+			response.getWriter().append(JSONpwd);
+
 	}
+	
 
 	/**
 	 * @param String 
@@ -39,18 +52,9 @@ public class BDCenterServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response, Object String) throws Exception {
 
-		//Reception de l'username et password provenants du POST
-
-		response.setContentType("text/html;charset=UTF-8");
-        
-		//PrintWriter out = response.getWriter();
-		String pwd = request.getParameter("passWord");	
-		Servlet_filter sf = new Servlet_filter(pwd);		
-		ppwd = sf.getPwd();
 	
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		}
-	}  
+				response.getWriter().append("Served at: ").append(request.getContextPath());
+			} 
+}
 						
 	
