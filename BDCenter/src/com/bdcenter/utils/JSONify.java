@@ -1,7 +1,14 @@
 package com.bdcenter.utils;
 
+
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 import com.bdcenter.sqlservices.SQLConnector;
 
@@ -16,28 +23,39 @@ public class JSONify implements IJSONify {
 	
 	
 	@Override
-	public String parse(String data) {
-		// 
+	public JSONObject parse(String data) { 
 
 		String procsql;
 		// Parsing de la string récupérée:
-		objetJson = (JSONObject) parser.parse(data);
+		JSONObject objetJson = (JSONObject) parser.parse(data);
 
+		return objetJson;
 		
-		//Appel de la fonction qui retourne le nom de la procédure à utiliser:
-		procsql = EInterfaces.this.getCallBck(objetJson.id);
-		
-		// Création de la chaine SQL, avec le nom de la procédure et la valeur:
-		sqlcx.call_sql(procsql, objet.value);
-		
+
 	}
 
 	@Override
-	public String stringify(repSql) {
-		// TODO Auto-generated method stub
+	public String stringify(ResultSet rs) {
+		
+		ResultSetMetaData rsMeta = rs.getMetaData();
+		int columnCnt = rsMeta.getColumnCount();		
+		List<String> columnNames = new ArrayList<String>();
+		List<JSONObject> resList = new ArrayList<JSONObject>();
+		
+		JSONObject obj = new JSONObject(); 
 		
 		
-		return null;
+		while(rs.next()) { // convert each object to an human readable JSON object           
+            for(int i=1;i<=columnCnt;i++) {
+                String key = columnNames.get(i - 1);
+                String value = rs.getString(i);
+                obj.put(key, value);
+            }
+        }
+		
+		String jsonSortie = obj.toString();
+		
+		return jsonSortie;
 	}
 
 	// constructor

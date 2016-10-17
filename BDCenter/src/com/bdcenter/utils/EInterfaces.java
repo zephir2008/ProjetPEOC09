@@ -20,9 +20,9 @@ public enum EInterfaces {
 
 	private static String Label;
 	private static String CallBck;
-	private static String SQLField;
+
 	//private HashMap<String, String> collproc = new HashMap<String, String>(5);
-	private HashMap<String, String> collproc = new HashMap<String, String>();
+	private static HashMap<String, String> collproc = new HashMap<String, String>();
 
 
 	public static String getLabel() {
@@ -41,15 +41,19 @@ public enum EInterfaces {
 		CallBck = callBck;
 	}
 
-	public String getCallbckByKey(String key){
+	private static void setCallbckByKey(String key, String callbck){
+		collproc.put(key, callbck);
+	}
+	
+	public static String getCallbckByKey(String key){
 		String retVal = "";
-		this.collproc.get(key);
+		collproc.get(key);
 		return retVal;
 	}
 
 	EInterfaces(String label, String callbck){
 		setLabel(label);
 		setCallBck(callbck);
-		this.collproc.put(label, callbck);
+		setCallbckByKey(label, callbck);
 	}
 }
