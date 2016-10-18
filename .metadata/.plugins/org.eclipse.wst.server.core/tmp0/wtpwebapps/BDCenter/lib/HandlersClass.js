@@ -380,6 +380,7 @@ class Handlers {
 			$("#logout").removeClass("show");
 			$("#logout").addClass("invisible");
 			myStorage.clear("whosLogged");
+			("#t3").css("background-color",rgba(139,139,91,0.8));
 		});
 		Handlers.autocomplete();
 	}
@@ -415,6 +416,7 @@ class Handlers {
 				.addClass("show");
 			$(_maBibliotheque).trigger("login");			// login bibliothèque
 			myStorage.whosLogged = user;
+			("#t3").css("background-color",rgba(172,172,128,0.8));
 		}
 	}
 
@@ -424,7 +426,7 @@ class Handlers {
 	static getUserByPassword(check){
 		$.ajax({
 			url: '/BDCenter/Bibliotheque',										// mon Url d'applet JEE
-			type: 'GET',														// en méthode GET
+			type: 'POST',														// en méthode GET
 			data: { 'password' : check },											// le paramètre à vérifier
 			contentType : 'application/x-www-form-urlencoded; charset=UTF-8',		// j'envois au format ...
 			dataType: 'json'													// j'attends un résultat au format ...
@@ -465,34 +467,31 @@ class Handlers {
 		return retVal;
 	}
 
-	//***********************************************************
-	// Gestion des changements de taille de la fenêtre (dynamique)
-	// ou des différents affichages des périphériques (PC, tablette, cellphone)
-	static viewportHandler(viewport){
-	    // Executes only in XS breakpoint
-	    if( viewport.is('xs') ) {
-	console.log('xs mode');
-	        // ...
-	    }
-
-	    // Executes in SM, MD and LG breakpoints
-	    if( viewport.is('>=sm') ) {
-	console.log('SM, MD & LG mode');
-	        // ...
-	    }
-
-	    // Executes in XS and SM breakpoints
-	    if( viewport.is('<md') ) {
-	console.log('xs & sm mode');
-	        // ...
-	    }
-	}
-	
 	
 	//***********************************************************
 	//*** Gestion des autocompletes
 	static autocomplete(){
-		$.widget( "custom.catcomplete", $.ui.autocomplete, {
+	    $( "#gsearch" ).autocomplete({
+	        source: function( request, response ) {
+	          $.ajax( {
+	  			url: '/BDCenter/Bibliotheque',										// mon Url d'applet JEE
+	  			type: 'GET',
+	            dataType: "jsonp",
+	            data: {
+	              term: request.term
+	           },
+	            success: function( data ) {
+	              response( data );
+	            }
+	          });
+	        },
+	        minLength: 2,
+	        select: function( event, ui ) {
+	         // log( "Selected: " + ui.item.value + " aka " + ui.item.id );
+	        }
+	      });
+		
+/*		$.widget( "custom.catcomplete", $.ui.autocomplete, {
 			_create: function() {
 				this._super();
 				this.widget().menu( "option", "items", "> :not(.ui-autocomplete-category)" );
@@ -532,6 +531,6 @@ class Handlers {
 			delay: 0,
 			source: data
 		});
-	}
+*/	}
 }
 //***********************************************************
