@@ -150,7 +150,7 @@ class ImgButton{
 		if(ImgButton.prototype.active){
 console.log("je suis : "+self.titre);
 			$("#formular").modal('show');
-			$("#formular #couv").html(toto);
+			$("#formular #vide").html(toto);
 			$('[data-toggle="tooltip"]').tooltip('hide');
 // qque chose a faire ?!
 		} else {
@@ -191,7 +191,6 @@ class Bibliotheque{
 
 		this.Editeur = [];
 		this.buttonList = [];
-		//this.divList = [];
 
 		for(var x in BDAuth){					// récupère les éditeurs
 			this.Editeur.push(BDAuth[x]);
@@ -212,6 +211,9 @@ class Bibliotheque{
 					break;
 				case "E":
 					insert = (x != 0) && (BDCouv[x].Etat != 5);
+					break;
+				case "*":
+					insert = (BDCouv[x].Titre == "")
 					break;
 				default:
 					insert = true;
@@ -310,16 +312,10 @@ class Bibliotheque{
 	//***********************************************************
 	stepLogin(){	// a faire suite au login réussi
 		ImgButton.prototype.active = true;
-		//this.buttonList.forEach(function(x){
-		//	x.activate;
-		//});
 	}
 	//***********************************************************
 	stepLogout(){	// a faire suite au logout
 		ImgButton.prototype.active = false;
-		//this.buttonList.forEach(function(x){
-		//	x.inactivate;
-		//});
 	}
 }
 //***********************************************************
@@ -346,8 +342,6 @@ class Handlers {
 		if(myStorage.whosLogged){
 			Handlers.logMe( myStorage.whosLogged );
 		}
-		//$('[data-toggle="tooltip"]').tooltip();
-		//$('[data-toggle="popover"]').popover();
 	}
 
 	//***********************************************************
@@ -362,29 +356,27 @@ class Handlers {
 		});
 
 		$("#login").on('show',function(){
-//console.log("activé !");
 			this.focus();
 		});
 
 			// vérification du login (clic sur le bouton login de la fenetre modal
 		$("#login").click(function() {						// connexion de l'utilisateur
 			Handlers.getUserByPassword($("#password").val());
-//			$("#password").val(null);						// efface le dernier mot de passe
-//			$("#modal").modal("hide");
-//console.log('login =' + user);
-//			Handlers.logMe( user );
 		});
 
 		$("#logout").click(function(){
-			$(_maBibliotheque).trigger("logout");			// login bibliothèque
+			myStorage.clear("whosLogged");
+			$(_maBibliotheque).trigger("logout");
 			$("#logout").removeClass("show");
 			$("#logout").addClass("invisible");
-			myStorage.clear("whosLogged");
-			$("#t3").css("background-color","rgba(172,172,128,0.8)");
+			$("#t3").removeClass("conn");
+			$("#t3").addClass("noconn");
 		});
+
 		Handlers.autocomplete();
 	}
 
+	//***********************************************************
 	static initBibliotheque(which){
 		var selector;
 
@@ -398,8 +390,10 @@ class Handlers {
 			case 'Occasion':
 				selector = "E";
 				break;
-			default:	// Tous
+			case 'Tous':
 				selector = "T";
+			default:	// un ouvrage précis
+				selector = "*";
 		}
 		return new Bibliotheque( selector );		// crée les boutons
 	}
@@ -416,7 +410,8 @@ class Handlers {
 				.addClass("show");
 			$(_maBibliotheque).trigger("login");			// login bibliothèque
 			myStorage.whosLogged = user;
-			$("#t3").css("background-color","rgba(192,175,98,0.8)");
+			$("#t3").removeClass("noconn");
+			$("#t3").addClass("conn");
 		}
 	}
 
@@ -472,27 +467,27 @@ class Handlers {
 	//***********************************************************
 	//*** Gestion des autocompletes
 	static autocomplete(){
-	    $( "#gsearch" ).autocomplete({
-	        source: function( request, response ) {
-	          $.ajax( {
-	  			url: '/BDCenter/Bibliotheque',										// mon Url d'applet JEE
-	  			type: 'GET',
-	            dataType: "json",
-	            data: {
-	              term: request.term
-	           },
-	            success: function( data ) {
-console.log(JSON.stringify(data));
-	              response( JSON.stringify(data) );
-	            }
-	          });
-	        },
-	        minLength: 2,
-	        select: function( event, ui ) {
-	         // log( "Selected: " + ui.item.value + " aka " + ui.item.id );
-	        }
-	      });
-		
+		$( "#gsearch" ).autocomplete({
+			source: function( request, response ) {
+				$.ajax({
+					url: '/BDCenter/Bibliotheque',				// mon Url d'applet JEE
+					type: 'GET',								// en méthode GET
+					data: { term: request.term },				// "term" = paramètre de recherche
+					dataType: 'json',							// j'attends un résultat au format ...
+					success: function( data ) {					// quand la réponse (= ok) arrive
+						// Reste à filtre les valeurs en fonction de l'input parent
+						response( data );
+					}
+				});
+			},
+			minLength: 2,										// 2 caractère minimum pour la recherche
+			select: function( event, ui ) {						// on a sélectionné qque chose dans la liste
+				
+console.log( "Selected: " + ui.item.value + " aka " + ui.item.id );
+			}
+		});
+
+/* autocomplete à adapter pour un affichage avec des catégories */
 /*		$.widget( "custom.catcomplete", $.ui.autocomplete, {
 			_create: function() {
 				this._super();
@@ -533,6 +528,7 @@ console.log(JSON.stringify(data));
 			delay: 0,
 			source: data
 		});
-*/	}
+*/
+	}
 }
 //***********************************************************

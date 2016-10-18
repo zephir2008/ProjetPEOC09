@@ -18,6 +18,12 @@
 @colCommand : rgba(255, 255, 204, 0.8); // gold;
 @colOccasion: rgba(204, 255, 204, 0.8); //green;
 
+
+@notConnected : rgba(192,98,98,0.8);	// fond non connecté
+@Connected : rgba(172,172,172,0.8);	// fond connecté
+@borderConnected: 4px solid gold;
+
+
 /* paramètre de base de la page */
 body {
 	min-width: @min-size;
@@ -112,13 +118,20 @@ hr {
 	width: 100%;
  	bottom:0;
 	z-index: 0;
-	background-color: rgba(139,139,91,0.8); //rgba(172,172,128,0.8);
 /*	animation-name: colorChange;
 	animation-timing-function: ease-in-out;
 	animation-iteration-count: infinite;
 	animation-duration: 6s;
 	animation-direction: alternate;
 */
+}
+.noconn{
+	background-color: @notConnected; // couleur non connecté
+}
+.conn {
+	background-color: @Connected;	// couleur connecté
+	border: @borderConnected;
+	border-radius: 10px;
 }
 
 /*******************************/
@@ -148,6 +161,9 @@ hr {
 	width:100%;
 	max-height: 170px !important;
 }
+.topmarg {
+	margin-top: 7px;
+}
 input[type=password]{
 	background-color: #fcc;
 	margin-right: 20px;
@@ -172,7 +188,7 @@ nav{
 /* la barre de navigation */
 #nav {
 	/*position: fixed;*/
-	background-color: rgba(192,192,192,0.7);
+	background-color: @Connected;
 	border-radius: 20px;
 }
 

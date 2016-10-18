@@ -16,36 +16,37 @@ public enum EInterfaces {
 	TITLE ("Titre","get_titles"),
 	AUTHOR ("Auteur","get_authors"),
 	REFERENCE ("Reference","get_references"),
-	EDITOR ("Editeur", "get_editors");
+	EDITOR ("Editeur", "get_editors"),
+	ALL("All","autocomplete");
 
-	private static String Label;
-	private static String CallBck;
+	private String Label;
+	private String CallBck;
 
 	//private HashMap<String, String> collproc = new HashMap<String, String>(5);
-	private static HashMap<String, String> collproc = new HashMap<String, String>();
+	private HashMap<String, String> collproc = new HashMap<String, String>();
 
 
-	public static String getLabel() {
+	public String getLabel() {
 		return Label;
 	}
 
-	private static void setLabel(String label) {
+	private void setLabel(String label) {
 		Label = label;
 	}
 
-	public static String getCallBck() {
+	public String getCallBck() {
 		return CallBck;
 	}
 
-	private static void setCallBck(String callBck) {
+	private void setCallBck(String callBck) {
 		CallBck = callBck;
 	}
 
-	private static void setCallbckByKey(String key, String callbck){
+	private void setCallbckByKey(String key, String callbck){
 		collproc.put(key, callbck);
 	}
 	
-	public static String getCallbckByKey(String key){
+	public String getCallbckByKey(String key){
 		String retVal = "";
 		collproc.get(key);
 		return retVal;

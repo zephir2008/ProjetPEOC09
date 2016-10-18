@@ -1,29 +1,33 @@
 package com.bdcenter.servlet;
 
 import com.bdcenter.sqlservices.ESQLProcedures;
+import com.bdcenter.utils.EInterfaces;
 import com.bdcenter.sqlservices.SQLConnector;
 
 public class Servlet_filter {
 
-	public String check_password(String pwd) {
-		String retVal = "";
-		ESQLProcedures mon_callback;
-		String chaine;
+	private String getSqlValues(String callback, String parameters){
+		String retVal="";
 
-		try {
-			SQLConnector sc = new SQLConnector();		// connexion à la base
+		try{
+			SQLConnector sc = new SQLConnector();
+			retVal = sc.sql_autocomplete(callback, parameters);
 
-			mon_callback = ESQLProcedures.USERBYLOGIN;	// ma procédure SQL à appeler
-			chaine = "Call " + mon_callback.getCallback() + "('" + pwd + "')";
-
-			retVal = sc.call_sql( mon_callback.getCallback(), "'"+pwd+"'" );
-		
-		} catch(Exception e) {
+		} catch(Exception e){
 			retVal =  "{\"utilisateur -Servletfilter\":\"Erreur\"}";
 		}
-	
+
 		return retVal;
 	}
 
+	public String autocomplete(String roots){
+		EInterfaces mon_callback = EInterfaces.ALL;
+		return this.getSqlValues( mon_callback.getCallBck(), "'"+roots+"'");
+	}
 	
+	
+	public String check_password(String pwd) {
+		ESQLProcedures mon_callback = ESQLProcedures.USERBYLOGIN;
+		return this.getSqlValues( mon_callback.getCallback(), "'"+pwd+"'" );
+	}
 }

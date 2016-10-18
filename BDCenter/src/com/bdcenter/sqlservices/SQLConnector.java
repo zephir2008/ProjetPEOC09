@@ -1,6 +1,8 @@
 package com.bdcenter.sqlservices;
 
 
+import java.util.ArrayList;
+import org.json.simple.JSONObject;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -22,6 +24,60 @@ public class SQLConnector implements ICommunicationSQL {
 		}
 	}
 
+	public String sql_autocomplete(String reason, String parameters){
+		JSONObject Json = new JSONObject();
+		String retVal = "";
+		String chaine;
+		ArrayList<String> al = new ArrayList<String>();
+
+	    chaine = "Call " + reason + "(" + parameters + ")";
+		retVal="{\"id\":\"\",\"value\":\"\",\"categ\":\"\"}";
+
+		try {
+			this.conn = this.get_new_connection();
+			this.stmt = this.conn.createStatement();
+			this.rs = this.stmt.executeQuery( chaine );
+
+			while(this.rs.next()){
+				Json.put("id", this.rs.getInt(1));
+				Json.put("value", JSONObject.escape(this.rs.getString(2)+ " ("+this.rs.getString(3)+")"));
+
+				al.add(Json.toJSONString());
+			};
+			retVal = al.toString();
+		} catch (SQLException ex){			// erreur
+		    System.out.println("SQLException: " + ex.getMessage());
+		    System.out.println("SQLState: " + ex.getSQLState());
+		    System.out.println("VendorError: " + ex.getErrorCode());
+		    retVal="{\"id\":\"erreur\",\"value\":\"erreur\",\"categ\":\"erreur\"}";
+		} finally {
+		    if (this.rs != null) {
+		        try {
+		            this.rs.close();
+		        } catch (SQLException sqlEx) { } // ignore
+		        this.rs = null;
+		    }
+
+		    if (this.stmt != null) {
+		        try {
+		            this.stmt.close();
+		        } catch (SQLException sqlEx) { } // ignore
+		        this.stmt = null;
+		    }
+		    
+		    if(this.conn != null){
+		    	try {
+		    		this.conn.close();
+		    	} catch (SQLException sqlEx) { } // ignore
+		    	this.conn = null;
+		    }
+		}
+		return retVal;
+	}
+
+
+	
+	
 	@Override
 	public String call_sql(String reason, String parameters) {
 		String retVal = "";
@@ -33,9 +89,11 @@ public class SQLConnector implements ICommunicationSQL {
 			this.conn = this.get_new_connection();
 			this.stmt = this.conn.createStatement();
 			this.rs = this.stmt.executeQuery( chaine );
-//			retVal = new JSONify(rs);
+
+
 			this.rs.next();
 			retVal = "{ \"utilisateur\": \""+this.rs.getString("utl_nom")+"\"}";
+
 		} catch (SQLException ex){
 			// erreur
 		    System.out.println("SQLException: " + ex.getMessage());
