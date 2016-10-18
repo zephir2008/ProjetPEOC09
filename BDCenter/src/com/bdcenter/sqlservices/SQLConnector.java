@@ -75,7 +75,7 @@ public class SQLConnector implements ICommunicationSQL {
 		try {
 			//jdbc:mysql://192.168.137.102:3306/
 			//jdbc:mysql://localhost:3306/
-		    retVal = DriverManager.getConnection("jdbc:mysql:/localhost:3306/g_et_co_bdtheque","gore", "gore44");
+		    retVal = DriverManager.getConnection("jdbc:mysql://192.168.137.102:3306/g_et_co_bdtheque","gore", "gore44");
 		} catch (SQLException ex) {
 		    // handle any errors
 		    System.out.println("SQLException: " + ex.getMessage());

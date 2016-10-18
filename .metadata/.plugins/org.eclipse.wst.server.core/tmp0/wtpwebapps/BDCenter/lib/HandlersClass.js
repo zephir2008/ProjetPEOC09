@@ -380,7 +380,7 @@ class Handlers {
 			$("#logout").removeClass("show");
 			$("#logout").addClass("invisible");
 			myStorage.clear("whosLogged");
-			("#t3").css("background-color",rgba(139,139,91,0.8));
+			$("#t3").css("background-color","rgba(172,172,128,0.8)");
 		});
 		Handlers.autocomplete();
 	}
@@ -416,7 +416,7 @@ class Handlers {
 				.addClass("show");
 			$(_maBibliotheque).trigger("login");			// login bibliothèque
 			myStorage.whosLogged = user;
-			("#t3").css("background-color",rgba(172,172,128,0.8));
+			$("#t3").css("background-color","rgba(192,175,98,0.8)");
 		}
 	}
 
@@ -433,11 +433,12 @@ class Handlers {
 		}).complete(function(data){
 			var json;
 			json = data.responseJSON;
-			if(json.utilisateur == "erreur"){
-				// Raise error div
-			} else {
-				Handlers.logMe( json.utilisateur );
+			if(json){
+				if(json.utilisateur != "erreur"){
+					Handlers.logMe( json.utilisateur );
+				}
 			}
+			Handlers.logMe("");
 		}).fail(function(data){
 			// Raise error div (pb accès au serveur)
 		});
@@ -476,12 +477,13 @@ class Handlers {
 	          $.ajax( {
 	  			url: '/BDCenter/Bibliotheque',										// mon Url d'applet JEE
 	  			type: 'GET',
-	            dataType: "jsonp",
+	            dataType: "json",
 	            data: {
 	              term: request.term
 	           },
 	            success: function( data ) {
-	              response( data );
+console.log(JSON.stringify(data));
+	              response( JSON.stringify(data) );
 	            }
 	          });
 	        },
