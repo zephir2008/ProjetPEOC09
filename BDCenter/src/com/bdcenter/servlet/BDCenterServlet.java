@@ -31,11 +31,13 @@ public class BDCenterServlet extends HttpServlet {
 		String query = request.getParameter("term");
 		JSONObject Json = new JSONObject();
 System.out.println(query);
+		JSONObject j2 = new JSONObject();
 
 		Json.put("id", "#rre0048");
 		Json.put("value", "test ok");
+		//j2.toJSONString()
 System.out.println(Json.toString());
-		response.getWriter().print(Json); // append( Json );
+		response.getWriter().append(Json.toJSONString() ); // append( Json );
 	}
 
 	/**

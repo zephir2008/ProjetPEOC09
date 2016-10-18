@@ -241,6 +241,57 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `autocomplete` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`%` PROCEDURE `autocomplete`(in param varchar(45))
+BEGIN
+
+SELECT 
+    gco_fournisseurs.id_fournisseur AS id,
+    gco_fournisseurs.frn_nom AS value,
+    'Fournisseur' AS categ
+FROM
+    gco_fournisseurs
+WHERE
+    frn_nom LIKE CONCAT('%', param, '%') COLLATE utf8_general_ci 
+UNION SELECT 
+    gco_livres.id_livre AS id,
+    gco_livres.liv_titre AS value,
+    'Titre' AS categ
+FROM
+    gco_livres
+WHERE
+    gco_livres.liv_titre LIKE CONCAT('%', param, '%') COLLATE utf8_general_ci 
+UNION SELECT 
+    gco_livres.id_livre AS id,
+    gco_livres.liv_auteur value,
+    'Auteur' AS categ
+FROM
+    gco_livres
+WHERE
+    gco_livres.liv_auteur LIKE CONCAT('%', param, '%') COLLATE utf8_general_ci 
+UNION SELECT 
+    gco_livres.id_livre AS id,
+    gco_livres.liv_reference value,
+    'Reference' AS categ
+FROM
+    gco_livres
+WHERE
+    gco_livres.liv_reference LIKE CONCAT('%', param, '%') COLLATE utf8_general_ci;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `book_manage` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -437,4 +488,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-10-14 15:28:05
+-- Dump completed on 2016-10-18 11:34:16
