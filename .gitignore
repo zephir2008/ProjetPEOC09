@@ -99,7 +99,7 @@ local.properties
 
 photothumb.db
 *.log
-.metadata/*/*
+.metadata/
 
 *.index
 .metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt

@@ -1,42 +1,60 @@
 package com.bdcenter.utils;
 
+import java.util.HashMap;
+//import java.util.Map;
+
+
 public enum EInterfaces {
-	TITLES ("Titre","get_titles","gco_livres.liv_titre"),
-	AUTHORS ("Auteur","get_authors","gco_livres.liv_auteur"),
-	REFERENCE ("Reference","get_references","gco_livres.liv_references"),
-	EDITORS ("Editeur", "get_editors","gco_fournisseurs.frn_nom");
+	// utilisation : 
+	/*
+	 * 	p.ex. :		String x = EInterface.getCallbck('Titre');
+	 *  			String y = EInterface.getMyLabel(TITLES);
+	 */
+	
+	
+		//**************************** Partie utile *********************************//
+	TITLE ("Titre","get_titles"),
+	AUTHOR ("Auteur","get_authors"),
+	REFERENCE ("Reference","get_references"),
+	EDITOR ("Editeur", "get_editors"),
+	ALL("All","autocomplete");
 
 	private String Label;
 	private String CallBck;
-	private String SQLField;
+
+	//private HashMap<String, String> collproc = new HashMap<String, String>(5);
+	private HashMap<String, String> collproc = new HashMap<String, String>();
+
 
 	public String getLabel() {
-		return this.Label;
+		return Label;
 	}
 
-	public void setLabel(String label) {
-		this.Label = label;
+	private void setLabel(String label) {
+		Label = label;
 	}
 
 	public String getCallBck() {
-		return this.CallBck;
+		return CallBck;
 	}
 
-	public void setCallBck(String callBck) {
-		this.CallBck = callBck;
+	private void setCallBck(String callBck) {
+		CallBck = callBck;
 	}
 
-	public String getSQLField() {
-		return this.SQLField;
+	private void setCallbckByKey(String key, String callbck){
+		collproc.put(key, callbck);
+	}
+	
+	public String getCallbckByKey(String key){
+		String retVal = "";
+		collproc.get(key);
+		return retVal;
 	}
 
-	public void setSQLField(String sQLField) {
-		this.SQLField = sQLField;
-	}
-
-	EInterfaces(String label, String callbck, String sqlField){
-		this.setLabel(label);
-		this.setCallBck(callbck);
-		this.setSQLField(sqlField);
+	EInterfaces(String label, String callbck){
+		setLabel(label);
+		setCallBck(callbck);
+		setCallbckByKey(label, callbck);
 	}
 }
