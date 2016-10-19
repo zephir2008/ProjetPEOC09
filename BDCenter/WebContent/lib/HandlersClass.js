@@ -20,9 +20,6 @@ class Test {
 
 
 
-
-
-
 //***********************************************************
 // Chacune des images de ma bibliothèque affichées
 //***********************************************************
@@ -55,7 +52,7 @@ class ImgButton{
 		this.ORef.helperTitle = this.myTitle(true);
 
 		//this.ORef.active = false;										// bouton inactif par défaut
-		ImgButton.prototype.active = false;								// variable static : bouton inactif par défaut
+		//ImgButton.prototype.active = false;								// variable static : bouton inactif par défaut
 		this.ORef.status = ImgButton.categorie(
 			(this.ORef.ref != "0"),
 			(JSONObj["Etat"]==5),
@@ -81,17 +78,6 @@ class ImgButton{
 		$(this.ORef.displ).mouseout([this], ImgButton.onMouseOut);
 		$(this.ORef.infos).click([this], ImgButton.onClick);		// clic sur une informations
 	}
-
-	//***********************************************************
-	/*get activate(){													// active le bouton
-		ImgButton.active = true;
-		//this.ORef.active = true;
-	}*/
-
-	//***********************************************************
-	/*get inactivate(){												// désactive le bouton 
-		this.ORef.active = false;
-	}*/
 
 	//***********************************************************
 	myTitle(isTitle){													// Création du titre (bulles d'aides)
@@ -125,7 +111,6 @@ class ImgButton{
 				delay: 300
 			}, 200, 'swing');
 		}
-//console.log('visible : '+self.infos.css('display'));	// block ou none (none = ok)
 		//evt.stopPropagation();
 	}
 	//***********************************************************
@@ -148,11 +133,9 @@ class ImgButton{
 			class: 'hidden-xs bibimg'
 		});
 		if(ImgButton.prototype.active){
-console.log("je suis : "+self.titre);
 			$("#formular").modal('show');
-			$("#formular #vide").html(toto);
+			$("#formular #pict").html(toto);
 			$('[data-toggle="tooltip"]').tooltip('hide');
-// qque chose a faire ?!
 		} else {
 			Handlers.doLogin();
 		}
@@ -189,124 +172,110 @@ class Bibliotheque{
 	constructor( which ){
 		var nbImagePerLine = 6;
 
-		this.Editeur = [];
-		this.buttonList = [];
-
-		for(var x in BDAuth){					// récupère les éditeurs
-			this.Editeur.push(BDAuth[x]);
-		}
-
-		var img;
-		var f;
-		var insert;
-		var x;
-		for(var x in BDCouv){						// peuple la bibliothèque
-			insert = false;
-			switch( which ){
-				case "S":
-					insert = (BDCouv[x].Stock == 0);
-					break;
-				case "R":
-					insert = (BDCouv[x].Reassort > 0 );
-					break;
-				case "E":
-					insert = (x != 0) && (BDCouv[x].Etat != 5);
-					break;
-				case "*":
-					insert = (BDCouv[x].Titre == "")
-					break;
-				default:
-					insert = true;
+		this.getBibliothequeDatas(function(){
+			var Editeur = [];
+			var buttonList = [];
+			for(var x in BDAuth){					// récupère les éditeurs
+				Editeur.push(BDAuth[x]);
 			}
-			//insert = (x==0) || insert;
-			if(insert){
-				img = new ImgButton(
-					BDCouv[x],
-					(x > 0) ? this.Editeur[ BDCouv[x]["Editeur"] ] : {frn_nom: "Création", frn_contact: "n.a.", frn_telephone: "n.a."}
-				);
-				this.buttonList.push( img );
+
+			var img;
+			var f;
+			var insert;
+			var x;
+			for(x in BDCouv){						// peuple la bibliothèque
+				insert = false;
+				switch( which ){
+					case "S":
+						insert = (BDCouv[x].Stock == 0);
+						break;
+					case "R":
+						insert = (BDCouv[x].Reassort > 0 );
+						break;
+					case "E":
+						insert = (x != 0) && (BDCouv[x].Etat != 5);
+						break;
+					case "L":
+						if(myStorage.SelectedBookCateg == 'Fournisseur') {
+							insert = (BDCouv[x].Editeur == myStorage.SelectedBookId );
+						} else if (myStorage.SelectedBookCateg == 'Auteur') {
+							insert = ( (BDCouv[x].Auteur).indexOf(myStorage.SelectedBookId) >= 0);
+						} else {
+							insert = ( (1*myStorage.SelectedBookId) == BDCouv[x].id );
+						}
+						break;
+					default:
+						insert = true;
+				}
+
+				if(insert){
+					img = new ImgButton(
+						BDCouv[x],
+						(BDCouv[x].id > 1) ? Editeur[ BDCouv[x].Editeur ] : {frn_nom: "Création", frn_contact: "n.a.", frn_telephone: "n.a."}
+					);
+					buttonList.push( img );
+				}
 			}
-		}
+			myStorage.removeItem("SelectedBookCateg");
+			myStorage.removeItem("SelectedBookId");
 
-		var div = "";
-		var t;
-		var i = 0;
-		var mainDiv = $('<div>', {
-			class: "row text-center"
-		});
-
-		for(var x in this.buttonList){				// création des boutons de l'interface
-			t = this.buttonList[x];
-			//this.divList.push( t );
-
-/*			t.ORef.displ
-				.tooltip({
-					animation: false,
-					html: true,
-					placement: (x % nbImagePerLine < 2) ? 'right' : 'left',
-					title: t.ORef.helperTitle + "<hr>" + t.ORef.helperHTML,
-					delay: { show: 900, hide: 300 }
-				});
-*/
-			div = $('<div>', {
-					class: "col-md-2 biblio"
-				})
-				.html( t.ORef.displ )
-				.append( t.ORef.infos )
-				.tooltip({
-					animation: false,
-					html: true,
-					placement: (x % nbImagePerLine < 2) ? 'right' : 'left',
-					title: t.ORef.helperTitle + "<hr>" + t.ORef.helperHTML,
-					delay: { show: 900, hide: 300 }
-				});
-
-/*			div.tooltip({
-				animation: false,
-				html: true,
-				placement: (x % nbImagePerLine < 2) ? 'right' : 'left',
-				title: t.ORef.helperTitle + "<hr>" + t.ORef.helperHTML,
-				delay: { show: 900, hide: 300 }
+			var div = "";
+			var t;
+			var i = 0;
+			var mainDiv = $('<div>', {
+				class: "row text-center"
 			});
-*/
-			//div.html( t.ORef.displ ).append( t.ORef.infos );
-			mainDiv.append( div );
-			i++;
-			i %= nbImagePerLine;					// 6 boutton par ligne
 
-			if(i == 0){
-				$("#biblio").append( mainDiv );
-				mainDiv = $('<div>', {
-					class: "row text-center"
-				});
+			for(x in buttonList){				// création des boutons de l'interface
+				t = buttonList[x];
+				div = $('<div>', {
+						class: "col-md-2 biblio"
+					})
+					.html( t.ORef.displ )
+					.append( t.ORef.infos )
+					.tooltip({
+						animation: false,
+						html: true,
+						placement: (x % nbImagePerLine < 2) ? 'right' : 'left',
+						title: t.ORef.helperTitle + "<hr>" + t.ORef.helperHTML,
+						delay: { show: 900, hide: 300 }
+					});
+
+				mainDiv.append( div );
+				i++;
+				i %= nbImagePerLine;					// 6 boutton par ligne
+
+				if(i == 0){
+					$("#biblio").append( mainDiv );
+					mainDiv = $('<div>', {
+						class: "row text-center"
+					});
+				}
 			}
-		}
+			if(i > 0){
+				$("#biblio").append( mainDiv );
+			}
+		});
+	}
 
-		if(i>0){
-			$("#biblio").append( mainDiv );
-		}
-
-		$("#selector")						// les boutons de filtres du menu
-			.append($('<li>', {
-					id: "_T",
-					role: "presentation",
-					class: "myMenu"+((which == 'T') ? " active" : "")
-				}).append($("<a>",{href: "?voir=Tous"}).html("Tous")))		// on force le rechargement de la bibliothèque (destruction de la précédente)
-			.append($('<li>', {
-					id: "_S",
-					role: "presentation",
-					class: "myMenu"+((which == 'S') ? " active" : "")
-				}).append($("<a>",{href: "?voir=Rupture"}).html("En rupture")))
-			.append($('<li>', {
-					id: "_R",
-					role: "presentation",
-					class: "myMenu"+((which == 'R') ? " active" : "")
-				}).append($("<a>",{href: "?voir=Reassort"}).html("R&eacute;assort")))
-			.append($('<li>', {
-					id: "_E",
-					role: "presentation",
-					class: "myMenu"+((which == 'E') ? " active" : "")
-				}).append($("<a>",{href: "?voir=Occasion"}).html("Occasion")));
+	//***********************************************************
+	getBibliothequeDatas(done){
+		$.ajax({
+			url: '/BDCenter/Bibliotheque',										// mon Url d'applet JEE
+			type: 'POST',														// en méthode GET
+			data: { 'biblio' : true },											// le paramètre à vérifier
+			contentType : 'application/x-www-form-urlencoded; charset=UTF-8',		// j'envois au format ...
+			dataType: 'jsonp'													// j'attends un résultat au format ...
+		}).complete(function(data){
+			var json;
+			json = data.responseText;
+			if(json != null){
+				BDCouv = JSON.parse(json);
+				done();
+			}
+		}).fail(function(data){
+			// Raise error div (pb accès au serveur)
+		});
 	}
 
 	//***********************************************************
@@ -334,8 +303,11 @@ class Handlers {
 	constructor(){
 		Handlers.init();
 
+		var voir = decodeURIComponent($.urlParam('voir'));
+		if(voir.toString() == 'null') { voir = 'Tous'; }
+
 		myStorage = Handlers.WebStorage;
-		_maBibliotheque = Handlers.initBibliotheque(decodeURIComponent($.urlParam('voir')));
+		_maBibliotheque = Handlers.initBibliotheque(voir);
 		$(_maBibliotheque).on("login",_maBibliotheque.stepLogin);		// déclencheur pour login réussi
 		$(_maBibliotheque).on("logout",_maBibliotheque.stepLogout);	// déclencheur pour logout
 
@@ -365,7 +337,7 @@ class Handlers {
 		});
 
 		$("#logout").click(function(){
-			myStorage.clear("whosLogged");
+			myStorage.clear();
 			$(_maBibliotheque).trigger("logout");
 			$("#logout").removeClass("show");
 			$("#logout").addClass("invisible");
@@ -392,9 +364,33 @@ class Handlers {
 				break;
 			case 'Tous':
 				selector = "T";
-			default:	// un ouvrage précis
-				selector = "*";
+				break;
+			default:	// un ouvrage précis (voir='Livre')
+				selector = "L";
 		}
+		$("#selector")						// les boutons de filtres du menu
+			.append($('<li>', {
+					id: "_T",
+					role: "presentation",
+					class: "myMenu"+((selector == 'T') ? " active" : "")
+				}).append($("<a>",{href: "?voir=Tous"}).html("Tous")))		// on force le rechargement de la bibliothèque (destruction de la précédente)
+			.append($('<li>', {
+					id: "_S",
+					role: "presentation",
+					class: "myMenu"+((selector == 'S') ? " active" : "")
+				}).append($("<a>",{href: "?voir=Rupture"}).html("En rupture")))
+			.append($('<li>', {
+					id: "_R",
+					role: "presentation",
+					class: "myMenu"+((selector == 'R') ? " active" : "")
+				}).append($("<a>",{href: "?voir=Reassort"}).html("R&eacute;assort")))
+			.append($('<li>', {
+					id: "_E",
+					role: "presentation",
+					class: "myMenu"+((selector == 'E') ? " active" : "")
+				}).append($("<a>",{href: "?voir=Occasion"}).html("Occasion"))
+		);
+
 		return new Bibliotheque( selector );		// crée les boutons
 	}
 
@@ -403,6 +399,7 @@ class Handlers {
 	static logMe( user ){
 		$("#password").val(null);						// efface le dernier mot de passe
 		$("#modal").modal("hide");
+		ImgButton.prototype.active = false;
 		if( user != "" ){								// on se connecte
 			$("#logout")
 				.html("Bonjour "+user+" !")
@@ -412,6 +409,7 @@ class Handlers {
 			myStorage.whosLogged = user;
 			$("#t3").removeClass("noconn");
 			$("#t3").addClass("conn");
+			ImgButton.prototype.active = true;
 		}
 	}
 
@@ -432,8 +430,9 @@ class Handlers {
 				if(json.utilisateur != "erreur"){
 					Handlers.logMe( json.utilisateur );
 				}
+			} else {
+				Handlers.logMe("");
 			}
-			Handlers.logMe("");
 		}).fail(function(data){
 			// Raise error div (pb accès au serveur)
 		});
@@ -476,14 +475,38 @@ class Handlers {
 					dataType: 'json',							// j'attends un résultat au format ...
 					success: function( data ) {					// quand la réponse (= ok) arrive
 						// Reste à filtre les valeurs en fonction de l'input parent
-						response( data );
+//****************************************************
+// dédoublonnage
+						var temp = {};
+						$.each(data, function( item ) {
+					    	temp[ data[item].value ] = data[item];	// j'écrase !
+						});
+//****************************************************
+						response( temp );
 					}
 				});
 			},
 			minLength: 2,										// 2 caractère minimum pour la recherche
 			select: function( event, ui ) {						// on a sélectionné qque chose dans la liste
-				
-console.log( "Selected: " + ui.item.value + " aka " + ui.item.id );
+				var st = ui.item.value;
+				var vals;
+				if(st.indexOf('(Fournisseur)') > 0){			// Pour les fournisseurs uniquement
+					myStorage.SelectedBookCateg = 'Fournisseur';
+					myStorage.SelectedBookId = ui.item.id; 
+				}
+				if(
+					(st.indexOf('(Reference)')>0) ||
+					(st.indexOf('(Titre)')>0)
+				) {
+					myStorage.SelectedBookCateg = "id";
+					myStorage.SelectedBookId = ui.item.id; 
+				}
+				if(st.indexOf('(Auteur)')>0){
+					myStorage.SelectedBookCateg = 'Auteur';
+					myStorage.SelectedBookId = st.substr(0, st.indexOf(' (Auteur)')-1); 
+				}
+
+				$(location).attr('href', '?voir=Livre');		// recharge la page pour afficher la selection
 			}
 		});
 

@@ -35,12 +35,12 @@
 		<script src="lib/less/less.min.js"></script>
 
 	<!-- Les scripts de tests / validation -->
-		<script src="img/BD.js"></script>
 		<script src="img/editors.js"></script>
 		<script src="lib/HandlersClass.js"></script>
 
 		<script>					// Handler document.ready(), initialisation
 		//***********************************************************
+			var BDCouv;
 			_maBibliotheque = {};			// l'objet bibiliothèque complet
 			myStorage = null;				// web storage pour conserver les infos utiles
 			displayMode = 'full';			// variable globale d'état de l'affichage
@@ -157,18 +157,27 @@
 					</div>
 
 					<div class="modal-body">
-						<div>
-							<span id="vide"></span>
+						<div class="pictleft">
+							<span id="pict"></span>	<!--  pour afficher l'image -->
 						</div> 
 						<div class="input-group">
-							<input id="fred" type="text" size="30" class="form-control" placeholder="Référence" tabindex="-1" />
+							<input id="ref" type="text" name="ref" size="10" class="form-control" placeholder="Référence" tabindex="1" />
+							<input id="ttl" type="text" name="ttl" size="50" class="form-control" placeholder="Titre" />
+							<input id="aut" type="text" name="aut" size="30" class="form-control" placeholder="Auteur" />
+							<input id="edt" type="text" name="edt" size="30" class="form-control" placeholder="Editeur" />
+							<label for="stk">En stock&nbsp;:
+							<input id="stk" type="number" name="stk" class="form-control" placeholder="0" />
+							</label>
+							<label for="rea">Réassort en cours&nbsp;:
+								<input id="rea" type="number" name="rea" class="form-control" placeholder="0" />
+							</label>
 						</div>
 
-						<div class="alert alert-danger" role="alert">
+<!-- 						<div class="alert alert-danger" role="alert">
 							<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
 							<span class="sr-only">Error:</span>Enter a valid email address
 						</div>
-					</div>
+-->					</div>
 
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>

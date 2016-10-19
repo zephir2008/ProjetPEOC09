@@ -1,33 +1,45 @@
 package com.bdcenter.servlet;
 
-import com.bdcenter.sqlservices.ESQLProcedures;
 import com.bdcenter.utils.EInterfaces;
+import com.bdcenter.sqlservices.ESQLProcedures;
 import com.bdcenter.sqlservices.SQLConnector;
 
 public class Servlet_filter {
+		// rechercher dans la base de données pour l'autocomplete
+	public String autocomplete(String roots){
+		String retVal = "";
 
-	private String getSqlValues(String callback, String parameters){
-		String retVal="";
-
-		try{
-			SQLConnector sc = new SQLConnector();
-			retVal = sc.sql_autocomplete(callback, parameters);
-
-		} catch(Exception e){
-			retVal =  "{\"utilisateur -Servletfilter\":\"Erreur\"}";
-		}
+		String mon_callback = EInterfaces.AUTOCOM.getCallBck();
+		SQLConnector sc = new SQLConnector();
+		retVal = sc.sql_autocomplete(mon_callback, roots);
 
 		return retVal;
 	}
 
-	public String autocomplete(String roots){
-		EInterfaces mon_callback = EInterfaces.ALL;
-		return this.getSqlValues( mon_callback.getCallBck(), "'"+roots+"'");
+		// retrouver un/des livre(s) suivant un paramètre  
+	public String get_books(String filter, String Value){
+		String retVal = "";
+		String mon_callback;
+
+		if(Value != null){
+			mon_callback = EInterfaces.ALL.getCallbckByKey(filter);
+		} else {
+			mon_callback = EInterfaces.ALL.getCallBck();
+		}
+		SQLConnector sc = new SQLConnector();
+		retVal = sc.sql_get_books( mon_callback, Value);
+
+		return retVal;
 	}
-	
-	
+
+		// Vérifier l'identifiant de connexion
 	public String check_password(String pwd) {
-		ESQLProcedures mon_callback = ESQLProcedures.USERBYLOGIN;
-		return this.getSqlValues( mon_callback.getCallback(), "'"+pwd+"'" );
+		String retVal="";
+
+		String mon_callback = ESQLProcedures.USERBYLOGIN.getCallback();
+		SQLConnector sc = new SQLConnector();
+		retVal = sc.sql_get_user( mon_callback, pwd );
+
+		return retVal;
 	}
 }

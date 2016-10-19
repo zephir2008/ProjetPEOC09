@@ -17,7 +17,8 @@ public enum EInterfaces {
 	AUTHOR ("Auteur","get_authors"),
 	REFERENCE ("Reference","get_references"),
 	EDITOR ("Editeur", "get_editors"),
-	ALL("All","autocomplete");
+	AUTOCOM("Autocom","autocomplete"),
+	ALL("All","get_livre_tous");
 
 	private String Label;
 	private String CallBck;
@@ -26,7 +27,7 @@ public enum EInterfaces {
 	private HashMap<String, String> collproc = new HashMap<String, String>();
 
 
-	public String getLabel() {
+		public String getLabel() {
 		return Label;
 	}
 
@@ -48,7 +49,7 @@ public enum EInterfaces {
 	
 	public String getCallbckByKey(String key){
 		String retVal = "";
-		collproc.get(key);
+		retVal = collproc.get(key);
 		return retVal;
 	}
 

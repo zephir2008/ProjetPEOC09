@@ -110,3 +110,45 @@ oct. 15, 2016 20:47:25.45 1476557245449	addons.webextension.rested@restedclient	
 oct. 15, 2016 20:47:25.45 1476557245449	addons.webextension.rested@restedclient	WARN	Loading extension 'rested@restedclient': Reading manifest: Error processing license: An unexpected property was found in the WebExtension manifest.
 oct. 15, 2016 20:47:25.46 1476557245466	addons.webextension.rested@restedclient	WARN	Please specify whether you want browser_style or not in your browser_action options.
 oct. 15, 2016 20:48:26.43 1476557306436	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+
+oct. 19, 2016 14:11:51.29 NEW SESSION
+oct. 19, 2016 14:11:51.29 1476879111290	addons.webextension.rested@restedclient	WARN	Loading extension 'rested@restedclient': Reading manifest: Error processing contributors: An unexpected property was found in the WebExtension manifest.
+oct. 19, 2016 14:11:51.29 1476879111291	addons.webextension.rested@restedclient	WARN	Loading extension 'rested@restedclient': Reading manifest: Error processing license: An unexpected property was found in the WebExtension manifest.
+oct. 19, 2016 14:11:51.32 1476879111320	addons.webextension.rested@restedclient	WARN	Please specify whether you want browser_style or not in your browser_action options.
+oct. 19, 2016 14:11:52.84 Couldn't get object: TypeError: Components.classes[cid] is undefined
+oct. 19, 2016 14:11:52.84 Couldn't get string: closeAndStopPicking
+oct. 19, 2016 14:12:21.03 1476879141030	addons.webextension.rested@restedclient	WARN	Loading extension 'rested@restedclient': Reading manifest: Error processing contributors: An unexpected property was found in the WebExtension manifest.
+oct. 19, 2016 14:12:21.03 1476879141030	addons.webextension.rested@restedclient	WARN	Loading extension 'rested@restedclient': Reading manifest: Error processing license: An unexpected property was found in the WebExtension manifest.
+oct. 19, 2016 14:12:21.04 1476879141047	addons.webextension.rested@restedclient	WARN	Please specify whether you want browser_style or not in your browser_action options.
+oct. 19, 2016 14:12:22.19 Couldn't get object: TypeError: Components.classes[cid] is undefined
+oct. 19, 2016 14:12:22.19 Couldn't get string: closeAndStopPicking
+oct. 19, 2016 14:17:56.03 1476879476033	addons.webextension.rested@restedclient	WARN	Loading extension 'rested@restedclient': Reading manifest: Error processing contributors: An unexpected property was found in the WebExtension manifest.
+oct. 19, 2016 14:17:56.03 1476879476034	addons.webextension.rested@restedclient	WARN	Loading extension 'rested@restedclient': Reading manifest: Error processing license: An unexpected property was found in the WebExtension manifest.
+oct. 19, 2016 14:17:56.05 1476879476054	addons.webextension.rested@restedclient	WARN	Please specify whether you want browser_style or not in your browser_action options.
+oct. 19, 2016 14:17:57.05 Couldn't get object: TypeError: Components.classes[cid] is undefined
+oct. 19, 2016 14:17:57.05 Couldn't get string: closeAndStopPicking
+oct. 19, 2016 14:18:14.02 1476879494022	addons.webextension.rested@restedclient	WARN	Loading extension 'rested@restedclient': Reading manifest: Error processing contributors: An unexpected property was found in the WebExtension manifest.
+oct. 19, 2016 14:18:14.02 1476879494023	addons.webextension.rested@restedclient	WARN	Loading extension 'rested@restedclient': Reading manifest: Error processing license: An unexpected property was found in the WebExtension manifest.
+oct. 19, 2016 14:18:14.04 1476879494043	addons.webextension.rested@restedclient	WARN	Please specify whether you want browser_style or not in your browser_action options.
+oct. 19, 2016 14:18:15.05 Couldn't get object: TypeError: Components.classes[cid] is undefined
+oct. 19, 2016 14:18:15.05 Couldn't get string: closeAndStopPicking
+oct. 19, 2016 14:25:44.74 1476879944748	addons.webextension.rested@restedclient	WARN	Loading extension 'rested@restedclient': Reading manifest: Error processing contributors: An unexpected property was found in the WebExtension manifest.
+oct. 19, 2016 14:25:44.74 1476879944748	addons.webextension.rested@restedclient	WARN	Loading extension 'rested@restedclient': Reading manifest: Error processing license: An unexpected property was found in the WebExtension manifest.
+oct. 19, 2016 14:25:44.77 1476879944779	addons.webextension.rested@restedclient	WARN	Please specify whether you want browser_style or not in your browser_action options.
+oct. 19, 2016 14:25:46.30 Couldn't get object: TypeError: Components.classes[cid] is undefined
+oct. 19, 2016 14:25:46.30 Couldn't get string: closeAndStopPicking
+oct. 19, 2016 14:43:44.93 1476881024939	addons.webextension.rested@restedclient	WARN	Loading extension 'rested@restedclient': Reading manifest: Error processing contributors: An unexpected property was found in the WebExtension manifest.
+oct. 19, 2016 14:43:44.94 1476881024939	addons.webextension.rested@restedclient	WARN	Loading extension 'rested@restedclient': Reading manifest: Error processing license: An unexpected property was found in the WebExtension manifest.
+oct. 19, 2016 14:43:44.97 1476881024971	addons.webextension.rested@restedclient	WARN	Please specify whether you want browser_style or not in your browser_action options.
+oct. 19, 2016 14:43:46.36 Couldn't get object: TypeError: Components.classes[cid] is undefined
+oct. 19, 2016 14:43:46.36 Couldn't get string: closeAndStopPicking
+oct. 19, 2016 15:04:40.13 1476882280132	addons.webextension.rested@restedclient	WARN	Loading extension 'rested@restedclient': Reading manifest: Error processing contributors: An unexpected property was found in the WebExtension manifest.
+oct. 19, 2016 15:04:40.13 1476882280133	addons.webextension.rested@restedclient	WARN	Loading extension 'rested@restedclient': Reading manifest: Error processing license: An unexpected property was found in the WebExtension manifest.
+oct. 19, 2016 15:04:40.15 1476882280153	addons.webextension.rested@restedclient	WARN	Please specify whether you want browser_style or not in your browser_action options.
+oct. 19, 2016 15:04:41.09 Couldn't get object: TypeError: Components.classes[cid] is undefined
+oct. 19, 2016 15:04:41.09 Couldn't get string: closeAndStopPicking
+oct. 19, 2016 16:36:33.75 1476887793750	addons.webextension.rested@restedclient	WARN	Loading extension 'rested@restedclient': Reading manifest: Error processing contributors: An unexpected property was found in the WebExtension manifest.
+oct. 19, 2016 16:36:33.75 1476887793751	addons.webextension.rested@restedclient	WARN	Loading extension 'rested@restedclient': Reading manifest: Error processing license: An unexpected property was found in the WebExtension manifest.
+oct. 19, 2016 16:36:33.76 1476887793769	addons.webextension.rested@restedclient	WARN	Please specify whether you want browser_style or not in your browser_action options.
+oct. 19, 2016 16:36:34.68 Couldn't get object: TypeError: Components.classes[cid] is undefined
+oct. 19, 2016 16:36:34.69 Couldn't get string: closeAndStopPicking

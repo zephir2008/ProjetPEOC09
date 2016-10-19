@@ -4,4 +4,6 @@
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.Hashtable"/>
 <fullyQualifiedTypeName name="com.bdcenter.sqlservices.ESQLProcedures"/>
+<fullyQualifiedTypeName name="com.bdcenter.utils.EInterfaces"/>
+<fullyQualifiedTypeName name="java.lang.Boolean"/>
 </qualifiedTypeNameHistroy>
